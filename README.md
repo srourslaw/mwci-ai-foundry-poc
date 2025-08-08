@@ -67,52 +67,63 @@ This comprehensive Proof of Concept (POC) demonstrates Manila Water Company's **
 ```mermaid
 graph TB
     subgraph "Frontend Layer"
-        A[🏠 Dashboard] --> B[👥 HR Assistant]
-        A --> C[🎫 Smart Ticketing]
-        A --> D[📊 Chat with Data]
+        A[🏠 Dashboard]
+        B[👥 HR Assistant]
+        C[🎫 Smart Ticketing]
+        D[📊 Chat with Data]
     end
 
     subgraph "AI Services Layer"
-        E[OpenAI GPT-3.5-turbo<br/>Primary AI Engine] --> F[Claude 3 Haiku<br/>Complex Analysis]
+        E[OpenAI GPT-3.5-turbo<br/>Primary AI Engine]
+        F[Claude 3 Haiku<br/>Complex Analysis]
         G[Custom AI Workflows<br/>Classification & Routing]
     end
 
     subgraph "Data Processing Layer"
-        H[Employee Management<br/>HR Data] --> I[Ticket Processing<br/>Customer Service]
-        I --> J[Water Operations<br/>Analytics Data]
-        J --> K[Policy Management<br/>Knowledge Base]
+        H[Employee Management<br/>HR Data]
+        I[Ticket Processing<br/>Customer Service]
+        J[Water Operations<br/>Analytics Data]
+        K[Policy Management<br/>Knowledge Base]
     end
 
     subgraph "Integration Layer"
-        L[SAP SuccessFactors<br/>HR System] --> M[ManageEngine<br/>Ticketing System]
-        M --> N[Enterprise Lake House<br/>Data Platform]
-        N --> O[Microsoft Teams<br/>Collaboration]
+        L[SAP SuccessFactors<br/>HR System]
+        M[ManageEngine<br/>Ticketing System]
+        N[Enterprise Lake House<br/>Data Platform]
+        O[Microsoft Teams<br/>Collaboration]
     end
 
+    A --> B
+    A --> C
+    A --> D
+
     B --> E
-    C --> E
+    C --> G
     D --> F
+
     E --> H
+    E --> K
     F --> J
     G --> I
-Technology Stack Deep Dive
-Core Technologies
-Frontend Framework: Streamlit 1.28.0 (Rapid prototyping with enterprise capabilities)
-AI Models:
-OpenAI GPT-3.5-turbo (Primary conversational AI)
-Anthropic Claude 3 Haiku (Complex data analysis)
-Data Processing: Pandas 2.1.0, NumPy 1.24.0
-Visualization: Plotly 5.17.0 (Interactive charts and dashboards)
-Development: Python 3.8+, Git, Gemini Code CLI
-AI Service Architecture
-code
-Python
 
-download
+    H --> L
+    I --> M
+    J --> N
+    K --> O
+```
 
-content_copy
+### Technology Stack Deep Dive
+#### Core Technologies
+- **Frontend Framework:** Streamlit 1.28.0 (Rapid prototyping with enterprise capabilities)
+- **AI Models:**
+  - OpenAI GPT-3.5-turbo (Primary conversational AI)
+  - Anthropic Claude 3 Haiku (Complex data analysis)
+- **Data Processing:** Pandas 2.1.0, NumPy 1.24.0
+- **Visualization:** Plotly 5.17.0 (Interactive charts and dashboards)
+- **Development:** Python 3.8+, Git, Gemini Code CLI
 
-expand_less
+### AI Service Architecture
+```python
 # AI Service Layer Implementation
 class AIModelManager:
     def __init__(self):
@@ -123,33 +134,34 @@ class AIModelManager:
         # HR-specific prompt engineering
         # Context injection with employee data
         # Intelligent response generation
+        pass
 
     def classify_ticket(self, description, categories):
         # Multi-class classification
         # Confidence scoring
         # Reasoning explanation
+        pass
 
     def generate_data_insights(self, query, data_context):
         # Natural language to SQL/Analytics
         # Chart generation recommendations
         # Insight synthesis
-🚀 Quick Start Guide
-Prerequisites
-Python 3.8+ installed on your system
-Git for version control
-OpenAI API Key (minimum $15 credit recommended)
-Claude API Key (optional, $15 credit recommended)
-Streamlit Account for cloud deployment
-Installation Steps
-Step 1: Clone and Setup
-code
-Bash
+        pass
+```
 
-download
+---
 
-content_copy
+## 🚀 Quick Start Guide
+### Prerequisites
+- Python 3.8+ installed on your system
+- Git for version control
+- OpenAI API Key (minimum $15 credit recommended)
+- Claude API Key (optional, $15 credit recommended)
+- Streamlit Account for cloud deployment
 
-expand_less
+### Installation Steps
+#### Step 1: Clone and Setup
+```bash
 # Clone the repository
 git clone https://github.com/srourslaw/mwci-ai-foundry-poc.git
 cd mwci-ai-foundry-poc
@@ -160,64 +172,41 @@ source manila_water_ai/bin/activate  # On Windows: manila_water_ai\Scripts\activ
 
 # Install dependencies
 pip install -r requirements.txt
-Step 2: Configure API Keys
-code
-Bash
-
-download
-
-content_copy
-
-expand_less
+```
+#### Step 2: Configure API Keys
+```bash
 # Create secrets file
 mkdir -p .streamlit
 cat > .streamlit/secrets.toml << EOF
 OPENAI_API_KEY = "sk-your-openai-api-key-here"
 ANTHROPIC_API_KEY = "sk-ant-your-claude-api-key-here"
 EOF
-Step 3: Run Application
-code
-Bash
-
-download
-
-content_copy
-
-expand_less
+```
+#### Step 3: Run Application
+```bash
 # Start the application
 streamlit run app.py
 
 # Application will be available at:
 # Local: http://localhost:8501
 # Network: http://YOUR_IP:8501
-Step 4: Deploy to Streamlit Cloud (Optional)
-Push code to GitHub repository
-Visit share.streamlit.io
-Connect your GitHub repository
-Add API keys in Streamlit Cloud secrets
-Deploy with one click
-Environment Configuration
-Required Environment Variables
-code
-Toml
+```
+#### Step 4: Deploy to Streamlit Cloud (Optional)
+1. Push code to GitHub repository
+2. Visit share.streamlit.io
+3. Connect your GitHub repository
+4. Add API keys in Streamlit Cloud secrets
+5. Deploy with one click
 
-download
-
-content_copy
-
-expand_less
+### Environment Configuration
+#### Required Environment Variables
+```toml
 # .streamlit/secrets.toml
 OPENAI_API_KEY = "your-openai-key"           # Required for HR Assistant & Ticketing
 ANTHROPIC_API_KEY = "your-claude-key"        # Optional, for enhanced data analysis
-Streamlit Configuration
-code
-Toml
-
-download
-
-content_copy
-
-expand_less
+```
+#### Streamlit Configuration
+```toml
 # .streamlit/config.toml
 [theme]
 primaryColor = "#1f77b4"                     # Manila Water blue
@@ -230,22 +219,20 @@ font = "sans serif"
 headless = true
 port = 8501
 maxUploadSize = 200
-📊 Feature Implementation
-🏠 Dashboard Module - Central Command Center
-Core Functionality
-Real-time KPIs: Population served, service connections, water quality metrics
-Performance Monitoring: Customer satisfaction, response times, operational efficiency
-Interactive Visualizations: Consumption trends, quality gauges, monthly performance
-Quick Navigation: Seamless access to all AI services
-Technical Implementation
-code
-Python
+```
 
-download
+---
 
-content_copy
+## 📊 Feature Implementation
+### 🏠 Dashboard Module - Central Command Center
+#### Core Functionality
+- Real-time KPIs: Population served, service connections, water quality metrics
+- Performance Monitoring: Customer satisfaction, response times, operational efficiency
+- Interactive Visualizations: Consumption trends, quality gauges, monthly performance
+- Quick Navigation: Seamless access to all AI services
 
-expand_less
+#### Technical Implementation
+```python
 def show_dashboard(data_processor):
     # Render header with Manila Water branding
     UIComponents.render_header(
@@ -270,21 +257,16 @@ def show_dashboard(data_processor):
     areas_data = data_processor.get_service_areas()
     fig = UIComponents.create_consumption_chart(areas_data)
     st.plotly_chart(fig, use_container_width=True)
-Key Features
-Dynamic Metric Cards: Real-time updates with trend indicators
-Interactive Charts: Plotly visualizations with hover details
-Responsive Design: Mobile and desktop optimized
-Manila Water Branding: Consistent visual identity
-👥 HR Assistant Module - 24/7 Employee Support
-Advanced Capabilities
-code
-Python
+```
+#### Key Features
+- Dynamic Metric Cards: Real-time updates with trend indicators
+- Interactive Charts: Plotly visualizations with hover details
+- Responsive Design: Mobile and desktop optimized
+- Manila Water Branding: Consistent visual identity
 
-download
-
-content_copy
-
-expand_less
+### 👥 HR Assistant Module - 24/7 Employee Support
+#### Advanced Capabilities
+```python
 def process_leave_request(employee_data, leave_type, dates):
     # Check current leave balance
     balance = employee_data.get('leave_balance', {})
@@ -300,20 +282,14 @@ def process_leave_request(employee_data, leave_type, dates):
     )
 
     return response
-Features:
+```
+**Features:**
+- Automatic balance checking and validation
+- Policy compliance verification
+- Manager approval workflow simulation
+- Multiple leave types (vacation, sick, emergency)
 
-Automatic balance checking and validation
-Policy compliance verification
-Manager approval workflow simulation
-Multiple leave types (vacation, sick, emergency)
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```python
 def search_policies(query):
     # Search through policy database
     policies = data_processor.get_hr_policies()
@@ -324,24 +300,18 @@ def search_policies(query):
             relevant_policies.append(policy_data)
 
     return relevant_policies
-Features:
+```
+**Features:**
+- Instant access to 15+ HR policies
+- Benefits explanation and guidance
+- Compliance requirements information
+- Training program details
+- New hire guidance and checklists
+- Document requirements explanation
+- System access procedures
+- Interactive FAQ resolution
 
-Instant access to 15+ HR policies
-Benefits explanation and guidance
-Compliance requirements information
-Training program details
-New hire guidance and checklists
-Document requirements explanation
-System access procedures
-Interactive FAQ resolution
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```python
 def render_chat_interface():
     # Display chat history
     for message in st.session_state.hr_messages:
@@ -354,21 +324,16 @@ def render_chat_interface():
     user_input = st.chat_input("Ask your HR question...")
     if user_input:
         process_hr_query(user_input)
-Demo Data Implementation
-4 Realistic Employee Profiles: Complete HR records with departments
-Comprehensive Leave Balances: Vacation, sick, emergency leave tracking
-15+ HR Policies: Covering health benefits, training, remote work
-20+ FAQ Items: Common employee questions and detailed answers
-🎫 Smart Ticketing Module - AI-Powered Customer Service
-Revolutionary Features
-code
-Python
+```
+#### Demo Data Implementation
+- 4 Realistic Employee Profiles: Complete HR records with departments
+- Comprehensive Leave Balances: Vacation, sick, emergency leave tracking
+- 15+ HR Policies: Covering health benefits, training, remote work
+- 20+ FAQ Items: Common employee questions and detailed answers
 
-download
-
-content_copy
-
-expand_less
+### 🎫 Smart Ticketing Module - AI-Powered Customer Service
+#### Revolutionary Features
+```python
 def classify_ticket(description, categories):
     system_prompt = f"""
     Classify this customer issue into categories: {categories}
@@ -393,20 +358,14 @@ def classify_ticket(description, categories):
     )
 
     return json.loads(response.choices[0].message.content)
-Capabilities:
+```
+**Capabilities:**
+- 95%+ Classification Accuracy across 5 major categories
+- Confidence Scoring for classification reliability
+- Intelligent Reasoning explanations for decisions
+- Priority Assignment based on issue severity
 
-95%+ Classification Accuracy across 5 major categories
-Confidence Scoring for classification reliability
-Intelligent Reasoning explanations for decisions
-Priority Assignment based on issue severity
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```python
 def find_best_technician(category, area):
     technicians = data_processor.get_available_technicians()
 
@@ -421,20 +380,14 @@ def find_best_technician(category, area):
 
     # Fallback to best available
     return min(technicians, key=lambda x: x['current_workload'])
-Features:
+```
+**Features:**
+- Specialty-based Assignment: Match technicians to issue types
+- Geographic Optimization: Zone-based routing for efficiency
+- Workload Balancing: Distribute tickets across available staff
+- Real-time Availability: Dynamic status checking
 
-Specialty-based Assignment: Match technicians to issue types
-Geographic Optimization: Zone-based routing for efficiency
-Workload Balancing: Distribute tickets across available staff
-Real-time Availability: Dynamic status checking
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```python
 def suggest_solution(category, description):
     solution_prompt = f"""
     For this {category} issue: {description}
@@ -447,31 +400,26 @@ def suggest_solution(category, description):
     """
 
     return ai_manager.suggest_ticket_solution(category, description)
-Capabilities:
+```
+**Capabilities:**
+- AI-generated resolution recommendations
+- Step-by-step customer guidance
+- Historical pattern matching
+- Escalation path identification
+- Live ticket status tracking
+- Technician workload visualization
+- SLA compliance monitoring
+- Performance analytics
 
-AI-generated resolution recommendations
-Step-by-step customer guidance
-Historical pattern matching
-Escalation path identification
-Live ticket status tracking
-Technician workload visualization
-SLA compliance monitoring
-Performance analytics
-Demo Implementation
-5 Ticket Categories: Water quality, billing, service interruption, new connections, meter issues
-4 Technician Profiles: Specialists with zones and capacities
-Realistic Scenarios: Sample tickets with full AI analysis
-Complete Workflow: From submission to resolution
-📊 Chat with Data Module - Natural Language Analytics
-Advanced Analytics Capabilities
-code
-Python
+#### Demo Implementation
+- 5 Ticket Categories: Water quality, billing, service interruption, new connections, meter issues
+- 4 Technician Profiles: Specialists with zones and capacities
+- Realistic Scenarios: Sample tickets with full AI analysis
+- Complete Workflow: From submission to resolution
 
-download
-
-content_copy
-
-expand_less
+### 📊 Chat with Data Module - Natural Language Analytics
+#### Advanced Analytics Capabilities
+```python
 def process_data_query(user_query):
     # Determine query intent
     query_type = classify_query_intent(user_query)
@@ -488,20 +436,14 @@ def process_data_query(user_query):
         return insights, chart_data
 
     return insights, None
-Features:
+```
+**Features:**
+- Plain English Queries: "Which area consumes the most water?"
+- Complex Analytics: Multi-dimensional data exploration
+- Contextual Understanding: Query interpretation with domain knowledge
+- Intelligent Responses: Actionable insights and recommendations
 
-Plain English Queries: "Which area consumes the most water?"
-Complex Analytics: Multi-dimensional data exploration
-Contextual Understanding: Query interpretation with domain knowledge
-Intelligent Responses: Actionable insights and recommendations
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```python
 def generate_chart_data(query, data_processor):
     query_lower = query.lower()
 
@@ -523,20 +465,14 @@ def generate_chart_data(query, data_processor):
             'data': data_processor.get_monthly_trends(),
             'title': 'Monthly Performance Trends'
         }
-Capabilities:
+```
+**Capabilities:**
+- Automatic Chart Selection: Bar, line, scatter, gauge charts
+- Interactive Plotly Visualizations: Hover details, zoom, pan
+- Multi-dimensional Analysis: Population vs consumption correlations
+- Real-time Chart Generation: Dynamic based on query content
 
-Automatic Chart Selection: Bar, line, scatter, gauge charts
-Interactive Plotly Visualizations: Hover details, zoom, pan
-Multi-dimensional Analysis: Population vs consumption correlations
-Real-time Chart Generation: Dynamic based on query content
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```python
 class DataProcessor:
     def get_service_areas(self):
         # 5 major service areas with complete metrics
@@ -557,27 +493,23 @@ class DataProcessor:
             {"month": "Jan 2025", "consumption": 45000, "complaints": 234},
             # ... trend data
         ]
-Data Coverage:
+```
+**Data Coverage:**
+- 5 Service Areas: Makati, Quezon City, Manila, Pasig, Mandaluyong
+- 7 Months Trends: Consumption, complaints, new connections
+- Infrastructure Data: 8 treatment plants, 156 pumping stations
+- Quality Metrics: Real-time parameters and compliance scores
+- Trend Analysis: Automatic pattern recognition
+- Comparative Analytics: Area-by-area performance comparison
+- Predictive Insights: Future trend projections
+- Operational Recommendations: Data-driven suggestions
 
-5 Service Areas: Makati, Quezon City, Manila, Pasig, Mandaluyong
-7 Months Trends: Consumption, complaints, new connections
-Infrastructure Data: 8 treatment plants, 156 pumping stations
-Quality Metrics: Real-time parameters and compliance scores
-Trend Analysis: Automatic pattern recognition
-Comparative Analytics: Area-by-area performance comparison
-Predictive Insights: Future trend projections
-Operational Recommendations: Data-driven suggestions
-🤖 AI Integration Details
-Dual-AI Architecture Implementation
-Primary AI Engine: OpenAI GPT-3.5-turbo
-code
-Python
+---
 
-download
-
-content_copy
-
-expand_less
+## 🤖 AI Integration Details
+### Dual-AI Architecture Implementation
+#### Primary AI Engine: OpenAI GPT-3.5-turbo
+```python
 class OpenAIIntegration:
     def __init__(self):
         self.client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
@@ -596,27 +528,21 @@ class OpenAIIntegration:
             return response.choices[0].message.content
         except Exception as e:
             return self.fallback_response(str(e))
-Use Cases:
+```
+**Use Cases:**
+- HR conversational responses
+- Ticket classification and routing
+- General query processing
+- Real-time customer support
 
-HR conversational responses
-Ticket classification and routing
-General query processing
-Real-time customer support
-Optimization Features:
+**Optimization Features:**
+- Custom prompt engineering for Manila Water context
+- Token usage optimization for cost efficiency
+- Error handling with graceful fallbacks
+- Response caching for common queries
 
-Custom prompt engineering for Manila Water context
-Token usage optimization for cost efficiency
-Error handling with graceful fallbacks
-Response caching for common queries
-Secondary AI Engine: Claude 3 Haiku
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+#### Secondary AI Engine: Claude 3 Haiku
+```python
 class ClaudeIntegration:
     def __init__(self):
         self.client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
@@ -634,22 +560,16 @@ class ClaudeIntegration:
             return response.content[0].text
         except Exception as e:
             return self.fallback_to_openai(query, data_context)
-Specialized Functions:
+```
+**Specialized Functions:**
+- Complex data analysis and interpretation
+- Multi-dimensional analytical reasoning
+- Structured data processing
+- Advanced insight generation
 
-Complex data analysis and interpretation
-Multi-dimensional analytical reasoning
-Structured data processing
-Advanced insight generation
-Prompt Engineering Strategies
-Context-Aware Prompting
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+### Prompt Engineering Strategies
+#### Context-Aware Prompting
+```python
 def build_hr_context(employee_data, policies):
     return f"""
     You are Manila Water's HR AI Assistant.
@@ -665,15 +585,9 @@ def build_hr_context(employee_data, policies):
     Respond professionally and helpfully. Reference specific policies when relevant.
     Keep responses concise but informative.
     """
-Structured Output Formatting
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### Structured Output Formatting
+```python
 def classification_prompt(categories):
     return f"""
     Classify customer issues into these categories: {categories}
@@ -688,21 +602,16 @@ def classification_prompt(categories):
 
     Consider urgency, impact, and service level requirements.
     """
-Performance Optimization
-Response Time Optimization
-Streaming Responses: Real-time output for better UX
-Parallel Processing: Concurrent API calls where possible
-Caching Strategy: Store frequent responses
-Token Optimization: Efficient prompt design
-Cost Management
-code
-Python
+```
+### Performance Optimization
+#### Response Time Optimization
+- Streaming Responses: Real-time output for better UX
+- Parallel Processing: Concurrent API calls where possible
+- Caching Strategy: Store frequent responses
+- Token Optimization: Efficient prompt design
 
-download
-
-content_copy
-
-expand_less
+#### Cost Management
+```python
 class CostTracker:
     def __init__(self):
         self.total_tokens = 0
@@ -712,16 +621,13 @@ class CostTracker:
         self.total_tokens += prompt_tokens + completion_tokens
         # GPT-3.5-turbo pricing: $0.0015 per 1K input tokens
         self.estimated_cost += (prompt_tokens * 0.0015 + completion_tokens * 0.002) / 1000
-📁 Project Structure
-Complete File Organization
-code
-Code
+```
 
-download
+---
 
-content_copy
-
-expand_less
+## 📁 Project Structure
+### Complete File Organization
+```
 mwci-ai-foundry-poc/
 ├── 📄 app.py                         # Main Streamlit application (320 lines)
 ├── 📁 pages/                         # Feature modules
@@ -743,38 +649,38 @@ mwci-ai-foundry-poc/
 ├── 📄 requirements.txt               # Python dependencies (11 packages)
 ├── 📄 README.md                      # This comprehensive documentation
 └── 📄 .gitignore                     # Git ignore patterns
-File Details and Line Counts
-Core Application Files
-app.py (320 lines): Main entry point with navigation and dashboard
-hr_assistant.py (280 lines): Complete HR support functionality
-smart_ticketing.py (350 lines): Ticket management with AI classification
-chat_with_data.py (300 lines): Natural language data analytics
-Utility Modules
-ai_models.py (180 lines): AI service integrations and prompt engineering
-data_processor.py (220 lines): Data handling and business logic
-ui_components.py (400 lines): Reusable UI components and visualizations
-Data Files
-employees.json: 4 employee profiles with complete HR data
-tickets.json: 5 categories, 4 technicians, sample tickets
-water_data.json: 5 service areas, 7 months trends, infrastructure
-policies.json: 15+ HR policies, FAQ, onboarding guides
-Code Quality Metrics
-Total Lines of Code: ~2,050 lines
-Documentation Coverage: 100% with inline comments
-Error Handling: Comprehensive try-catch blocks
-Code Reusability: Modular design with utility functions
-Maintainability: Clear separation of concerns
-💾 Data Architecture
-Comprehensive Dataset Implementation
-Employee Management Data Structure
-code
-Json
+```
+### File Details and Line Counts
+#### Core Application Files
+- app.py (320 lines): Main entry point with navigation and dashboard
+- hr_assistant.py (280 lines): Complete HR support functionality
+- smart_ticketing.py (350 lines): Ticket management with AI classification
+- chat_with_data.py (300 lines): Natural language data analytics
 
-download
+#### Utility Modules
+- ai_models.py (180 lines): AI service integrations and prompt engineering
+- data_processor.py (220 lines): Data handling and business logic
+- ui_components.py (400 lines): Reusable UI components and visualizations
 
-content_copy
+#### Data Files
+- employees.json: 4 employee profiles with complete HR data
+- tickets.json: 5 categories, 4 technicians, sample tickets
+- water_data.json: 5 service areas, 7 months trends, infrastructure
+- policies.json: 15+ HR policies, FAQ, onboarding guides
 
-expand_less
+### Code Quality Metrics
+- Total Lines of Code: ~2,050 lines
+- Documentation Coverage: 100% with inline comments
+- Error Handling: Comprehensive try-catch blocks
+- Code Reusability: Modular design with utility functions
+- Maintainability: Clear separation of concerns
+
+---
+
+## 💾 Data Architecture
+### Comprehensive Dataset Implementation
+#### Employee Management Data Structure
+```json
 {
   "employees": [
     {
@@ -808,15 +714,9 @@ expand_less
     // ... additional policies
   }
 }
-Operational Water Data Structure
-code
-Json
-
-download
-
-content_copy
-
-expand_less
+```
+#### Operational Water Data Structure
+```json
 {
   "service_areas": [
     {
@@ -850,15 +750,9 @@ expand_less
     // ... 6 additional months
   ]
 }
-Customer Service Data Structure
-code
-Json
-
-download
-
-content_copy
-
-expand_less
+```
+#### Customer Service Data Structure
+```json
 {
   "ticket_categories": [
     {
@@ -886,16 +780,10 @@ expand_less
     // ... 3 additional technicians
   ]
 }
-Data Processing Implementation
-Efficient Data Retrieval
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+### Data Processing Implementation
+#### Efficient Data Retrieval
+```python
 class DataProcessor:
     def __init__(self):
         self.data_cache = {}
@@ -917,15 +805,9 @@ class DataProcessor:
         areas = self.get_service_areas()
         total = sum(area.get('monthly_consumption_liters', 0) for area in areas)
         return total / 1_000_000_000  # Convert to billion liters
-Data Analytics Functions
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### Data Analytics Functions
+```python
 def get_summary_stats(self):
     """Generate comprehensive summary statistics"""
     areas = self.get_service_areas()
@@ -939,31 +821,22 @@ def get_summary_stats(self):
         'treatment_plants': metrics.get('total_treatment_plants', 0),
         'customer_satisfaction': metrics.get('customer_satisfaction_score', 0)
     }
-🎨 UI/UX Implementation
-Manila Water Branding Integration
-Color Scheme and Visual Identity
-code
-Python
+```
 
-download
+---
 
-content_copy
-
-expand_less
+## 🎨 UI/UX Implementation
+### Manila Water Branding Integration
+#### Color Scheme and Visual Identity
+```python
 # Manila Water Brand Colors
 PRIMARY_BLUE = "#1f77b4"      # Manila Water blue
 ACCENT_GREEN = "#2ca02c"      # Water/nature green
 BACKGROUND_LIGHT = "#f0f8ff"  # Light blue background
 TEXT_DARK = "#262730"         # Dark text for readability
-Custom CSS Styling
-code
-Css
-
-download
-
-content_copy
-
-expand_less
+```
+#### Custom CSS Styling
+```css
 /* Manila Water Theme Implementation */
 .main > div {
     padding-top: 2rem;
@@ -986,16 +859,10 @@ expand_less
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-left: 4px solid #1f77b4;
 }
-Interactive Components
-Dynamic Metric Cards
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+### Interactive Components
+#### Dynamic Metric Cards
+```python
 def render_metric_card(title, value, delta=None, icon="📊"):
     """Render interactive metric card with trend indicators"""
     delta_html = ""
@@ -1020,15 +887,9 @@ def render_metric_card(title, value, delta=None, icon="📊"):
         {delta_html}
     </div>
     """, unsafe_allow_html=True)
-Professional Chat Interface
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### Professional Chat Interface
+```python
 def render_chat_message(message, is_user=False, avatar=None):
     """Render chat messages with professional styling"""
     if is_user:
@@ -1065,15 +926,9 @@ def render_chat_message(message, is_user=False, avatar=None):
         </div>
     </div>
     """, unsafe_allow_html=True)
-Interactive Visualizations
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### Interactive Visualizations
+```python
 def create_consumption_chart(areas_data):
     """Create interactive water consumption visualization"""
     df = pd.DataFrame(areas_data)
@@ -1109,16 +964,10 @@ def create_consumption_chart(areas_data):
     )
 
     return fig
-Responsive Design Implementation
-Mobile-First Approach
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+### Responsive Design Implementation
+#### Mobile-First Approach
+```python
 def adaptive_layout():
     """Responsive layout that adapts to screen size"""
     # Detect screen size using Streamlit's viewport
@@ -1130,15 +979,9 @@ def adaptive_layout():
         # Desktop layout: Multi-column, side-by-side components
         col1, col2, col3, col4 = st.columns(4)
         render_desktop_metrics([col1, col2, col3, col4])
-Accessibility Features
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### Accessibility Features
+```python
 def ensure_accessibility():
     """Implement accessibility best practices"""
     st.markdown("""
@@ -1166,17 +1009,14 @@ def ensure_accessibility():
     }
     </style>
     """, unsafe_allow_html=True)
-🔧 Integration Capabilities
-Enterprise System Integration Architecture
-SAP SuccessFactors Integration
-code
-Python
+```
 
-download
+---
 
-content_copy
-
-expand_less
+## 🔧 Integration Capabilities
+### Enterprise System Integration Architecture
+#### SAP SuccessFactors Integration
+```python
 class SAPSuccessFactorsConnector:
     """Integration with Manila Water's HR system"""
 
@@ -1209,15 +1049,9 @@ class SAPSuccessFactorsConnector:
 
         response = self.session.post(endpoint, json=payload)
         return response.json()
-ManageEngine Integration
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### ManageEngine Integration
+```python
 class ManageEngineConnector:
     """Integration with ticketing system"""
 
@@ -1251,15 +1085,9 @@ class ManageEngineConnector:
         endpoint = f"{self.base_url}/api/v3/requests/{ticket_id}"
         # Implementation for status updates
         pass
-Enterprise Lake House Integration
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### Enterprise Lake House Integration
+```python
 class LakeHouseConnector:
     """Integration with data platform"""
 
@@ -1297,16 +1125,10 @@ class LakeHouseConnector:
         )
 
         return response.choices[0].message.content
-API Architecture Design
-RESTful API Endpoints
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+### API Architecture Design
+#### RESTful API Endpoints
+```python
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
@@ -1390,16 +1212,10 @@ async def process_data_query(query: str):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-Real-time Data Synchronization
-Webhook Integration
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+### Real-time Data Synchronization
+#### Webhook Integration
+```python
 class WebhookHandler:
     """Handle real-time data updates"""
 
@@ -1431,17 +1247,14 @@ class WebhookHandler:
             send_customer_notification(ticket_id)
 
         return {"status": "processed"}
-📈 Performance & Analytics
-System Performance Metrics
-Response Time Analysis
-code
-Python
+```
 
-download
+---
 
-content_copy
-
-expand_less
+## 📈 Performance & Analytics
+### System Performance Metrics
+#### Response Time Analysis
+```python
 class PerformanceMonitor:
     """Monitor and track system performance"""
 
@@ -1475,15 +1288,9 @@ class PerformanceMonitor:
             'error_rate': self.metrics['error_count'] / max(self.metrics['api_calls'], 1),
             'active_sessions': self.metrics['user_sessions']
         }
-Usage Analytics Dashboard
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+#### Usage Analytics Dashboard
+```python
 def render_analytics_dashboard():
     """Display system usage analytics"""
     st.markdown("### 📊 System Performance Analytics")
@@ -1527,16 +1334,10 @@ def render_analytics_dashboard():
 
     # Response time trends
     create_response_time_chart()
-Business Intelligence Dashboard
-KPI Tracking Implementation
-code
-Python
-
-download
-
-content_copy
-
-expand_less
+```
+### Business Intelligence Dashboard
+#### KPI Tracking Implementation
+```python
 def track_business_kpis():
     """Track and display business KPIs"""
 
@@ -1560,3 +1361,4 @@ def track_business_kpis():
     analytics_metrics = {
         'query_success_rate': 98.2,      # percentage
         'insight_generation_time
+```
