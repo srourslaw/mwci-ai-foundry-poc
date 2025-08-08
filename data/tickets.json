@@ -1,0 +1,122 @@
+{
+  "ticket_categories": [
+    {
+      "name": "Water Quality Issues",
+      "priority_default": "High",
+      "sla_hours": 4,
+      "typical_solutions": [
+        "Water quality test scheduled",
+        "Flushing pipeline in your area",
+        "Check local storage tank"
+      ]
+    },
+    {
+      "name": "Billing Inquiries",
+      "priority_default": "Medium", 
+      "sla_hours": 24,
+      "typical_solutions": [
+        "Review billing statement",
+        "Check meter reading accuracy",
+        "Payment plan options available"
+      ]
+    },
+    {
+      "name": "Service Interruption",
+      "priority_default": "Critical",
+      "sla_hours": 2,
+      "typical_solutions": [
+        "Emergency repair team dispatched",
+        "Temporary water supply arranged",
+        "Pipeline maintenance in progress"
+      ]
+    },
+    {
+      "name": "New Connection Request",
+      "priority_default": "Low",
+      "sla_hours": 72,
+      "typical_solutions": [
+        "Site survey scheduled",
+        "Technical feasibility study required",
+        "Documentation verification needed"
+      ]
+    },
+    {
+      "name": "Meter Reading Issues",
+      "priority_default": "Medium",
+      "sla_hours": 48,
+      "typical_solutions": [
+        "Meter reader dispatch scheduled",
+        "Remote reading system check",
+        "Meter replacement evaluation"
+      ]
+    }
+  ],
+  "technicians": [
+    {
+      "id": "TECH001",
+      "name": "Carlos Mendoza",
+      "specialty": "Water Quality",
+      "zone": "North Manila",
+      "current_workload": 3,
+      "max_capacity": 8,
+      "contact": "carlos.mendoza@manilawater.com",
+      "status": "Available"
+    },
+    {
+      "id": "TECH002", 
+      "name": "Ana Rodriguez",
+      "specialty": "Billing Systems",
+      "zone": "Central Manila",
+      "current_workload": 5,
+      "max_capacity": 10,
+      "contact": "ana.rodriguez@manilawater.com",
+      "status": "Busy"
+    },
+    {
+      "id": "TECH003",
+      "name": "Luis Garcia",
+      "specialty": "Infrastructure",
+      "zone": "South Manila",
+      "current_workload": 2,
+      "max_capacity": 6,
+      "contact": "luis.garcia@manilawater.com", 
+      "status": "Available"
+    },
+    {
+      "id": "TECH004",
+      "name": "Rosa Santos",
+      "specialty": "Customer Service",
+      "zone": "East Manila",
+      "current_workload": 7,
+      "max_capacity": 12,
+      "contact": "rosa.santos@manilawater.com",
+      "status": "Busy"
+    }
+  ],
+  "sample_tickets": [
+    {
+      "id": "TKT001",
+      "description": "Water pressure is very low in our building since yesterday morning",
+      "customer_name": "Roberto Silva",
+      "customer_contact": "+63 917 123 4567",
+      "area": "Makati",
+      "status": "New",
+      "priority": "High",
+      "category": "Service Interruption",
+      "assigned_tech": "Luis Garcia",
+      "created_date": "2025-08-08 09:30:00"
+    },
+    {
+      "id": "TKT002", 
+      "description": "My water bill seems too high this month, please check meter reading",
+      "customer_name": "Carmen Lopez",
+      "customer_contact": "+63 928 987 6543",
+      "area": "Quezon City",
+      "status": "In Progress",
+      "priority": "Medium", 
+      "category": "Billing Inquiries",
+      "assigned_tech": "Ana Rodriguez",
+      "created_date": "2025-08-07 14:15:00"
+    }
+  ]
+}

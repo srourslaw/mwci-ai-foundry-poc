@@ -1,0 +1,85 @@
+{
+  "hr_policies": {
+    "leave_policy": {
+      "title": "Employee Leave Policy",
+      "content": "Manila Water employees are entitled to 15 days of vacation leave annually. Sick leave is provided up to 12 days per year with medical certificate required for absences exceeding 3 consecutive days. Emergency leave may be granted for unforeseen circumstances with manager approval.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-03-15"
+    },
+    "health_benefits": {
+      "title": "Health and Wellness Benefits",
+      "content": "MWCI provides comprehensive health insurance including medical, dental, and vision coverage for employees and dependents. Annual health check-ups are mandatory and fully covered. Mental health support and wellness programs are available through our employee assistance program.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-02-28"
+    },
+    "training_programs": {
+      "title": "Professional Development and Training",
+      "content": "Manila Water invests in continuous learning through technical training, leadership development, and professional certification programs. Each employee has an annual training budget of PHP 50,000. Online learning platforms and external conference attendance are encouraged.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-04-10"
+    },
+    "remote_work": {
+      "title": "Flexible Work Arrangements",
+      "content": "Hybrid work model allows up to 3 days remote work per week for eligible positions. Work-from-home equipment and internet allowance provided. Core hours 10 AM - 3 PM required for collaboration.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-01-15"
+    },
+    "performance_review": {
+      "title": "Performance Management System",
+      "content": "Annual performance reviews conducted in Q1 with mid-year check-ins. Goal setting aligned with company objectives. Performance ratings linked to merit increases and promotion opportunities.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-01-20"
+    }
+  },
+  "onboarding_faq": [
+    {
+      "question": "What documents do I need for my first day?",
+      "answer": "Please bring valid government ID, TIN number, SSS/PhilHealth/Pag-IBIG documents, medical certificate, and 2x2 ID photos. HR will provide a detailed checklist via email."
+    },
+    {
+      "question": "How do I access company systems?",
+      "answer": "IT will set up your accounts on Day 1. You'll receive credentials for email, HRIS, and relevant business systems. IT orientation is scheduled for all new hires."
+    },
+    {
+      "question": "When will I receive my company ID and equipment?",
+      "answer": "Company ID and laptop will be issued during IT setup on your first day. Additional equipment requests can be made through your manager and IT helpdesk."
+    },
+    {
+      "question": "What is the dress code?",
+      "answer": "Business casual is standard. Field operations require safety gear which will be provided. Fridays are casual dress days."
+    },
+    {
+      "question": "How do I enroll in benefits?",
+      "answer": "Benefits enrollment is completed during HR orientation in your first week. Healthcare coverage begins on your first day, with premium deductions starting in your second month."
+    }
+  ],
+  "common_inquiries": [
+    {
+      "category": "Payroll",
+      "questions": [
+        "When is payday?",
+        "How do I update my bank account?",
+        "What deductions appear on my payslip?",
+        "How do I get a certificate of employment?"
+      ]
+    },
+    {
+      "category": "Benefits",
+      "questions": [
+        "How do I use my health insurance?",
+        "What is covered under dental benefits?",
+        "How do I apply for maternity/paternity leave?",
+        "What wellness programs are available?"
+      ]
+    },
+    {
+      "category": "Time and Attendance",
+      "questions": [
+        "How do I log my working hours?",
+        "What is the process for overtime approval?",
+        "How do I report sick days?",
+        "What are the flexible work options?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "employees": [
+    {
+      "id": "EMP001",
+      "name": "Juan Santos",
+      "email": "juan.santos@manilawater.com",
+      "department": "Operations",
+      "position": "Water Plant Operator",
+      "manager": "Maria Gonzalez",
+      "hire_date": "2019-03-15",
+      "leave_balance": {
+        "vacation": 12,
+        "sick": 8,
+        "emergency": 3
+      },
+      "location": "North Treatment Plant"
+    },
+    {
+      "id": "EMP002",
+      "name": "Maria Cruz",
+      "email": "maria.cruz@manilawater.com",
+      "department": "Customer Service",
+      "position": "Senior Service Representative",
+      "manager": "Carlos Rodriguez",
+      "hire_date": "2018-07-22",
+      "leave_balance": {
+        "vacation": 15,
+        "sick": 10,
+        "emergency": 2
+      },
+      "location": "Makati Service Center"
+    },
+    {
+      "id": "EMP003",
+      "name": "Pedro Reyes",
+      "email": "pedro.reyes@manilawater.com",
+      "department": "Engineering",
+      "position": "Pipeline Engineer",
+      "manager": "Ana Lopez",
+      "hire_date": "2020-01-10",
+      "leave_balance": {
+        "vacation": 18,
+        "sick": 12,
+        "emergency": 4
+      },
+      "location": "Central Engineering Office"
+    },
+    {
+      "id": "EMP004",
+      "name": "Ana Mendoza",
+      "email": "ana.mendoza@manilawater.com",
+      "department": "Finance",
+      "position": "Billing Specialist",
+      "manager": "Luis Garcia",
+      "hire_date": "2017-11-08",
+      "leave_balance": {
+        "vacation": 20,
+        "sick": 15,
+        "emergency": 3
+      },
+      "location": "Head Office"
+    }
+  ],
+  "departments": [
+    "Operations",
+    "Customer Service", 
+    "Engineering",
+    "Finance",
+    "Human Resources",
+    "Information Technology",
+    "Quality Assurance"
+  ],
+  "leave_policies": {
+    "vacation": {
+      "annual_entitlement": 15,
+      "max_consecutive": 10,
+      "advance_notice": 7
+    },
+    "sick": {
+      "annual_entitlement": 12,
+      "medical_certificate_required": 3,
+      "max_consecutive": 30
+    },
+    "emergency": {
+      "annual_entitlement": 5,
+      "approval_required": true,
+      "notice_period": "immediate"
+    }
+  }
+}

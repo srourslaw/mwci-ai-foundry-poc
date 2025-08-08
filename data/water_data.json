@@ -1,0 +1,90 @@
+{
+  "service_areas": [
+    {
+      "area": "Makati",
+      "population": 629616,
+      "monthly_consumption_liters": 2500000000,
+      "service_connections": 95000,
+      "water_quality_score": 99.2,
+      "service_availability": 99.1,
+      "average_pressure_psi": 45
+    },
+    {
+      "area": "Quezon City",
+      "population": 2960048,
+      "monthly_consumption_liters": 4200000000,
+      "service_connections": 420000,
+      "water_quality_score": 98.8,
+      "service_availability": 98.5,
+      "average_pressure_psi": 42
+    },
+    {
+      "area": "Manila",
+      "population": 1873493,
+      "monthly_consumption_liters": 3800000000,
+      "service_connections": 285000,
+      "water_quality_score": 99.0,
+      "service_availability": 98.9,
+      "average_pressure_psi": 44
+    },
+    {
+      "area": "Pasig",
+      "population": 803159,
+      "monthly_consumption_liters": 1900000000,
+      "service_connections": 125000,
+      "water_quality_score": 99.5,
+      "service_availability": 99.3,
+      "average_pressure_psi": 46
+    },
+    {
+      "area": "Mandaluyong",
+      "population": 425758,
+      "monthly_consumption_liters": 980000000,
+      "service_connections": 68000,
+      "water_quality_score": 99.1,
+      "service_availability": 98.7,
+      "average_pressure_psi": 43
+    }
+  ],
+  "operational_metrics": {
+    "total_treatment_plants": 8,
+    "total_pumping_stations": 156,
+    "total_pipeline_km": 9800,
+    "total_service_connections": 1200000,
+    "daily_production_million_liters": 1680,
+    "water_loss_percentage": 11.2,
+    "customer_satisfaction_score": 4.3,
+    "average_response_time_hours": 2.4
+  },
+  "monthly_trends": [
+    {"month": "Jan 2025", "consumption": 45000, "complaints": 234, "new_connections": 1200},
+    {"month": "Feb 2025", "consumption": 46200, "complaints": 198, "new_connections": 1350},
+    {"month": "Mar 2025", "consumption": 48100, "complaints": 267, "new_connections": 1180},
+    {"month": "Apr 2025", "consumption": 50300, "complaints": 189, "new_connections": 1420},
+    {"month": "May 2025", "consumption": 52800, "complaints": 156, "new_connections": 1380},
+    {"month": "Jun 2025", "consumption": 54200, "complaints": 143, "new_connections": 1290},
+    {"month": "Jul 2025", "consumption": 55100, "complaints": 178, "new_connections": 1340}
+  ],
+  "water_quality_parameters": {
+    "ph_level": 7.2,
+    "chlorine_residual_mg_l": 0.8,
+    "turbidity_ntu": 0.15,
+    "total_coliform": 0,
+    "e_coli": 0,
+    "hardness_mg_l": 120,
+    "iron_mg_l": 0.05,
+    "last_updated": "2025-08-08 08:00:00"
+  },
+  "infrastructure_status": {
+    "treatment_plants": [
+      {"name": "La Mesa Treatment Plant", "capacity_mld": 280, "status": "Operational", "efficiency": 98.5},
+      {"name": "Balara Treatment Plant", "capacity_mld": 150, "status": "Operational", "efficiency": 97.8},
+      {"name": "Eastbank Treatment Plant", "capacity_mld": 200, "status": "Maintenance", "efficiency": 0}
+    ],
+    "major_pipelines": [
+      {"name": "North Main Pipeline", "diameter_mm": 1200, "length_km": 45, "status": "Good", "last_inspection": "2025-06-15"},
+      {"name": "South Distribution Line", "diameter_mm": 800, "length_km": 38, "status": "Fair", "last_inspection": "2025-07-20"},
+      {"name": "East Transmission Main", "diameter_mm": 1000, "length_km": 52, "status": "Excellent", "last_inspection": "2025-07-30"}
+    ]
+  }
+}
