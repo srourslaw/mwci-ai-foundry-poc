@@ -2,84 +2,560 @@
   "hr_policies": {
     "leave_policy": {
       "title": "Employee Leave Policy",
-      "content": "Manila Water employees are entitled to 15 days of vacation leave annually. Sick leave is provided up to 12 days per year with medical certificate required for absences exceeding 3 consecutive days. Emergency leave may be granted for unforeseen circumstances with manager approval.",
+      "content": "Manila Water employees are entitled to 15 days of vacation leave annually (earned monthly at 1.25 days). Sick leave is provided up to 12 days per year with medical certificate required for absences exceeding 3 consecutive days. Emergency leave may be granted for unforeseen circumstances with manager approval. Maternity leave: 105 days for female employees (60 days with pay + 45 days without pay). Paternity leave: 7 days for male employees with full pay. Bereavement leave: 3 days for immediate family (spouse, children, parents), 1 day for relatives. Study leave available for work-related education with prior approval. Solo parent leave: 7 days annually. VAWC leave: 10 days for victims of violence against women and children. Service incentive leave (SIL): 5 days minimum as per Labor Code. Field personnel emergency leave for weather disturbances and natural disasters.",
       "effective_date": "2025-01-01",
       "last_updated": "2025-03-15"
     },
     "health_benefits": {
       "title": "Health and Wellness Benefits",
-      "content": "MWCI provides comprehensive health insurance including medical, dental, and vision coverage for employees and dependents. Annual health check-ups are mandatory and fully covered. Mental health support and wellness programs are available through our employee assistance program.",
+      "content": "MWCI provides comprehensive health insurance through Maxicare/Intellicare including medical, dental, and vision coverage for employees and up to 3 dependents. Annual health check-ups are mandatory and fully covered at accredited clinics. Mental health support and wellness programs available through employee assistance program. Coverage includes outpatient care (PHP 150,000), inpatient care (PHP 500,000), emergency care (no limit), prescription drugs (PHP 15,000), specialist consultations, laboratory tests, and diagnostic procedures. Dental coverage up to PHP 25,000 annually. Optical benefits PHP 8,000 every 2 years. Free annual physical exam and flu vaccination. Maternity benefits include pre-natal, delivery, and post-natal care. Critical illness coverage up to PHP 100,000. Accident insurance coverage for field personnel.",
       "effective_date": "2025-01-01",
       "last_updated": "2025-02-28"
     },
     "training_programs": {
       "title": "Professional Development and Training",
-      "content": "Manila Water invests in continuous learning through technical training, leadership development, and professional certification programs. Each employee has an annual training budget of PHP 50,000. Online learning platforms and external conference attendance are encouraged.",
+      "content": "Manila Water invests in continuous learning through technical training, leadership development, and professional certification programs. Each employee has an annual training budget of PHP 50,000-100,000 depending on level. Online learning platforms (Coursera, LinkedIn Learning) and external conference attendance encouraged. Technical certifications for water treatment operators, plumbers, engineers, and IT professionals fully sponsored. Leadership programs available for supervisory roles and above. Safety training mandatory for all field personnel (40-hour OSHA, confined space entry, electrical safety). Professional Engineering (PRC) license support and review programs. Scholarship programs for deserving employees pursuing relevant degrees. Skills-based training for meter reading, pipe laying, water quality testing, and customer service.",
       "effective_date": "2025-01-01",
       "last_updated": "2025-04-10"
     },
     "remote_work": {
       "title": "Flexible Work Arrangements",
-      "content": "Hybrid work model allows up to 3 days remote work per week for eligible positions. Work-from-home equipment and internet allowance provided. Core hours 10 AM - 3 PM required for collaboration.",
+      "content": "Hybrid work model allows up to 3 days remote work per week for eligible office positions (IT, Finance, HR, Customer Service). Work-from-home equipment allowance PHP 15,000 and internet allowance PHP 2,500/month. Core hours 10 AM - 3 PM required for collaboration. Compressed work week (4x10 hours) available for certain departments with manager approval. Flexible start times between 6:30 AM - 9 AM. Field operations personnel (meter readers, technicians, plumbers) maintain regular field schedules. Emergency response teams on 24/7 rotational basis. Weather work suspension follows DOLE guidelines during typhoons and severe weather.",
       "effective_date": "2025-01-01",
       "last_updated": "2025-01-15"
     },
     "performance_review": {
       "title": "Performance Management System",
-      "content": "Annual performance reviews conducted in Q1 with mid-year check-ins. Goal setting aligned with company objectives. Performance ratings linked to merit increases and promotion opportunities.",
+      "content": "Annual performance reviews conducted in Q1 (January-March) with mid-year check-ins in July. Goal setting aligned with company objectives using OKR framework and balanced scorecard approach. Performance ratings: Outstanding (5%, 8-10% merit increase), Exceeds Expectations (20%, 5-7% merit increase), Meets Expectations (70%, 3-4% merit increase), Below Expectations (5%, performance improvement plan). 360-degree feedback for leadership positions. Key Performance Indicators (KPIs) include water quality compliance, customer satisfaction scores, non-revenue water reduction, safety incidents, and operational efficiency metrics. Field personnel evaluated on service completion rates, safety compliance, and customer feedback scores.",
       "effective_date": "2025-01-01",
       "last_updated": "2025-01-20"
+    },
+    "compensation_benefits": {
+      "title": "Compensation and Benefits Structure",
+      "content": "MWCI follows market-competitive salary structure with annual benchmarking against utility companies and conglomerates. Salary paid twice monthly (15th and 30th) with early release 2-3 days ahead. 13th month pay guaranteed plus performance bonus up to 2-4 months salary based on company and individual performance. Rice allowance: PHP 2,000/month. Transportation allowance: PHP 3,500/month for non-company vehicle users. Meal/food allowance: PHP 200/day (PHP 4,400/month). Phone allowance: PHP 2,500/month for eligible positions. Uniform allowance: PHP 8,000 annually. Safety shoe allowance: PHP 3,000 annually for field personnel. Night shift differential: 10% for work between 10 PM - 6 AM. Overtime pay: 125% for first 8 hours, 130% thereafter. Holiday pay: 200% for regular holidays, 130% for special non-working days. Service awards (5, 10, 15, 20, 25+ years). Stock options available for senior management through parent company Ayala Corporation.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-05-01"
+    },
+    "field_operations_policy": {
+      "title": "Field Operations and Safety Guidelines",
+      "content": "All field personnel must complete 40-hour safety training before deployment. Personal protective equipment mandatory: hard hat, safety shoes, reflective vest, safety goggles, and gloves. Confined space entry procedures with permits and atmospheric testing. Excavation safety protocols with proper shoring and signage. Traffic management plans required for road works. Emergency response procedures for water main breaks, service interruptions, and customer complaints. Vehicle safety inspections and defensive driving certification. Hazmat handling for water treatment chemicals. Lock-out/Tag-out procedures for equipment maintenance. Heat stress prevention during summer months. Typhoon and flood response protocols. 24/7 emergency hotline for field personnel. GPS tracking for service vehicles and lone worker safety. Daily safety briefings and incident reporting within 24 hours.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-04-20"
+    },
+    "customer_service_standards": {
+      "title": "Customer Service Excellence Framework",
+      "content": "Customer service representatives must maintain 95% customer satisfaction rating. Response time standards: phone calls within 3 rings, walk-in customers within 5 minutes, email within 24 hours. Service connection completion within 5 working days for standard connections. Complaint resolution within 48 hours for service issues, 5 days for billing concerns. Meter reading accuracy of 99.5% with photo documentation. Multiple payment channels: cash, check, online banking, GCash, PayMaya, over-the-counter partners (7-Eleven, Cebuana, SM Bills Payment). Multilingual support (English, Filipino, and local dialects). Customer satisfaction surveys and mystery shopper programs. Service recovery protocols for major service interruptions. Community relations programs and public consultations for infrastructure projects.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-03-25"
+    },
+    "water_quality_compliance": {
+      "title": "Water Quality and Regulatory Compliance",
+      "content": "Strict adherence to Philippine National Standards for Drinking Water (PNSDW) and Department of Health regulations. Daily water quality testing at source, treatment plants, and distribution network. Laboratory certification and accreditation maintenance. Monthly reporting to Local Water Utilities Administration (LWUA) and Department of Health. Employee certification programs for water treatment plant operators and quality control technicians. Contamination response protocols and public notification procedures. Cross-connection control programs and backflow prevention. Sanitary surveys and watershed protection activities. Customer water quality complaint investigation within 24 hours. Regular audit and inspection compliance with regulatory agencies.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-05-10"
+    },
+    "code_of_conduct": {
+      "title": "Employee Code of Conduct and Ethics",
+      "content": "All employees must maintain highest standards of integrity and professionalism aligned with Ayala Group values. Zero tolerance for harassment, discrimination, corruption, or unethical behavior. Confidentiality agreements must be observed for customer data and business information. Conflict of interest must be disclosed including business relationships with suppliers or contractors. Gift policy: no gifts exceeding PHP 1,000 from customers, suppliers, or stakeholders. Social media guidelines prohibiting posting of confidential company information. Whistleblower protection guaranteed with anonymous reporting channels. Anti-corruption policy aligned with Ayala Integrity Initiative. Environmental stewardship and sustainability practices. Community engagement and corporate social responsibility participation. Violations subject to disciplinary action up to termination and potential legal action.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-02-15"
+    },
+    "safety_security": {
+      "title": "Workplace Safety and Security",
+      "content": "Comprehensive safety management system with OSHAS 18001 certification. Mandatory safety training for all employees with annual refresher courses. Personal protective equipment provided at no cost with quarterly replacement schedule. Safety incidents must be reported within 24 hours using incident report system. Emergency evacuation procedures posted in all facilities with quarterly drills. Fire safety system maintenance and inspection. Security access cards with biometric system for all premises. CCTV monitoring in all facilities and vehicle GPS tracking. Visitor management system with escort requirements. COVID-19 protocols including health screening, sanitation, and contact tracing. Occupational health programs including annual medical exams. Safety committee with employee representatives. Zero accident target with safety performance indicators.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-03-30"
+    },
+    "disciplinary_procedures": {
+      "title": "Progressive Disciplinary Action Policy",
+      "content": "Progressive discipline follows Labor Code requirements: Verbal counseling → Written warning → Final written warning → Suspension (1-30 days) → Termination. Due process guaranteed with two-notice rule and hearing opportunity. Employee right to union representation or chosen representative. Serious offenses (theft, fraud, insubordination, safety violations) may result in immediate suspension pending investigation. Appeal process available through HR committee and grievance machinery. Documentation required at each step with employee acknowledgment. Improvement plans implemented with specific timelines and monitoring. Offenses categorized as: administrative (tardiness, dress code), performance (failure to meet KPIs), disciplinary (insubordination, misconduct), and criminal (theft, violence). Positive discipline program emphasizing coaching and development.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-01-25"
+    },
+    "recruitment_hiring": {
+      "title": "Recruitment and Hiring Procedures",
+      "content": "Equal opportunity employer committed to diversity and inclusion with special consideration for PWDs and indigenous peoples. All positions posted internally first for 5 working days through job portal. Competency-based selection process with structured interviews and skills assessment. Background checks required for all hires including NBI clearance and previous employment verification. Reference verification mandatory with at least 2 professional references. Pre-employment medical examination including drug testing at accredited clinics. Psychological assessment for supervisory and safety-critical positions. 90-day probationary period for new hires with performance evaluation at 30, 60, and 90 days. Employee referral program with PHP 10,000-15,000 bonus for successful placements depending on position level. Graduate trainee programs for fresh engineering and business graduates with 2-year development track.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-04-05"
+    },
+    "data_privacy": {
+      "title": "Data Privacy and Information Security",
+      "content": "Full compliance with Data Privacy Act of 2012 (RA 10173) and National Privacy Commission regulations. Customer data protection with encryption and access controls. Personal data collection limited to business necessity with explicit consent. Employee privacy rights with controlled access to personnel records. Regular cybersecurity awareness training mandatory with phishing simulation tests. Password policy requires 8+ characters with complexity and 90-day expiration. Multi-factor authentication for critical systems. VPN required for remote access with endpoint security. USB restrictions and device encryption policies. Data breach response plan activated within 72 hours with NPC notification. Regular penetration testing and vulnerability assessments. Information classification system (public, internal, confidential, restricted). Document retention and disposal policies with secure destruction procedures.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-02-20"
+    },
+    "environmental_sustainability": {
+      "title": "Environmental Management and Sustainability",
+      "content": "ISO 14001 environmental management system implementation. Water conservation programs and non-revenue water reduction initiatives. Waste segregation and recycling programs in all facilities. Carbon footprint reduction through energy efficiency and renewable energy adoption. Sludge management and proper disposal from water treatment plants. Chemical storage and handling procedures with MSDS compliance. Environmental monitoring and compliance with DENR regulations. Tree planting and watershed protection activities. Green building certification for new facilities. Sustainable procurement policies prioritizing eco-friendly suppliers. Employee environmental awareness programs. Community education on water conservation and environmental protection.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-04-15"
+    },
+    "retirement_separation": {
+      "title": "Retirement and Separation Benefits",
+      "content": "Optional retirement at 60, mandatory at 65 years old as per Labor Code. Retirement benefit calculation: 22.5 days per year of service for first 10 years, 1 month for years 11-20, 1.5 months for 21+ years, or SSS retirement benefit whichever is higher. Resignation requires 30-day notice with proper turnover. Separation pay computation as per Labor Code Article 298. Exit interview mandatory with HR and immediate supervisor. Return of company property checklist including ID, laptop, tools, and uniforms. Final pay release within 30 days including unused leave conversion. COBRA-style health insurance continuation for 6 months at employee cost. Retiree association membership and company events invitation. Service awards and recognition ceremony. Career transition and financial planning seminars for retiring employees. Alumni network participation in company activities.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-03-10"
+    },
+    "union_relations": {
+      "title": "Labor Relations and Union Partnership",
+      "content": "Recognition of Manila Water Employees Union (MWEU) as exclusive bargaining agent. Collective Bargaining Agreement (CBA) negotiations every 3 years. Labor-Management Committee meetings monthly for workplace concerns. Grievance machinery with multiple levels including union representation. Freedom of association and right to organize protected. Union dues check-off system with employee authorization. No strike, no lockout clause during CBA effectivity. Joint safety committee with union representatives. Productivity improvement programs with gainsharing mechanisms. Dispute resolution through conciliation and arbitration. Union activities allowed during break times and designated areas. Labor education and training programs for union officers.",
+      "effective_date": "2025-01-01",
+      "last_updated": "2025-02-10"
     }
   },
   "onboarding_faq": [
     {
       "question": "What documents do I need for my first day?",
-      "answer": "Please bring valid government ID, TIN number, SSS/PhilHealth/Pag-IBIG documents, medical certificate, and 2x2 ID photos. HR will provide a detailed checklist via email."
+      "answer": "Please bring: (1) Valid government-issued ID (driver's license, passport, PRC license), (2) TIN number and BIR Certificate, (3) SSS/PhilHealth/Pag-IBIG member's data sheet and ID copies, (4) Medical certificate from DOH-accredited clinic with drug test results, (5) NBI clearance (not older than 6 months), (6) Diploma and transcript of records, (7) Certificate of employment from previous employer, (8) 2x2 ID photos (6 pieces with white background), (9) Birth certificate (NSO/PSA copy), (10) Marriage certificate if applicable, and (11) Barangay clearance. HR will provide a detailed checklist via email 3 days before your start date with specific requirements for your position."
     },
     {
-      "question": "How do I access company systems?",
-      "answer": "IT will set up your accounts on Day 1. You'll receive credentials for email, HRIS, and relevant business systems. IT orientation is scheduled for all new hires."
+      "question": "How do I access company systems on my first day?",
+      "answer": "IT will set up your accounts during the comprehensive IT orientation on Day 1 from 2:00-4:00 PM. You'll receive temporary passwords for: corporate email (@manilawater.com), HRIS system for payroll and benefits, SAP for finance and procurement, Microsoft Teams for communication, SharePoint for documents, and job-specific systems (billing system for customer service, work order system for field operations, etc.). Initial passwords must be changed within 24 hours. You'll also get VPN access for remote work and mobile device setup if applicable to your role."
     },
     {
-      "question": "When will I receive my company ID and equipment?",
-      "answer": "Company ID and laptop will be issued during IT setup on your first day. Additional equipment requests can be made through your manager and IT helpdesk."
+      "question": "When will I receive my company ID, equipment, and uniform?",
+      "answer": "Company ID will be issued after photo session during HR processing on Day 1, ready by 3:00 PM. Laptop and basic equipment provided during IT setup by end of Day 1. Uniform measurements taken during first week with delivery within 2 weeks (2 sets of company polo shirts, 1 jacket, and field uniform if applicable). Safety equipment (hard hat, safety shoes, reflective vest) issued immediately for field positions based on job requirements. Mobile phone issued within 3 days for positions requiring field mobility. Service vehicle assignment within first week for technicians and field supervisors."
     },
     {
-      "question": "What is the dress code?",
-      "answer": "Business casual is standard. Field operations require safety gear which will be provided. Fridays are casual dress days."
+      "question": "What is the dress code for different positions?",
+      "answer": "Office personnel: Business casual (collared shirts, slacks/skirts, closed shoes, no flip-flops or shorts). Company polo shirts provided quarterly. Field operations: Uniform shirts with company logo, dark pants, safety shoes (steel-toed), and required PPE. Engineering staff: Business casual with safety gear when visiting sites. Customer service: Business casual with neat grooming standards. Management: Business attire (coat and tie for formal meetings). Fridays are casual dress days (jeans allowed, no shorts or slippers). Special events may require formal attire. Grooming standards include clean appearance and proper hygiene."
     },
     {
-      "question": "How do I enroll in benefits?",
-      "answer": "Benefits enrollment is completed during HR orientation in your first week. Healthcare coverage begins on your first day, with premium deductions starting in your second month."
+      "question": "How do I enroll in benefits and what's covered?",
+      "answer": "Benefits enrollment completed during HR orientation Day 2 using the online portal with HR assistance. Healthcare coverage (Maxicare/Intellicare) begins Day 1 with premium deductions starting Month 2. Coverage includes medical (PHP 150K outpatient, PHP 500K inpatient), dental (PHP 25K), optical (PHP 8K every 2 years), and dependents coverage (spouse + 3 children). Government benefits (SSS, PhilHealth, Pag-IBIG) enrollment mandatory. Life insurance (2x annual salary) automatic. Choose beneficiaries for all benefits. You have 30 days to make changes or add dependents. Benefits orientation session explains all coverage details and claims procedures."
+    },
+    {
+      "question": "What is my work schedule and reporting structure?",
+      "answer": "Standard office hours: 8:00 AM - 5:00 PM Monday-Friday with 1-hour lunch (12:00-1:00 PM). Flexible start time 7:00-9:00 AM with manager approval. Field operations may have varying schedules including weekend rotations. Emergency response teams on 24/7 standby rotation. Core collaboration hours 10:00 AM - 3:00 PM for remote workers. Overtime requires supervisor approval. Your immediate supervisor will be introduced on Day 1 along with team structure, department head, and reporting relationships. Regular team meetings scheduled weekly, monthly one-on-ones with supervisor, and quarterly department meetings."
+    },
+    {
+      "question": "Where do I park and how do I access the building?",
+      "answer": "Security will assign parking slot and provide temporary pass for first week. Monthly parking fee PHP 800 (air-conditioned basement) or PHP 500 (open parking) deducted from payroll. Motorcycle parking PHP 200/month. Building access card activated after security briefing and photo submission. Biometric enrollment for fingerprint access. Main entrance open 6:00 AM - 8:00 PM, after-hours access through security. Visitor registration required at main lobby. Emergency exits and evacuation routes explained during safety orientation. Car pool and shuttle service information available from HR."
+    },
+    {
+      "question": "What safety training and equipment will I receive?",
+      "answer": "All employees undergo basic safety orientation on Day 1 covering emergency procedures, fire safety, and general workplace hazards. Field personnel complete 40-hour safety training within first month including confined space entry, electrical safety, and hazmat handling. Safety equipment issued based on job requirements: hard hat, safety glasses, steel-toed shoes, reflective vest, gloves, and specialized gear for specific tasks. Annual safety refresher training mandatory. Safety manual provided and safety officer contact information shared. Incident reporting procedures explained with 24-hour reporting requirement."
+    },
+    {
+      "question": "How do I set up payroll and what allowances will I receive?",
+      "answer": "Bring bank account details (account number, bank certificate or passbook copy) to HR during first week. Payroll setup in SAP system with direct deposit to your chosen bank. Salary paid twice monthly (15th and 30th) with early release 2-3 days ahead. First pay includes pro-rated basic salary plus allowances: rice (PHP 2,000), transportation (PHP 3,500), meal (PHP 4,400), and phone allowance (PHP 2,500 if applicable). Government deductions (SSS, PhilHealth, Pag-IBIG, withholding tax) and health insurance premiums start Month 2. Multiple bank accounts can be set up for salary splitting if needed."
+    },
+    {
+      "question": "What training programs and career development opportunities are available?",
+      "answer": "New hire orientation program spans 2 weeks covering company history, mission/vision, policies, systems training, and department-specific training. Technical training budget PHP 50,000-100,000 annually based on position level. Online learning platforms (Coursera, LinkedIn Learning) access provided. Professional certification support for relevant licenses (PRC engineering, water treatment operator, safety officer). Leadership development programs for supervisory track. Conference and seminar attendance encouraged with advance approval. Graduate degree scholarship programs for deserving employees. Mentorship program pairs new hires with experienced employees. Career planning sessions with HR annually."
     }
   ],
   "common_inquiries": [
     {
-      "category": "Payroll",
+      "category": "Payroll and Compensation",
       "questions": [
-        "When is payday?",
-        "How do I update my bank account?",
-        "What deductions appear on my payslip?",
-        "How do I get a certificate of employment?"
+        "When is payday and can I get advance salary?",
+        "How do I update my bank account information for direct deposit?",
+        "What deductions appear on my payslip and how are they calculated?",
+        "How do I get a certificate of employment for loan applications?",
+        "How is overtime pay calculated for different work schedules?",
+        "What is the process for salary advance and emergency loans?",
+        "How do I get my BIR Form 2316 for income tax filing?",
+        "Why is my net pay different this month and who do I ask?",
+        "How do I update my tax exemptions and dependents for BIR?",
+        "What happens if payday falls on a weekend or holiday?",
+        "How do I request payslip reprinting for previous months?",
+        "What is included in my gross pay and how are bonuses computed?",
+        "How are night shift differentials and holiday pay calculated?",
+        "What allowances am I entitled to and when do they change?",
+        "How do I set up multiple bank accounts for salary splitting?",
+        "What is the policy on salary increases and merit adjustments?"
       ]
     },
     {
-      "category": "Benefits",
+      "category": "Benefits and Insurance",
       "questions": [
-        "How do I use my health insurance?",
-        "What is covered under dental benefits?",
-        "How do I apply for maternity/paternity leave?",
-        "What wellness programs are available?"
+        "How do I use my health insurance at hospitals and clinics?",
+        "What is covered under dental benefits and how do I claim?",
+        "How do I apply for maternity/paternity leave and what documents needed?",
+        "What wellness programs are available and how do I join?",
+        "How do I add newborn baby or spouse to my health coverage?",
+        "What is the process for medical reimbursement and claims?",
+        "How do I access the employee assistance program for counseling?",
+        "What preventive care is covered 100% under health insurance?",
+        "How do I find accredited hospitals and clinics in my area?",
+        "What is my annual health insurance limit and when does it reset?",
+        "How do I apply for education assistance and scholarship programs?",
+        "What retirement benefits do I have and how are they calculated?",
+        "How do I get optical benefits for eyeglasses and contact lenses?",
+        "What happens to my benefits during unpaid leave or suspension?",
+        "How do I change beneficiaries for life insurance and retirement?",
+        "What government benefits (SSS, PhilHealth, Pag-IBIG) am I entitled to?"
       ]
     },
     {
       "category": "Time and Attendance",
       "questions": [
-        "How do I log my working hours?",
-        "What is the process for overtime approval?",
-        "How do I report sick days?",
-        "What are the flexible work options?"
+        "How do I log my working hours using the biometric system?",
+        "What is the process for overtime approval and documentation?",
+        "How do I report sick days and what medical certificates needed?",
+        "What are the flexible work options for my position?",
+        "How do I request vacation leave and what's the advance notice required?",
+        "What is the policy on tardiness and grace period?",
+        "How do I apply for work from home and what equipment provided?",
+        "What happens if I forget to time in/out or biometric fails?",
+        "How many hours constitute a full workday for different shifts?",
+        "What is the grace period for tardiness and late arrivals?",
+        "How do I request permanent or temporary schedule changes?",
+        "What is the process for emergency leave during typhoons?",
+        "How do undertime and half-day leaves affect my pay?",
+        "What is the policy for field personnel reporting to different locations?",
+        "How do I request compensatory time off for weekend work?",
+        "What are the break times and meal period policies?"
+      ]
+    },
+    {
+      "category": "Performance and Career Development",
+      "questions": [
+        "When are performance reviews conducted and what's the process?",
+        "How do I set my annual goals and KPIs with my supervisor?",
+        "What career development opportunities and training are available?",
+        "How do I apply for internal job postings and promotions?",
+        "What training programs are available for my position level?",
+        "How is my performance rating determined and what are the criteria?",
+        "What is the promotion process and timeline for different levels?",
+        "How do I get regular feedback from my manager throughout the year?",
+        "What mentorship programs exist for career development?",
+        "How do I access online learning platforms and external courses?",
+        "What conferences and seminars can I attend with company support?",
+        "How do I create a career development plan with HR guidance?",
+        "What certifications and licenses does the company support?",
+        "How do I request cross-training in different departments?",
+        "What leadership development programs are available?",
+        "How do performance ratings affect salary increases and bonuses?"
+      ]
+    },
+    {
+      "category": "Workplace Policies and Conduct",
+      "questions": [
+        "What is the dress code policy for office and field personnel?",
+        "How do I report workplace concerns or harassment issues?",
+        "What is the policy on personal phone use during work hours?",
+        "Can I work a second job or side business while employed here?",
+        "What are the rules for social media posting about the company?",
+        "How do I request workplace accommodations for disabilities?",
+        "What is the anti-harassment and discrimination policy?",
+        "How do I access the whistleblower hotline and ethics reporting?",
+        "What is the policy on gifts from customers, suppliers, or contractors?",
+        "Can I bring family members to company events and activities?",
+        "What are the smoking and alcohol policies on company premises?",
+        "How do I report safety concerns and workplace hazards?",
+        "What is the policy on romantic relationships between colleagues?",
+        "How are disciplinary actions handled and what are my rights?",
+        "What is the policy on moonlighting and conflict of interest?",
+        "How do I request religious or cultural accommodation?"
+      ]
+    },
+    {
+      "category": "Technology and Equipment",
+      "questions": [
+        "How do I get IT support for technical issues and system problems?",
+        "What software am I allowed to install on my company laptop?",
+        "How do I connect to the company VPN for remote work access?",
+        "What is the policy on using personal devices for work?",
+        "How do I request new equipment or software for my job?",
+        "What happens if my laptop breaks or gets damaged/stolen?",
+        "How do I access email and company systems from home?",
+        "What are the password requirements and security policies?",
+        "How do I report a security incident or potential cyber threat?",
+        "Can I use cloud storage services like Google Drive or Dropbox?",
+        "How do I get access to new systems or software applications?",
+        "What is the mobile device management policy for company phones?",
+        "How do I backup my work files and data regularly?",
+        "What internet and communication tools are approved for use?",
+        "How do I request software licenses or technical training?",
+        "What is the policy on installing personal apps on company devices?"
+      ]
+    },
+    {
+      "category": "Field Operations and Safety",
+      "questions": [
+        "What safety training is required for field operations work?",
+        "How do I request and maintain my personal protective equipment?",
+        "What is the procedure for entering confined spaces safely?",
+        "How do I report work-related injuries and near-miss incidents?",
+        "What is the emergency response procedure for water main breaks?",
+        "How do I handle customer complaints during field visits?",
+        "What is the policy for working alone in remote locations?",
+        "How do I request backup or assistance during field work?",
+        "What are the vehicle safety requirements and inspection procedures?",
+        "How do I handle hazardous materials and chemicals safely?",
+        "What is the protocol for working during severe weather?",
+        "How do I access tools and equipment from the warehouse?",
+        "What is the procedure for traffic management during road work?",
+        "How do I complete work orders and service documentation?",
+        "What training is required for water quality testing?",
+        "How do I handle difficult or aggressive customers in the field?"
+      ]
+    },
+    {
+      "category": "Customer Service Operations",
+      "questions": [
+        "What are the service level standards for customer response times?",
+        "How do I handle billing disputes and payment arrangements?",
+        "What is the procedure for water service disconnection/reconnection?",
+        "How do I process new service connection applications?",
+        "What information can I share with customers about their accounts?",
+        "How do I escalate complex customer complaints to supervisors?",
+        "What payment options can I offer to customers?",
+        "How do I verify customer identity for account inquiries?",
+        "What is the process for scheduling field service appointments?",
+        "How do I handle emergency calls and after-hours service requests?",
+        "What discounts or assistance programs are available for customers?",
+        "How do I update customer information and contact details?",
+        "What is the procedure for processing meter reading disputes?",
+        "How do I handle requests for water quality testing?",
+        "What documentation is required for account transfers or closures?",
+        "How do I access customer payment history and account status?"
+      ]
+    },
+    {
+      "category": "Facilities and Workplace Environment",
+      "questions": [
+        "How do I get building access after hours and on weekends?",
+        "What is the parking policy and how do I pay parking fees?",
+        "How do I reserve meeting rooms and conference facilities?",
+        "What amenities are available in the office (cafeteria, gym, etc.)?",
+        "How do I report facility issues like aircon, lighting, or plumbing?",
+        "What is the visitor policy and how do I register guests?",
+        "How do I get a replacement access card if lost or damaged?",
+        "What are the emergency procedures for fire, earthquake, and evacuation?",
+        "Can I eat at my desk or are there designated eating areas?",
+        "Where can I store personal items and what security is provided?",
+        "What is the policy on decorating workspaces and personal items?",
+        "How do I request ergonomic equipment for health and comfort?",
+        "What are the temperature and lighting controls in work areas?",
+        "How do I report maintenance issues with office equipment?",
+        "What recreational facilities are available for employee use?",
+        "How do I access the lactation room and mother's area facilities?"
+      ]
+    },
+    {
+      "category": "Legal and Compliance",
+      "questions": [
+        "What are my rights as an employee under Philippine labor law?",
+        "How do I file a grievance through the proper channels?",
+        "What is the process for background checks and security clearance?",
+        "How is my personal data protected under the Data Privacy Act?",
+        "What regulatory training is required by law for my position?",
+        "How do I report ethical violations or corruption anonymously?",
+        "What are the company's legal obligations regarding workplace safety?",
+        "How do I request access to my personnel file and employment records?",
+        "What is the policy on confidential information and trade secrets?",
+        "How are workplace investigations conducted and what are my rights?",
+        "What documentation do I need to maintain for compliance?",
+        "How do I understand my employment contract and terms?",
+        "What are the legal requirements for water quality and environmental compliance?",
+        "How do I report violations of safety regulations or standards?",
+        "What is the process for obtaining professional licenses and certifications?",
+        "How do I handle legal subpoenas or court orders related to work?"
+      ]
+    },
+    {
+      "category": "Water Operations and Technical",
+      "questions": [
+        "What water quality standards must I maintain in my work?",
+        "How do I perform water testing and laboratory procedures correctly?",
+        "What is the procedure for responding to water contamination alerts?",
+        "How do I operate water treatment plant equipment safely?",
+        "What are the protocols for water main repairs and replacements?",
+        "How do I read and record water meter readings accurately?",
+        "What is the process for investigating customer water quality complaints?",
+        "How do I handle non-revenue water identification and reduction?",
+        "What training is required for water treatment plant operations?",
+        "How do I respond to low water pressure complaints from customers?",
+        "What are the procedures for valve operations and system maintenance?",
+        "How do I conduct leak detection surveys in the distribution system?",
+        "What is the emergency response for water supply interruptions?",
+        "How do I coordinate with other departments for service restoration?",
+        "What documentation is required for water quality compliance reporting?",
+        "How do I handle chemical dosing and treatment processes safely?"
+      ]
+    },
+    {
+      "category": "Union and Labor Relations",
+      "questions": [
+        "How do I join the Manila Water Employees Union (MWEU)?",
+        "What are my rights under the Collective Bargaining Agreement?",
+        "How do I file a grievance through the union process?",
+        "What benefits are negotiated through the union contract?",
+        "How do union dues get deducted from my salary?",
+        "What is the process for union representation in disciplinary cases?",
+        "How do I participate in union activities and meetings?",
+        "What are the no-strike, no-lockout provisions in our agreement?",
+        "How do I get updates on CBA negotiations and labor issues?",
+        "What training programs are available through union partnership?",
+        "How do I contact union representatives for workplace issues?",
+        "What is the role of the Labor-Management Committee?",
+        "How do I participate in productivity improvement programs?",
+        "What are my rights during workplace investigations with union presence?",
+        "How do I access union-sponsored benefits and programs?",
+        "What is the process for electing union officers and representatives?"
       ]
     }
-  ]
+  ],
+  "emergency_contacts": {
+    "hr_helpdesk": {
+      "phone": "+63-2-8917-7878",
+      "email": "hr.helpdesk@manilawater.com",
+      "text_hotline": "+63-917-888-4357",
+      "hours": "8:00 AM - 6:00 PM, Monday to Friday",
+      "emergency_hr": "+63-917-888-7878 (after hours for urgent matters)"
+    },
+    "it_support": {
+      "phone": "+63-2-8917-7888",
+      "email": "it.helpdesk@manilawater.com",
+      "emergency_line": "+63-917-888-7777",
+      "hours": "24/7 for critical systems, 7 AM - 7 PM for general support",
+      "remote_support": "TeamViewer and Microsoft Teams available"
+    },
+    "security": {
+      "main_office": "+63-2-8917-7999",
+      "emergency": "911 or 117 (PNP)",
+      "fire_emergency": "116 (BFP)",
+      "medical_emergency": "+63-2-8917-7911 (company clinic)",
+      "hours": "24/7",
+      "security_incidents": "security.incidents@manilawater.com"
+    },
+    "employee_assistance": {
+      "phone": "+63-2-8917-7855",
+      "email": "eap@manilawater.com",
+      "confidential_hotline": "+63-917-555-4357",
+      "text_support": "+63-917-555-3277",
+      "hours": "24/7 confidential counseling support",
+      "services": "Personal, financial, legal, and family counseling"
+    },
+    "ethics_hotline": {
+      "phone": "+63-2-8917-7800",
+      "email": "ethics@manilawater.com",
+      "anonymous_reporting": "https://ethics.manilawater.com",
+      "text_hotline": "+63-917-888-3844",
+      "hours": "24/7 anonymous reporting available",
+      "mailing_address": "Ethics Office, Manila Water Company, 799 EDSA, Quezon City"
+    },
+    "occupational_health": {
+      "company_clinic": "+63-2-8917-7911",
+      "emergency_medical": "+63-917-911-4357",
+      "occupational_physician": "Dr. Maria Santos - ext. 7912",
+      "safety_officer": "+63-917-888-7799",
+      "hours": "24/7 emergency response, 8 AM - 5 PM clinic hours"
+    },
+    "union_representatives": {
+      "mweu_president": "+63-917-555-8888",
+      "grievance_committee": "grievance.mweu@gmail.com",
+      "union_office": "+63-2-8917-7833",
+      "hours": "8 AM - 5 PM, Monday to Friday",
+      "emergency_union_rep": "+63-917-555-9999 (after hours for urgent labor issues)"
+    }
+  },
+  "policy_acknowledgment": {
+    "required_reading": [
+      "Employee Handbook (150 pages)",
+      "Code of Conduct and Ethics",
+      "Safety Manual and Emergency Procedures",
+      "IT Security Policy and Acceptable Use",
+      "Anti-Harassment and Discrimination Policy",
+      "Data Privacy and Confidentiality Agreement",
+      "Customer Service Standards and Procedures",
+      "Environmental and Quality Management Policy",
+      "Union CBA Summary (if applicable)",
+      "Emergency Response and Business Continuity Plan"
+    ],
+    "acknowledgment_deadline": "30 days from hire date",
+    "testing_required": "Online quiz with 80% passing score for safety and ethics modules",
+    "annual_renewal": "Required every January with policy updates",
+    "non_compliance_consequences": "Disciplinary action up to termination, training suspension",
+    "digital_signature": "Electronic acknowledgment through HRIS system",
+    "supervisor_confirmation": "Manager must confirm employee understanding and compliance"
+  },
+  "policy_updates": {
+    "notification_method": "Email, company intranet, team meetings, and bulletin boards",
+    "comment_period": "14 days for major policy changes with employee feedback mechanism",
+    "effective_date_notice": "Minimum 30 days advance notice for significant changes",
+    "revision_history": "Available on company intranet with version control",
+    "emergency_updates": "Immediate implementation for safety and regulatory compliance",
+    "training_updates": "Mandatory briefing sessions for major policy changes",
+    "translation": "Key policies available in Filipino and major local dialects"
+  },
+  "company_resources": {
+    "employee_portal": {
+      "url": "https://portal.manilawater.com",
+      "features": "Payslips, leave applications, benefits enrollment, training catalog",
+      "mobile_app": "MW Employee App available on Google Play and App Store",
+      "support": "it.portal@manilawater.com"
+    },
+    "learning_management_system": {
+      "platform": "Manila Water Academy (powered by Cornerstone OnDemand)",
+      "access": "Single sign-on through employee portal",
+      "catalog": "500+ courses including technical, safety, leadership, and compliance",
+      "certifications": "Professional development certificates and continuing education units"
+    },
+    "communication_channels": {
+      "company_newsletter": "MW Connect (monthly digital publication)",
+      "town_halls": "Quarterly all-hands meetings with CEO",
+      "team_meetings": "Weekly department meetings and monthly all-employee meetings",
+      "suggestion_box": "Physical and digital suggestion systems",
+      "social_media": "Official Facebook, LinkedIn, and YouTube channels"
+    },
+    "wellness_programs": {
+      "annual_medical_exam": "Comprehensive health screening at company clinic",
+      "fitness_facilities": "On-site gym and recreational facilities",
+      "mental_health": "EAP counseling, stress management, and mindfulness programs",
+      "health_campaigns": "Vaccination drives, health fairs, and awareness programs",
+      "sports_activities": "Company sports leagues and recreational tournaments"
+    }
+  },
+  "performance_metrics": {
+    "customer_satisfaction": {
+      "target": "95% satisfaction rating",
+      "measurement": "Monthly customer surveys and mystery shopper programs",
+      "reporting": "Department scorecards and individual performance tracking"
+    },
+    "operational_excellence": {
+      "water_quality": "100% compliance with PNSDW standards",
+      "service_reliability": "99.5% system uptime and availability",
+      "response_times": "Emergency response within 30 minutes, routine service within 24 hours"
+    },
+    "safety_performance": {
+      "target": "Zero accidents and incidents",
+      "measurement": "Monthly safety meetings and incident tracking",
+      "training": "Minimum 40 hours annual safety training for field personnel"
+    },
+    "financial_performance": {
+      "collection_efficiency": "95% minimum collection rate",
+      "non_revenue_water": "Target reduction of 2% annually",
+      "cost_management": "Budget variance within 5% tolerance"
+    }
+  },
+  "regulatory_compliance": {
+    "government_agencies": [
+      "Local Water Utilities Administration (LWUA)",
+      "Department of Health (DOH) - Water Quality Standards",
+      "Department of Environment and Natural Resources (DENR)",
+      "Department of Labor and Employment (DOLE)",
+      "National Privacy Commission (NPC)",
+      "Bureau of Internal Revenue (BIR)",
+      "Social Security System (SSS)",
+      "Philippine Health Insurance Corporation (PhilHealth)",
+      "Home Development Mutual Fund (Pag-IBIG)"
+    ],
+    "certifications_maintained": [
+      "ISO 9001:2015 Quality Management System",
+      "ISO 14001:2015 Environmental Management System", 
+      "ISO 45001:2018 Occupational Health and Safety",
+      "ISO 27001:2013 Information Security Management",
+      "Philippine National Standards for Drinking Water (PNSDW) compliance"
+    ],
+    "regular_reporting": {
+      "monthly": "Water quality reports to DOH and LWUA",
+      "quarterly": "Financial and operational reports to regulatory bodies",
+      "annually": "Environmental compliance reports to DENR",
+      "as_needed": "Incident reports within 24 hours of occurrence"
+    }
+  }
 }

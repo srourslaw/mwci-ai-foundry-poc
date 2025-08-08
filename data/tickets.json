@@ -4,50 +4,180 @@
       "name": "Water Quality Issues",
       "priority_default": "High",
       "sla_hours": 4,
+      "escalation_level": 2,
+      "department": "Operations",
+      "cost_impact": "Medium",
       "typical_solutions": [
         "Water quality test scheduled",
         "Flushing pipeline in your area",
-        "Check local storage tank"
+        "Check local storage tank",
+        "Chlorination system adjustment",
+        "Replace filtration media"
       ]
     },
     {
       "name": "Billing Inquiries",
       "priority_default": "Medium", 
       "sla_hours": 24,
+      "escalation_level": 1,
+      "department": "Customer Service",
+      "cost_impact": "Low",
       "typical_solutions": [
         "Review billing statement",
         "Check meter reading accuracy",
-        "Payment plan options available"
+        "Payment plan options available",
+        "Adjust billing cycle",
+        "Refund processing"
       ]
     },
     {
       "name": "Service Interruption",
       "priority_default": "Critical",
       "sla_hours": 2,
+      "escalation_level": 3,
+      "department": "Emergency Response",
+      "cost_impact": "High",
       "typical_solutions": [
         "Emergency repair team dispatched",
         "Temporary water supply arranged",
-        "Pipeline maintenance in progress"
+        "Pipeline maintenance in progress",
+        "Valve replacement required",
+        "Pressure restoration in process"
       ]
     },
     {
       "name": "New Connection Request",
       "priority_default": "Low",
       "sla_hours": 72,
+      "escalation_level": 1,
+      "department": "Engineering",
+      "cost_impact": "Revenue",
       "typical_solutions": [
         "Site survey scheduled",
         "Technical feasibility study required",
-        "Documentation verification needed"
+        "Documentation verification needed",
+        "Pipeline extension assessment",
+        "Cost estimation provided"
       ]
     },
     {
       "name": "Meter Reading Issues",
       "priority_default": "Medium",
       "sla_hours": 48,
+      "escalation_level": 1,
+      "department": "Metering",
+      "cost_impact": "Medium",
       "typical_solutions": [
         "Meter reader dispatch scheduled",
         "Remote reading system check",
-        "Meter replacement evaluation"
+        "Meter replacement evaluation",
+        "Calibration verification",
+        "Access issues resolved"
+      ]
+    },
+    {
+      "name": "Leak Reports",
+      "priority_default": "High",
+      "sla_hours": 6,
+      "escalation_level": 2,
+      "department": "Maintenance",
+      "cost_impact": "High",
+      "typical_solutions": [
+        "Leak detection team dispatched",
+        "Pipe section isolation",
+        "Emergency repair initiated",
+        "Pressure monitoring installed",
+        "Surface restoration scheduled"
+      ]
+    },
+    {
+      "name": "Payment Issues",
+      "priority_default": "Medium",
+      "sla_hours": 24,
+      "escalation_level": 1,
+      "department": "Finance",
+      "cost_impact": "Low",
+      "typical_solutions": [
+        "Payment verification check",
+        "Account reconciliation",
+        "Payment method update",
+        "Transaction reversal",
+        "Account reactivation"
+      ]
+    },
+    {
+      "name": "Disconnection Request",
+      "priority_default": "Low",
+      "sla_hours": 48,
+      "escalation_level": 1,
+      "department": "Customer Service",
+      "cost_impact": "Low",
+      "typical_solutions": [
+        "Account closure processing",
+        "Final billing calculation",
+        "Meter removal scheduled",
+        "Deposit refund processing",
+        "Service transfer option"
+      ]
+    },
+    {
+      "name": "Emergency Repairs",
+      "priority_default": "Critical",
+      "sla_hours": 1,
+      "escalation_level": 3,
+      "department": "Emergency Response",
+      "cost_impact": "High",
+      "typical_solutions": [
+        "Emergency crew dispatched immediately",
+        "Traffic management coordinated",
+        "Alternate supply activated",
+        "Safety perimeter established",
+        "Utility coordination initiated"
+      ]
+    },
+    {
+      "name": "Pressure Problems",
+      "priority_default": "High",
+      "sla_hours": 8,
+      "escalation_level": 2,
+      "department": "Operations",
+      "cost_impact": "Medium",
+      "typical_solutions": [
+        "Pressure monitoring installed",
+        "Pump station check scheduled",
+        "Valve adjustment required",
+        "Booster installation assessment",
+        "System hydraulics review"
+      ]
+    },
+    {
+      "name": "Water Contamination",
+      "priority_default": "Critical",
+      "sla_hours": 2,
+      "escalation_level": 3,
+      "department": "Quality Control",
+      "cost_impact": "High",
+      "typical_solutions": [
+        "Immediate water sampling",
+        "System isolation if required",
+        "Health department notification",
+        "Public advisory issued",
+        "Source investigation initiated"
+      ]
+    },
+    {
+      "name": "Meter Installation",
+      "priority_default": "Medium",
+      "sla_hours": 48,
+      "escalation_level": 1,
+      "department": "Metering",
+      "cost_impact": "Low",
+      "typical_solutions": [
+        "Installation team scheduled",
+        "Site preparation verified",
+        "Equipment availability confirmed",
+        "Customer notification sent",
+        "Commissioning test planned"
       ]
     }
   ],
@@ -60,7 +190,13 @@
       "current_workload": 3,
       "max_capacity": 8,
       "contact": "carlos.mendoza@manilawater.com",
-      "status": "Available"
+      "status": "Available",
+      "years_experience": 12,
+      "certifications": ["Water Quality Analysis", "Chemical Treatment"],
+      "shift": "Day",
+      "emergency_response": true,
+      "avg_resolution_time_hours": 6.2,
+      "customer_rating": 4.7
     },
     {
       "id": "TECH002", 
@@ -70,7 +206,13 @@
       "current_workload": 5,
       "max_capacity": 10,
       "contact": "ana.rodriguez@manilawater.com",
-      "status": "Busy"
+      "status": "Busy",
+      "years_experience": 8,
+      "certifications": ["Billing Systems", "Customer Service"],
+      "shift": "Day",
+      "emergency_response": false,
+      "avg_resolution_time_hours": 18.5,
+      "customer_rating": 4.3
     },
     {
       "id": "TECH003",
@@ -80,7 +222,13 @@
       "current_workload": 2,
       "max_capacity": 6,
       "contact": "luis.garcia@manilawater.com", 
-      "status": "Available"
+      "status": "Available",
+      "years_experience": 15,
+      "certifications": ["Pipeline Repair", "Heavy Equipment"],
+      "shift": "Day",
+      "emergency_response": true,
+      "avg_resolution_time_hours": 4.8,
+      "customer_rating": 4.9
     },
     {
       "id": "TECH004",
@@ -90,7 +238,141 @@
       "current_workload": 7,
       "max_capacity": 12,
       "contact": "rosa.santos@manilawater.com",
-      "status": "Busy"
+      "status": "Busy",
+      "years_experience": 6,
+      "certifications": ["Customer Relations", "Conflict Resolution"],
+      "shift": "Day",
+      "emergency_response": false,
+      "avg_resolution_time_hours": 12.3,
+      "customer_rating": 4.5
+    },
+    {
+      "id": "TECH005",
+      "name": "Miguel Torres",
+      "specialty": "Emergency Repairs",
+      "zone": "Metro-wide",
+      "current_workload": 1,
+      "max_capacity": 4,
+      "contact": "miguel.torres@manilawater.com",
+      "status": "Available",
+      "years_experience": 18,
+      "certifications": ["Emergency Response", "Hazmat", "Confined Space"],
+      "shift": "24/7",
+      "emergency_response": true,
+      "avg_resolution_time_hours": 2.1,
+      "customer_rating": 4.8
+    },
+    {
+      "id": "TECH006",
+      "name": "Jennifer Lim",
+      "specialty": "Leak Detection",
+      "zone": "North Manila",
+      "current_workload": 4,
+      "max_capacity": 7,
+      "contact": "jennifer.lim@manilawater.com",
+      "status": "Busy",
+      "years_experience": 10,
+      "certifications": ["Acoustic Detection", "Ground Penetrating Radar"],
+      "shift": "Day",
+      "emergency_response": true,
+      "avg_resolution_time_hours": 8.7,
+      "customer_rating": 4.6
+    },
+    {
+      "id": "TECH007",
+      "name": "Ramon Cruz",
+      "specialty": "Meter Services",
+      "zone": "West Manila",
+      "current_workload": 6,
+      "max_capacity": 9,
+      "contact": "ramon.cruz@manilawater.com",
+      "status": "Busy",
+      "years_experience": 7,
+      "certifications": ["Meter Installation", "Digital Systems"],
+      "shift": "Day",
+      "emergency_response": false,
+      "avg_resolution_time_hours": 3.2,
+      "customer_rating": 4.4
+    },
+    {
+      "id": "TECH008",
+      "name": "Patricia Reyes",
+      "specialty": "Quality Control",
+      "zone": "Central Manila",
+      "current_workload": 2,
+      "max_capacity": 6,
+      "contact": "patricia.reyes@manilawater.com",
+      "status": "Available",
+      "years_experience": 14,
+      "certifications": ["Laboratory Analysis", "Environmental Compliance"],
+      "shift": "Day",
+      "emergency_response": true,
+      "avg_resolution_time_hours": 5.5,
+      "customer_rating": 4.9
+    },
+    {
+      "id": "TECH009",
+      "name": "David Kim",
+      "specialty": "Pressure Systems",
+      "zone": "East Manila",
+      "current_workload": 3,
+      "max_capacity": 8,
+      "contact": "david.kim@manilawater.com",
+      "status": "Available",
+      "years_experience": 11,
+      "certifications": ["Hydraulic Systems", "Pump Maintenance"],
+      "shift": "Day",
+      "emergency_response": false,
+      "avg_resolution_time_hours": 7.1,
+      "customer_rating": 4.2
+    },
+    {
+      "id": "TECH010",
+      "name": "Sarah Johnson",
+      "specialty": "Network Maintenance",
+      "zone": "South Manila",
+      "current_workload": 5,
+      "max_capacity": 10,
+      "contact": "sarah.johnson@manilawater.com",
+      "status": "Busy",
+      "years_experience": 9,
+      "certifications": ["Pipeline Systems", "Valve Operations"],
+      "shift": "Night",
+      "emergency_response": true,
+      "avg_resolution_time_hours": 6.8,
+      "customer_rating": 4.5
+    },
+    {
+      "id": "TECH011",
+      "name": "Antonio Velasco",
+      "specialty": "Billing Systems",
+      "zone": "West Manila",
+      "current_workload": 8,
+      "max_capacity": 12,
+      "contact": "antonio.velasco@manilawater.com",
+      "status": "Busy",
+      "years_experience": 5,
+      "certifications": ["Billing Software", "Data Analysis"],
+      "shift": "Day",
+      "emergency_response": false,
+      "avg_resolution_time_hours": 15.2,
+      "customer_rating": 4.1
+    },
+    {
+      "id": "TECH012",
+      "name": "Maria Gonzalez",
+      "specialty": "New Connections",
+      "zone": "Metro-wide",
+      "current_workload": 4,
+      "max_capacity": 8,
+      "contact": "maria.gonzalez@manilawater.com",
+      "status": "Available",
+      "years_experience": 13,
+      "certifications": ["Site Survey", "Engineering Design"],
+      "shift": "Day",
+      "emergency_response": false,
+      "avg_resolution_time_hours": 48.5,
+      "customer_rating": 4.6
     }
   ],
   "sample_tickets": [
@@ -99,24 +381,454 @@
       "description": "Water pressure is very low in our building since yesterday morning",
       "customer_name": "Roberto Silva",
       "customer_contact": "+63 917 123 4567",
+      "customer_email": "r.silva@email.com",
       "area": "Makati",
+      "address": "Unit 15B, Tower Plaza, Ayala Avenue",
       "status": "New",
       "priority": "High",
-      "category": "Service Interruption",
-      "assigned_tech": "Luis Garcia",
-      "created_date": "2025-08-08 09:30:00"
+      "category": "Pressure Problems",
+      "assigned_tech": "David Kim",
+      "created_date": "2025-08-08 09:30:00",
+      "estimated_resolution": "2025-08-08 17:30:00",
+      "customer_type": "Residential",
+      "service_connection_id": "MKT-15478",
+      "urgency_score": 7.5,
+      "customer_satisfaction_target": 4.0
     },
     {
       "id": "TKT002", 
       "description": "My water bill seems too high this month, please check meter reading",
       "customer_name": "Carmen Lopez",
       "customer_contact": "+63 928 987 6543",
+      "customer_email": "carmen.lopez@gmail.com",
       "area": "Quezon City",
+      "address": "123 Maginhawa Street, Diliman",
       "status": "In Progress",
       "priority": "Medium", 
       "category": "Billing Inquiries",
       "assigned_tech": "Ana Rodriguez",
-      "created_date": "2025-08-07 14:15:00"
+      "created_date": "2025-08-07 14:15:00",
+      "estimated_resolution": "2025-08-08 14:15:00",
+      "customer_type": "Residential",
+      "service_connection_id": "QC-28934",
+      "urgency_score": 4.2,
+      "customer_satisfaction_target": 4.0,
+      "last_updated": "2025-08-08 10:00:00",
+      "notes": "Checked meter reading, appears to be accurate. Customer has been using more water due to renovation work."
+    },
+    {
+      "id": "TKT003",
+      "description": "No water supply for 3 hours, entire street affected",
+      "customer_name": "Jose Hernandez",
+      "customer_contact": "+63 912 345 6789",
+      "customer_email": "j.hernandez@hotmail.com",
+      "area": "Manila",
+      "address": "456 Rizal Street, Binondo",
+      "status": "Resolved",
+      "priority": "Critical",
+      "category": "Service Interruption",
+      "assigned_tech": "Miguel Torres",
+      "created_date": "2025-08-06 08:00:00",
+      "estimated_resolution": "2025-08-06 10:00:00",
+      "actual_resolution": "2025-08-06 11:30:00",
+      "customer_type": "Commercial",
+      "service_connection_id": "MNL-67821",
+      "urgency_score": 9.5,
+      "customer_satisfaction_target": 3.5,
+      "resolution_notes": "Main pipeline valve failure repaired. Service restored to all affected customers."
+    },
+    {
+      "id": "TKT004",
+      "description": "Requesting new water connection for new restaurant",
+      "customer_name": "Lisa Chen",
+      "customer_contact": "+63 945 678 9012",
+      "customer_email": "lisa.chen@restaurant.com",
+      "area": "Taguig",
+      "address": "Unit G-12, BGC Central Plaza",
+      "status": "Assessment",
+      "priority": "Low",
+      "category": "New Connection Request",
+      "assigned_tech": "Maria Gonzalez",
+      "created_date": "2025-08-05 16:20:00",
+      "estimated_resolution": "2025-08-08 16:20:00",
+      "customer_type": "Commercial",
+      "service_connection_id": "NEW-TGG-001",
+      "urgency_score": 2.8,
+      "customer_satisfaction_target": 4.5,
+      "notes": "Site survey completed. Technical feasibility confirmed. Documentation under review."
+    },
+    {
+      "id": "TKT005",
+      "description": "Water has strange taste and odor, concerned about quality",
+      "customer_name": "Michael Santos",
+      "customer_contact": "+63 998 765 4321",
+      "customer_email": "m.santos@yahoo.com",
+      "area": "Pasig",
+      "address": "789 Ortigas Avenue, Kapitolyo",
+      "status": "Testing",
+      "priority": "High",
+      "category": "Water Quality Issues",
+      "assigned_tech": "Patricia Reyes",
+      "created_date": "2025-08-07 11:45:00",
+      "estimated_resolution": "2025-08-07 15:45:00",
+      "customer_type": "Residential",
+      "service_connection_id": "PSG-45612",
+      "urgency_score": 8.2,
+      "customer_satisfaction_target": 4.0,
+      "notes": "Water sample collected for laboratory analysis. Results pending."
+    },
+    {
+      "id": "TKT006",
+      "description": "Visible water leak on the sidewalk outside our building",
+      "customer_name": "Grace Tan",
+      "customer_contact": "+63 921 456 7890",
+      "customer_email": "grace.tan@condo.com",
+      "area": "Mandaluyong",
+      "address": "567 Shaw Boulevard, Wack Wack",
+      "status": "Dispatched",
+      "priority": "High",
+      "category": "Leak Reports",
+      "assigned_tech": "Jennifer Lim",
+      "created_date": "2025-08-08 07:15:00",
+      "estimated_resolution": "2025-08-08 13:15:00",
+      "customer_type": "Residential",
+      "service_connection_id": "MDY-78945",
+      "urgency_score": 7.8,
+      "customer_satisfaction_target": 4.0,
+      "notes": "Leak detection team en route. Traffic management coordinated."
+    },
+    {
+      "id": "TKT007",
+      "description": "Payment not reflecting in account despite successful transaction",
+      "customer_name": "Ricardo Morales",
+      "customer_contact": "+63 917 890 1234",
+      "customer_email": "ricardo.morales@email.com",
+      "area": "Caloocan",
+      "address": "321 EDSA, Monumento",
+      "status": "New",
+      "priority": "Medium",
+      "category": "Payment Issues",
+      "assigned_tech": "Antonio Velasco",
+      "created_date": "2025-08-08 13:20:00",
+      "estimated_resolution": "2025-08-09 13:20:00",
+      "customer_type": "Residential",
+      "service_connection_id": "CAL-12457",
+      "urgency_score": 5.1,
+      "customer_satisfaction_target": 4.0
+    },
+    {
+      "id": "TKT008",
+      "description": "Meter reading showing unusually high consumption",
+      "customer_name": "Elena Rodriguez",
+      "customer_contact": "+63 932 567 8901",
+      "customer_email": "elena.r@office.com",
+      "area": "Paranaque",
+      "address": "890 Sucat Road, BF Homes",
+      "status": "Scheduled",
+      "priority": "Medium",
+      "category": "Meter Reading Issues",
+      "assigned_tech": "Ramon Cruz",
+      "created_date": "2025-08-07 09:30:00",
+      "estimated_resolution": "2025-08-09 09:30:00",
+      "customer_type": "Residential",
+      "service_connection_id": "PAR-36589",
+      "urgency_score": 4.7,
+      "customer_satisfaction_target": 4.0,
+      "notes": "Site visit scheduled for meter inspection and recalibration check."
+    },
+    {
+      "id": "TKT009",
+      "description": "Emergency - Major pipe burst flooding the street",
+      "customer_name": "Juan dela Cruz",
+      "customer_contact": "+63 908 123 4567",
+      "customer_email": "juan.delacruz@gmail.com",
+      "area": "Las Pinas",
+      "address": "234 Alabang-Zapote Road",
+      "status": "Critical",
+      "priority": "Critical",
+      "category": "Emergency Repairs",
+      "assigned_tech": "Miguel Torres",
+      "created_date": "2025-08-08 14:45:00",
+      "estimated_resolution": "2025-08-08 15:45:00",
+      "customer_type": "Community Report",
+      "service_connection_id": "EMRG-LP-001",
+      "urgency_score": 10.0,
+      "customer_satisfaction_target": 3.0,
+      "notes": "Emergency response team dispatched immediately. Road closure coordinated with local authorities."
+    },
+    {
+      "id": "TKT010",
+      "description": "Request to disconnect service due to property sale",
+      "customer_name": "Amanda Garcia",
+      "customer_contact": "+63 956 789 0123",
+      "customer_email": "amanda.garcia@email.com",
+      "area": "Muntinlupa",
+      "address": "567 Alabang Hills Village",
+      "status": "Processing",
+      "priority": "Low",
+      "category": "Disconnection Request",
+      "assigned_tech": "Rosa Santos",
+      "created_date": "2025-08-06 10:15:00",
+      "estimated_resolution": "2025-08-08 10:15:00",
+      "customer_type": "Residential",
+      "service_connection_id": "MUN-98741",
+      "urgency_score": 1.5,
+      "customer_satisfaction_target": 4.0,
+      "notes": "Final billing calculated. Meter removal scheduled for tomorrow."
+    },
+    {
+      "id": "TKT011",
+      "description": "Water contamination report - discolored water from tap",
+      "customer_name": "Robert Kim",
+      "customer_contact": "+63 915 432 1098",
+      "customer_email": "robert.kim@company.com",
+      "area": "Marikina",
+      "address": "123 Riverbanks Drive",
+      "status": "Urgent",
+      "priority": "Critical",
+      "category": "Water Contamination",
+      "assigned_tech": "Carlos Mendoza",
+      "created_date": "2025-08-08 16:00:00",
+      "estimated_resolution": "2025-08-08 18:00:00",
+      "customer_type": "Residential",
+      "service_connection_id": "MRK-65432",
+      "urgency_score": 9.8,
+      "customer_satisfaction_target": 3.5,
+      "notes": "Immediate response initiated. Water sampling in progress. Public health notification prepared."
+    },
+    {
+      "id": "TKT012",
+      "description": "Schedule meter installation for new connection",
+      "customer_name": "Sofia Villanueva",
+      "customer_contact": "+63 929 876 5432",
+      "customer_email": "sofia.v@home.com",
+      "area": "San Juan",
+      "address": "789 N. Domingo Street",
+      "status": "Scheduled",
+      "priority": "Medium",
+      "category": "Meter Installation",
+      "assigned_tech": "Ramon Cruz",
+      "created_date": "2025-08-07 13:45:00",
+      "estimated_resolution": "2025-08-09 13:45:00",
+      "customer_type": "Residential",
+      "service_connection_id": "NEW-SJ-002",
+      "urgency_score": 3.2,
+      "customer_satisfaction_target": 4.5,
+      "notes": "Installation materials prepared. Customer notification sent for access arrangements."
     }
-  ]
+  ],
+  "ticket_statistics": {
+    "total_tickets_monthly": 8950,
+    "average_resolution_time_hours": 18.5,
+    "first_call_resolution_rate": 0.68,
+    "customer_satisfaction_average": 4.2,
+    "sla_compliance_rate": 0.87,
+    "escalation_rate": 0.12,
+    "repeat_ticket_rate": 0.08,
+    "emergency_response_time_minutes": 18.5
+  },
+  "ticket_trends": [
+    {"month": "Jan 2024", "total_tickets": 7850, "resolved": 7234, "avg_resolution_hours": 22.1, "satisfaction": 4.0, "sla_met": 0.82},
+    {"month": "Feb 2024", "total_tickets": 8120, "resolved": 7891, "avg_resolution_hours": 20.8, "satisfaction": 4.1, "sla_met": 0.84},
+    {"month": "Mar 2024", "total_tickets": 8450, "resolved": 8156, "avg_resolution_hours": 19.9, "satisfaction": 4.1, "sla_met": 0.85},
+    {"month": "Apr 2024", "total_tickets": 8890, "resolved": 8654, "avg_resolution_hours": 19.2, "satisfaction": 4.2, "sla_met": 0.86},
+    {"month": "May 2024", "total_tickets": 9200, "resolved": 8976, "avg_resolution_hours": 18.8, "satisfaction": 4.2, "sla_met": 0.87},
+    {"month": "Jun 2024", "total_tickets": 9450, "resolved": 9201, "avg_resolution_hours": 18.5, "satisfaction": 4.3, "sla_met": 0.88},
+    {"month": "Jul 2024", "total_tickets": 9680, "resolved": 9425, "avg_resolution_hours": 18.1, "satisfaction": 4.3, "sla_met": 0.88},
+    {"month": "Aug 2024", "total_tickets": 9520, "resolved": 9234, "avg_resolution_hours": 17.9, "satisfaction": 4.3, "sla_met": 0.89},
+    {"month": "Sep 2024", "total_tickets": 9280, "resolved": 9045, "avg_resolution_hours": 18.3, "satisfaction": 4.2, "sla_met": 0.87},
+    {"month": "Oct 2024", "total_tickets": 9120, "resolved": 8856, "avg_resolution_hours": 18.7, "satisfaction": 4.2, "sla_met": 0.86},
+    {"month": "Nov 2024", "total_tickets": 8950, "resolved": 8698, "avg_resolution_hours": 19.1, "satisfaction": 4.1, "sla_met": 0.85},
+    {"month": "Dec 2024", "total_tickets": 8780, "resolved": 8542, "avg_resolution_hours": 19.5, "satisfaction": 4.1, "sla_met": 0.84},
+    {"month": "Jan 2025", "total_tickets": 8650, "resolved": 8412, "avg_resolution_hours": 19.2, "satisfaction": 4.1, "sla_met": 0.85},
+    {"month": "Feb 2025", "total_tickets": 8820, "resolved": 8589, "avg_resolution_hours": 18.8, "satisfaction": 4.2, "sla_met": 0.86},
+    {"month": "Mar 2025", "total_tickets": 9150, "resolved": 8901, "avg_resolution_hours": 18.4, "satisfaction": 4.2, "sla_met": 0.87},
+    {"month": "Apr 2025", "total_tickets": 9380, "resolved": 9145, "avg_resolution_hours": 18.1, "satisfaction": 4.3, "sla_met": 0.88},
+    {"month": "May 2025", "total_tickets": 9650, "resolved": 9421, "avg_resolution_hours": 17.9, "satisfaction": 4.3, "sla_met": 0.89},
+    {"month": "Jun 2025", "total_tickets": 9890, "resolved": 9654, "avg_resolution_hours": 17.6, "satisfaction": 4.4, "sla_met": 0.90},
+    {"month": "Jul 2025", "total_tickets": 10120, "resolved": 9876, "avg_resolution_hours": 17.4, "satisfaction": 4.4, "sla_met": 0.90}
+  ],
+  "priority_distribution": {
+    "Critical": {"count": 1250, "percentage": 12.4, "avg_resolution_hours": 3.2},
+    "High": {"count": 2680, "percentage": 26.5, "avg_resolution_hours": 8.7},
+    "Medium": {"count": 4890, "percentage": 48.3, "avg_resolution_hours": 24.5},
+    "Low": {"count": 1300, "percentage": 12.8, "avg_resolution_hours": 58.3}
+  },
+      "zone_performance": {
+    "North Manila": {"total_tickets": 1850, "avg_resolution_hours": 16.8, "satisfaction": 4.3, "technicians": 3},
+    "Central Manila": {"total_tickets": 2100, "avg_resolution_hours": 19.2, "satisfaction": 4.1, "technicians": 3},
+    "South Manila": {"total_tickets": 1950, "avg_resolution_hours": 17.5, "satisfaction": 4.4, "technicians": 3},
+    "East Manila": {"total_tickets": 1680, "avg_resolution_hours": 18.1, "satisfaction": 4.2, "technicians": 2},
+    "West Manila": {"total_tickets": 1540, "avg_resolution_hours": 20.3, "satisfaction": 4.0, "technicians": 2},
+    "Metro-wide": {"total_tickets": 875, "avg_resolution_hours": 12.5, "satisfaction": 4.6, "technicians": 2}
+  },
+  "escalation_matrix": [
+    {"level": 1, "trigger_hours": 24, "escalate_to": "Supervisor", "auto_escalate": true},
+    {"level": 2, "trigger_hours": 48, "escalate_to": "Department Manager", "auto_escalate": true},
+    {"level": 3, "trigger_hours": 72, "escalate_to": "Operations Director", "auto_escalate": false},
+    {"level": 4, "trigger_hours": 96, "escalate_to": "General Manager", "auto_escalate": false}
+  ],
+  "sla_targets": {
+    "Critical": {"response_minutes": 30, "resolution_hours": 2, "notification_required": true},
+    "High": {"response_minutes": 60, "resolution_hours": 8, "notification_required": true},
+    "Medium": {"response_minutes": 240, "resolution_hours": 24, "notification_required": false},
+    "Low": {"response_minutes": 480, "resolution_hours": 72, "notification_required": false}
+  },
+  "communication_templates": {
+    "ticket_created": {
+      "sms": "Your water service ticket #{ticket_id} has been created. Est. resolution: {resolution_time}. Track: manilawater.com/track",
+      "email_subject": "Water Service Request Confirmed - Ticket #{ticket_id}",
+      "email_body": "Dear {customer_name}, We have received your service request regarding {category}. Our team will address this within {sla_hours} hours."
+    },
+    "technician_assigned": {
+      "sms": "Technician {tech_name} assigned to ticket #{ticket_id}. Contact: {tech_contact}",
+      "email_subject": "Technician Assigned - Ticket #{ticket_id}",
+      "email_body": "A qualified technician has been assigned to resolve your water service issue."
+    },
+    "ticket_resolved": {
+      "sms": "Ticket #{ticket_id} resolved. Please rate your experience: manilawater.com/rate/{ticket_id}",
+      "email_subject": "Service Request Completed - Ticket #{ticket_id}",
+      "email_body": "Your water service issue has been resolved. We value your feedback on our service quality."
+    }
+  },
+  "equipment_inventory": {
+    "leak_detection": {
+      "acoustic_equipment": {"available": 12, "in_use": 8, "maintenance": 2},
+      "ground_radar": {"available": 4, "in_use": 3, "maintenance": 1},
+      "pressure_loggers": {"available": 25, "in_use": 18, "maintenance": 3}
+    },
+    "repair_tools": {
+      "pipe_cutters": {"available": 35, "in_use": 28, "maintenance": 4},
+      "welding_equipment": {"available": 15, "in_use": 12, "maintenance": 2},
+      "excavation_tools": {"available": 20, "in_use": 16, "maintenance": 1}
+    },
+    "testing_equipment": {
+      "water_quality_kits": {"available": 45, "in_use": 32, "maintenance": 8},
+      "pressure_meters": {"available": 30, "in_use": 24, "maintenance": 3},
+      "flow_meters": {"available": 18, "in_use": 14, "maintenance": 2}
+    }
+  },
+  "knowledge_base": {
+    "common_solutions": [
+      {
+        "issue": "Low water pressure",
+        "causes": ["Valve partially closed", "Pipe blockage", "Pump failure", "High demand period"],
+        "troubleshooting_steps": [
+          "Check main valve position",
+          "Verify no leaks in service line",
+          "Test pressure at meter",
+          "Contact operations for system pressure check"
+        ],
+        "resolution_time_avg": 4.5
+      },
+      {
+        "issue": "High water bill",
+        "causes": ["Meter error", "Hidden leak", "Increased usage", "Billing system error"],
+        "troubleshooting_steps": [
+          "Verify meter reading accuracy",
+          "Check for visible leaks",
+          "Review usage history",
+          "Perform leak detection test"
+        ],
+        "resolution_time_avg": 18.2
+      },
+      {
+        "issue": "Water quality concerns",
+        "causes": ["Source contamination", "Pipe corrosion", "Cross-connection", "Treatment process issue"],
+        "troubleshooting_steps": [
+          "Collect water sample",
+          "Test chlorine residual",
+          "Check system pressure",
+          "Laboratory analysis if needed"
+        ],
+        "resolution_time_avg": 6.8
+      }
+    ],
+    "technical_procedures": [
+      {
+        "procedure": "Emergency Valve Shutdown",
+        "steps": ["Locate isolation valve", "Notify dispatch center", "Close valve gradually", "Verify isolation", "Document action"],
+        "safety_requirements": ["PPE required", "Traffic control", "Public notification"],
+        "estimated_time": "30 minutes"
+      },
+      {
+        "procedure": "Water Sample Collection",
+        "steps": ["Sterilize sampling point", "Flush for 2 minutes", "Collect in sterile container", "Label properly", "Transport to lab"],
+        "safety_requirements": ["Sterile technique", "Chain of custody"],
+        "estimated_time": "15 minutes"
+      }
+    ]
+  },
+  "performance_metrics": {
+    "monthly_targets": {
+      "sla_compliance": 0.90,
+      "customer_satisfaction": 4.2,
+      "first_call_resolution": 0.70,
+      "average_resolution_time": 16.0,
+      "escalation_rate": 0.10
+    },
+    "current_performance": {
+      "sla_compliance": 0.87,
+      "customer_satisfaction": 4.2,
+      "first_call_resolution": 0.68,
+      "average_resolution_time": 18.5,
+      "escalation_rate": 0.12
+    },
+    "improvement_initiatives": [
+      {"initiative": "Technician training program", "target_metric": "resolution_time", "expected_improvement": "15%"},
+      {"initiative": "Predictive maintenance", "target_metric": "emergency_tickets", "expected_improvement": "25%"},
+      {"initiative": "Customer portal enhancement", "target_metric": "first_call_resolution", "expected_improvement": "10%"}
+    ]
+  },
+  "integration_systems": {
+    "gis_mapping": {
+      "system": "ArcGIS Water Utility Network",
+      "features": ["Asset location", "Service area mapping", "Leak correlation"],
+      "api_endpoint": "https://gis.manilawater.com/api/v2"
+    },
+    "billing_system": {
+      "system": "Oracle Customer Care and Billing",
+      "features": ["Account lookup", "Payment status", "Usage history"],
+      "api_endpoint": "https://billing.manilawater.com/api/v3"
+    },
+    "mobile_workforce": {
+      "system": "FieldForce Mobile",
+      "features": ["Work order dispatch", "GPS tracking", "Photo documentation"],
+      "api_endpoint": "https://mobile.manilawater.com/api/v1"
+    }
+  },
+  "quality_assurance": {
+    "ticket_review_process": {
+      "random_sample_percentage": 10,
+      "review_criteria": ["Accuracy", "Completeness", "Customer communication", "Resolution effectiveness"],
+      "reviewer_qualifications": "Minimum 5 years experience",
+      "review_frequency": "Weekly"
+    },
+    "customer_callback_program": {
+      "callback_percentage": 15,
+      "callback_timeframe_hours": 24,
+      "satisfaction_threshold": 3.5,
+      "follow_up_required": true
+    },
+    "continuous_improvement": {
+      "monthly_analysis": true,
+      "trend_identification": "Automated",
+      "corrective_actions": "Tracked",
+      "training_updates": "Quarterly"
+    }
+  },
+  "emergency_protocols": {
+    "water_contamination": {
+      "immediate_actions": ["Isolate affected area", "Stop distribution", "Notify health authorities", "Issue public advisory"],
+      "response_team": ["Quality Control Manager", "Operations Director", "Communications Officer"],
+      "notification_timeline": "Within 30 minutes",
+      "testing_requirements": "Full laboratory panel"
+    },
+    "major_infrastructure_failure": {
+      "immediate_actions": ["Assess impact", "Deploy emergency teams", "Activate backup systems", "Notify customers"],
+      "response_team": ["Emergency Response Manager", "Technical Teams", "Customer Service"],
+      "notification_timeline": "Within 60 minutes",
+      "recovery_target": "24 hours maximum"
+    }
+  }
 }

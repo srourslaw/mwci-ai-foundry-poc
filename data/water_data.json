@@ -7,7 +7,10 @@
       "service_connections": 95000,
       "water_quality_score": 99.2,
       "service_availability": 99.1,
-      "average_pressure_psi": 45
+      "average_pressure_psi": 45,
+      "area_type": "Business District",
+      "elevation_masl": 15,
+      "zone_priority": "High"
     },
     {
       "area": "Quezon City",
@@ -16,7 +19,10 @@
       "service_connections": 420000,
       "water_quality_score": 98.8,
       "service_availability": 98.5,
-      "average_pressure_psi": 42
+      "average_pressure_psi": 42,
+      "area_type": "Mixed Residential-Commercial",
+      "elevation_masl": 70,
+      "zone_priority": "High"
     },
     {
       "area": "Manila",
@@ -25,7 +31,10 @@
       "service_connections": 285000,
       "water_quality_score": 99.0,
       "service_availability": 98.9,
-      "average_pressure_psi": 44
+      "average_pressure_psi": 44,
+      "area_type": "Urban Core",
+      "elevation_masl": 8,
+      "zone_priority": "Critical"
     },
     {
       "area": "Pasig",
@@ -34,7 +43,10 @@
       "service_connections": 125000,
       "water_quality_score": 99.5,
       "service_availability": 99.3,
-      "average_pressure_psi": 46
+      "average_pressure_psi": 46,
+      "area_type": "Residential",
+      "elevation_masl": 25,
+      "zone_priority": "High"
     },
     {
       "area": "Mandaluyong",
@@ -43,7 +55,142 @@
       "service_connections": 68000,
       "water_quality_score": 99.1,
       "service_availability": 98.7,
-      "average_pressure_psi": 43
+      "average_pressure_psi": 43,
+      "area_type": "Mixed",
+      "elevation_masl": 18,
+      "zone_priority": "Medium"
+    },
+    {
+      "area": "Taguig",
+      "population": 886722,
+      "monthly_consumption_liters": 2100000000,
+      "service_connections": 135000,
+      "water_quality_score": 99.3,
+      "service_availability": 99.0,
+      "average_pressure_psi": 47,
+      "area_type": "Business District",
+      "elevation_masl": 12,
+      "zone_priority": "High"
+    },
+    {
+      "area": "Paranaque",
+      "population": 689992,
+      "monthly_consumption_liters": 1650000000,
+      "service_connections": 98000,
+      "water_quality_score": 98.9,
+      "service_availability": 98.6,
+      "average_pressure_psi": 41,
+      "area_type": "Residential",
+      "elevation_masl": 5,
+      "zone_priority": "Medium"
+    },
+    {
+      "area": "Las Pinas",
+      "population": 606293,
+      "monthly_consumption_liters": 1420000000,
+      "service_connections": 87000,
+      "water_quality_score": 98.7,
+      "service_availability": 98.3,
+      "average_pressure_psi": 39,
+      "area_type": "Residential",
+      "elevation_masl": 8,
+      "zone_priority": "Medium"
+    },
+    {
+      "area": "Muntinlupa",
+      "population": 543445,
+      "monthly_consumption_liters": 1280000000,
+      "service_connections": 78000,
+      "water_quality_score": 98.8,
+      "service_availability": 98.4,
+      "average_pressure_psi": 40,
+      "area_type": "Residential",
+      "elevation_masl": 45,
+      "zone_priority": "Medium"
+    },
+    {
+      "area": "Caloocan",
+      "population": 1661584,
+      "monthly_consumption_liters": 3100000000,
+      "service_connections": 245000,
+      "water_quality_score": 98.6,
+      "service_availability": 98.1,
+      "average_pressure_psi": 38,
+      "area_type": "Mixed",
+      "elevation_masl": 32,
+      "zone_priority": "Medium"
+    },
+    {
+      "area": "Malabon",
+      "population": 380522,
+      "monthly_consumption_liters": 890000000,
+      "service_connections": 58000,
+      "water_quality_score": 98.4,
+      "service_availability": 97.8,
+      "average_pressure_psi": 36,
+      "area_type": "Industrial",
+      "elevation_masl": 2,
+      "zone_priority": "Low"
+    },
+    {
+      "area": "Navotas",
+      "population": 249463,
+      "monthly_consumption_liters": 580000000,
+      "service_connections": 38000,
+      "water_quality_score": 98.2,
+      "service_availability": 97.5,
+      "average_pressure_psi": 34,
+      "area_type": "Coastal",
+      "elevation_masl": 1,
+      "zone_priority": "Low"
+    },
+    {
+      "area": "Valenzuela",
+      "population": 714978,
+      "monthly_consumption_liters": 1680000000,
+      "service_connections": 102000,
+      "water_quality_score": 98.5,
+      "service_availability": 98.0,
+      "average_pressure_psi": 37,
+      "area_type": "Industrial",
+      "elevation_masl": 15,
+      "zone_priority": "Medium"
+    },
+    {
+      "area": "Marikina",
+      "population": 450741,
+      "monthly_consumption_liters": 1050000000,
+      "service_connections": 68000,
+      "water_quality_score": 99.4,
+      "service_availability": 99.2,
+      "average_pressure_psi": 44,
+      "area_type": "Residential",
+      "elevation_masl": 55,
+      "zone_priority": "High"
+    },
+    {
+      "area": "San Juan",
+      "population": 126347,
+      "monthly_consumption_liters": 295000000,
+      "service_connections": 19000,
+      "water_quality_score": 99.6,
+      "service_availability": 99.4,
+      "average_pressure_psi": 48,
+      "area_type": "Residential",
+      "elevation_masl": 62,
+      "zone_priority": "High"
+    },
+    {
+      "area": "Pateros",
+      "population": 65227,
+      "monthly_consumption_liters": 152000000,
+      "service_connections": 9800,
+      "water_quality_score": 99.1,
+      "service_availability": 98.9,
+      "average_pressure_psi": 41,
+      "area_type": "Mixed",
+      "elevation_masl": 12,
+      "zone_priority": "Low"
     }
   ],
   "operational_metrics": {
@@ -54,16 +201,38 @@
     "daily_production_million_liters": 1680,
     "water_loss_percentage": 11.2,
     "customer_satisfaction_score": 4.3,
-    "average_response_time_hours": 2.4
+    "average_response_time_hours": 2.4,
+    "total_reservoirs": 45,
+    "total_storage_capacity_ml": 2840,
+    "emergency_response_teams": 24,
+    "laboratory_facilities": 6,
+    "billing_accuracy_percentage": 99.7,
+    "collection_efficiency_percentage": 96.8,
+    "employee_count": 8500,
+    "annual_revenue_million_php": 45200,
+    "annual_capex_million_php": 12800,
+    "annual_opex_million_php": 28500
   },
   "monthly_trends": [
-    {"month": "Jan 2025", "consumption": 45000, "complaints": 234, "new_connections": 1200},
-    {"month": "Feb 2025", "consumption": 46200, "complaints": 198, "new_connections": 1350},
-    {"month": "Mar 2025", "consumption": 48100, "complaints": 267, "new_connections": 1180},
-    {"month": "Apr 2025", "consumption": 50300, "complaints": 189, "new_connections": 1420},
-    {"month": "May 2025", "consumption": 52800, "complaints": 156, "new_connections": 1380},
-    {"month": "Jun 2025", "consumption": 54200, "complaints": 143, "new_connections": 1290},
-    {"month": "Jul 2025", "consumption": 55100, "complaints": 178, "new_connections": 1340}
+    {"month": "Jan 2024", "consumption": 42800, "complaints": 298, "new_connections": 980, "revenue_million": 3650, "maintenance_incidents": 45},
+    {"month": "Feb 2024", "consumption": 43200, "complaints": 276, "new_connections": 1120, "revenue_million": 3720, "maintenance_incidents": 38},
+    {"month": "Mar 2024", "consumption": 44600, "complaints": 312, "new_connections": 1050, "revenue_million": 3890, "maintenance_incidents": 52},
+    {"month": "Apr 2024", "consumption": 46800, "complaints": 245, "new_connections": 1380, "revenue_million": 4020, "maintenance_incidents": 41},
+    {"month": "May 2024", "consumption": 49200, "complaints": 198, "new_connections": 1290, "revenue_million": 4180, "maintenance_incidents": 35},
+    {"month": "Jun 2024", "consumption": 51600, "complaints": 167, "new_connections": 1150, "revenue_million": 4350, "maintenance_incidents": 29},
+    {"month": "Jul 2024", "consumption": 53100, "complaints": 189, "new_connections": 1220, "revenue_million": 4480, "maintenance_incidents": 33},
+    {"month": "Aug 2024", "consumption": 52800, "complaints": 201, "new_connections": 1310, "revenue_million": 4420, "maintenance_incidents": 37},
+    {"month": "Sep 2024", "consumption": 50400, "complaints": 223, "new_connections": 1180, "revenue_million": 4280, "maintenance_incidents": 42},
+    {"month": "Oct 2024", "consumption": 47900, "complaints": 256, "new_connections": 1240, "revenue_million": 4080, "maintenance_incidents": 48},
+    {"month": "Nov 2024", "consumption": 46100, "complaints": 289, "new_connections": 1090, "revenue_million": 3920, "maintenance_incidents": 51},
+    {"month": "Dec 2024", "consumption": 44300, "complaints": 267, "new_connections": 980, "revenue_million": 3780, "maintenance_incidents": 44},
+    {"month": "Jan 2025", "consumption": 45000, "complaints": 234, "new_connections": 1200, "revenue_million": 3850, "maintenance_incidents": 39},
+    {"month": "Feb 2025", "consumption": 46200, "complaints": 198, "new_connections": 1350, "revenue_million": 3950, "maintenance_incidents": 32},
+    {"month": "Mar 2025", "consumption": 48100, "complaints": 267, "new_connections": 1180, "revenue_million": 4120, "maintenance_incidents": 45},
+    {"month": "Apr 2025", "consumption": 50300, "complaints": 189, "new_connections": 1420, "revenue_million": 4290, "maintenance_incidents": 28},
+    {"month": "May 2025", "consumption": 52800, "complaints": 156, "new_connections": 1380, "revenue_million": 4480, "maintenance_incidents": 24},
+    {"month": "Jun 2025", "consumption": 54200, "complaints": 143, "new_connections": 1290, "revenue_million": 4590, "maintenance_incidents": 21},
+    {"month": "Jul 2025", "consumption": 55100, "complaints": 178, "new_connections": 1340, "revenue_million": 4680, "maintenance_incidents": 26}
   ],
   "water_quality_parameters": {
     "ph_level": 7.2,
@@ -73,18 +242,134 @@
     "e_coli": 0,
     "hardness_mg_l": 120,
     "iron_mg_l": 0.05,
+    "fluoride_mg_l": 0.7,
+    "nitrate_mg_l": 2.3,
+    "sulfate_mg_l": 45,
+    "tds_mg_l": 180,
+    "alkalinity_mg_l": 85,
+    "copper_mg_l": 0.02,
+    "lead_mg_l": 0.001,
+    "manganese_mg_l": 0.03,
+    "arsenic_mg_l": 0.002,
+    "chromium_mg_l": 0.015,
+    "mercury_mg_l": 0.0005,
+    "cadmium_mg_l": 0.001,
     "last_updated": "2025-08-08 08:00:00"
   },
   "infrastructure_status": {
     "treatment_plants": [
-      {"name": "La Mesa Treatment Plant", "capacity_mld": 280, "status": "Operational", "efficiency": 98.5},
-      {"name": "Balara Treatment Plant", "capacity_mld": 150, "status": "Operational", "efficiency": 97.8},
-      {"name": "Eastbank Treatment Plant", "capacity_mld": 200, "status": "Maintenance", "efficiency": 0}
+      {"name": "La Mesa Treatment Plant", "capacity_mld": 280, "status": "Operational", "efficiency": 98.5, "commissioned": "1997", "technology": "Conventional"},
+      {"name": "Balara Treatment Plant", "capacity_mld": 150, "status": "Operational", "efficiency": 97.8, "commissioned": "2003", "technology": "Membrane Filtration"},
+      {"name": "Eastbank Treatment Plant", "capacity_mld": 200, "status": "Maintenance", "efficiency": 0, "commissioned": "2010", "technology": "Advanced Oxidation"},
+      {"name": "Novaliches Treatment Plant", "capacity_mld": 180, "status": "Operational", "efficiency": 98.9, "commissioned": "2015", "technology": "Reverse Osmosis"},
+      {"name": "Antipolo Treatment Plant", "capacity_mld": 120, "status": "Operational", "efficiency": 97.2, "commissioned": "2018", "technology": "Ultrafiltration"},
+      {"name": "Cainta Treatment Plant", "capacity_mld": 90, "status": "Operational", "efficiency": 98.1, "commissioned": "2020", "technology": "Membrane Bioreactor"},
+      {"name": "San Mateo Treatment Plant", "capacity_mld": 160, "status": "Under Construction", "efficiency": 0, "commissioned": "2026", "technology": "Hybrid Membrane"},
+      {"name": "Rodriguez Treatment Plant", "capacity_mld": 140, "status": "Planning", "efficiency": 0, "commissioned": "2027", "technology": "Advanced Biological"}
     ],
     "major_pipelines": [
-      {"name": "North Main Pipeline", "diameter_mm": 1200, "length_km": 45, "status": "Good", "last_inspection": "2025-06-15"},
-      {"name": "South Distribution Line", "diameter_mm": 800, "length_km": 38, "status": "Fair", "last_inspection": "2025-07-20"},
-      {"name": "East Transmission Main", "diameter_mm": 1000, "length_km": 52, "status": "Excellent", "last_inspection": "2025-07-30"}
+      {"name": "North Main Pipeline", "diameter_mm": 1200, "length_km": 45, "status": "Good", "last_inspection": "2025-06-15", "material": "Ductile Iron", "installed": "2005"},
+      {"name": "South Distribution Line", "diameter_mm": 800, "length_km": 38, "status": "Fair", "last_inspection": "2025-07-20", "material": "HDPE", "installed": "2012"},
+      {"name": "East Transmission Main", "diameter_mm": 1000, "length_km": 52, "status": "Excellent", "last_inspection": "2025-07-30", "material": "Steel", "installed": "2018"},
+      {"name": "West Supply Trunk", "diameter_mm": 900, "length_km": 34, "status": "Good", "last_inspection": "2025-05-12", "material": "Ductile Iron", "installed": "2008"},
+      {"name": "Central Distribution Grid", "diameter_mm": 600, "length_km": 67, "status": "Fair", "last_inspection": "2025-06-28", "material": "PVC", "installed": "2001"},
+      {"name": "Coastal Supply Line", "diameter_mm": 700, "length_km": 28, "status": "Poor", "last_inspection": "2025-04-18", "material": "Cast Iron", "installed": "1985"}
+    ],
+    "pumping_stations": [
+      {"name": "Balara Booster Station", "capacity_lps": 2800, "status": "Operational", "efficiency": 87.5, "head_meters": 85, "power_rating_kw": 450},
+      {"name": "Novaliches Primary PS", "capacity_lps": 3200, "status": "Operational", "efficiency": 89.2, "head_meters": 120, "power_rating_kw": 680},
+      {"name": "Eastbank Distribution PS", "capacity_lps": 1900, "status": "Maintenance", "efficiency": 0, "head_meters": 65, "power_rating_kw": 320},
+      {"name": "Antipolo High Service PS", "capacity_lps": 1400, "status": "Operational", "efficiency": 91.3, "head_meters": 180, "power_rating_kw": 580},
+      {"name": "Marikina Supply PS", "capacity_lps": 2100, "status": "Operational", "efficiency": 88.7, "head_meters": 95, "power_rating_kw": 420},
+      {"name": "Taguig Booster PS", "capacity_lps": 1650, "status": "Operational", "efficiency": 90.1, "head_meters": 75, "power_rating_kw": 380}
+    ],
+    "reservoirs": [
+      {"name": "La Mesa Reservoir", "capacity_ml": 580, "current_level_percent": 87, "type": "Surface", "elevation_masl": 195},
+      {"name": "Balara Service Reservoir", "capacity_ml": 125, "current_level_percent": 92, "type": "Elevated", "elevation_masl": 150},
+      {"name": "Novaliches Storage Tank", "capacity_ml": 200, "current_level_percent": 78, "type": "Ground", "elevation_masl": 120},
+      {"name": "Eastbank Reservoir", "capacity_ml": 180, "current_level_percent": 85, "type": "Ground", "elevation_masl": 85},
+      {"name": "Antipolo High Tank", "capacity_ml": 90, "current_level_percent": 94, "type": "Elevated", "elevation_masl": 220},
+      {"name": "Marikina Service Tank", "capacity_ml": 75, "current_level_percent": 89, "type": "Ground", "elevation_masl": 65}
     ]
+  },
+  "customer_segments": [
+    {"segment": "Residential", "connections": 980000, "avg_monthly_consumption_liters": 15000, "tariff_php_per_cubic_meter": 28.50, "billing_frequency": "Monthly"},
+    {"segment": "Commercial", "connections": 185000, "avg_monthly_consumption_liters": 45000, "tariff_php_per_cubic_meter": 32.80, "billing_frequency": "Monthly"},
+    {"segment": "Industrial", "connections": 28000, "avg_monthly_consumption_liters": 180000, "tariff_php_per_cubic_meter": 35.20, "billing_frequency": "Monthly"},
+    {"segment": "Institutional", "connections": 7000, "avg_monthly_consumption_liters": 85000, "tariff_php_per_cubic_meter": 30.40, "billing_frequency": "Monthly"}
+  ],
+  "maintenance_schedule": [
+    {"facility": "La Mesa Treatment Plant", "maintenance_type": "Preventive", "frequency": "Monthly", "last_performed": "2025-07-28", "next_scheduled": "2025-08-28", "cost_php": 850000},
+    {"facility": "Balara Booster Station", "maintenance_type": "Predictive", "frequency": "Quarterly", "last_performed": "2025-06-15", "next_scheduled": "2025-09-15", "cost_php": 320000},
+    {"facility": "North Main Pipeline", "maintenance_type": "Inspection", "frequency": "Bi-annual", "last_performed": "2025-06-15", "next_scheduled": "2025-12-15", "cost_php": 180000},
+    {"facility": "Eastbank Treatment Plant", "maintenance_type": "Major Overhaul", "frequency": "Annual", "last_performed": "2025-07-01", "next_scheduled": "2026-07-01", "cost_php": 12000000},
+    {"facility": "Novaliches Primary PS", "maintenance_type": "Preventive", "frequency": "Monthly", "last_performed": "2025-07-20", "next_scheduled": "2025-08-20", "cost_php": 420000}
+  ],
+  "water_sources": [
+    {"source": "Angat Dam", "type": "Surface Water", "capacity_mcm": 850, "current_level_mcm": 720, "quality_rating": "Excellent", "treatment_required": "Full"},
+    {"source": "Laguna Lake", "type": "Surface Water", "capacity_mcm": 2900, "current_level_mcm": 2450, "quality_rating": "Good", "treatment_required": "Advanced"},
+    {"source": "Marikina Groundwater", "type": "Groundwater", "capacity_mcm": 45, "current_level_mcm": 38, "quality_rating": "Good", "treatment_required": "Basic"},
+    {"source": "Antipolo Springs", "type": "Spring Water", "capacity_mcm": 12, "current_level_mcm": 10, "quality_rating": "Excellent", "treatment_required": "Minimal"},
+    {"source": "Deep Wells Network", "type": "Groundwater", "capacity_mcm": 85, "current_level_mcm": 72, "quality_rating": "Fair", "treatment_required": "Moderate"}
+  ],
+  "environmental_metrics": {
+    "carbon_footprint_tons_co2_annually": 125000,
+    "energy_consumption_mwh_annually": 180000,
+    "renewable_energy_percentage": 15.8,
+    "water_recycling_percentage": 8.2,
+    "sludge_production_tons_annually": 25000,
+    "chemical_usage_tons_annually": 8500,
+    "forest_watershed_protected_hectares": 12500,
+    "biodiversity_projects": 8
+  },
+  "emergency_preparedness": {
+    "backup_power_capacity_mw": 45,
+    "emergency_water_storage_days": 7,
+    "mobile_treatment_units": 6,
+    "emergency_response_vehicles": 28,
+    "disaster_recovery_time_hours": 72,
+    "alternative_supply_points": 156,
+    "emergency_communication_systems": 12,
+    "staff_emergency_training_hours_annually": 2400
+  },
+  "digital_infrastructure": {
+    "scada_monitoring_points": 2800,
+    "smart_meters_deployed": 285000,
+    "automated_billing_percentage": 95.2,
+    "mobile_app_users": 650000,
+    "online_payment_adoption_percentage": 78.5,
+    "iot_sensors_deployed": 1200,
+    "data_analytics_platforms": 4,
+    "cybersecurity_incidents_annually": 12
+  },
+  "compliance_metrics": {
+    "regulatory_compliance_score": 98.7,
+    "environmental_permits_valid": 45,
+    "safety_incidents_annually": 8,
+    "audit_findings_open": 3,
+    "iso_certifications": ["ISO 9001", "ISO 14001", "ISO 45001"],
+    "water_quality_tests_monthly": 12500,
+    "regulatory_inspections_annually": 24,
+    "compliance_training_hours_annually": 5600
+  },
+  "financial_performance": {
+    "operating_ratio": 0.63,
+    "debt_service_coverage_ratio": 1.45,
+    "current_ratio": 2.1,
+    "return_on_assets_percentage": 3.8,
+    "accounts_receivable_days": 35,
+    "cash_reserves_million_php": 8500,
+    "capital_investment_backlog_million_php": 45000,
+    "tariff_increase_percentage_last_year": 4.2
+  },
+  "research_development": {
+    "rd_budget_million_php_annually": 180,
+    "pilot_projects_active": 6,
+    "university_partnerships": 8,
+    "patents_filed": 3,
+    "innovation_awards": 12,
+    "technology_trials": 4,
+    "research_publications": 15,
+    "staff_in_rd": 45
   }
 }
