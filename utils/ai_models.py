@@ -20,6 +20,13 @@ class AIModelManager:
             openai_key = st.session_state.get('openai_api_key') or st.secrets.get("OPENAI_API_KEY") 
             anthropic_key = st.session_state.get('anthropic_api_key') or st.secrets.get("ANTHROPIC_API_KEY")
             
+            # Debug: Store which keys are available
+            self.available_keys = {
+                'gemini': bool(gemini_key),
+                'openai': bool(openai_key), 
+                'anthropic': bool(anthropic_key)
+            }
+            
             if openai_key:
                 openai.api_key = openai_key
                 self.openai_client = openai.OpenAI(api_key=openai_key)
@@ -31,7 +38,9 @@ class AIModelManager:
                 genai.configure(api_key=gemini_key)
                 self.gemini_model = genai.GenerativeModel('gemini-1.5-flash')
         except Exception as e:
-            pass  # Fail silently to avoid showing errors in UI
+            # Store error for debugging
+            self.setup_error = str(e)
+            pass
     
     def generate_hr_response(self, user_query: str, employee_data: Dict, context: str = "") -> str:
         """Generate HR assistant response using OpenAI or Gemini"""
@@ -605,6 +614,14 @@ Latest period: **{latest_month.get('month')}**
 *🚀 Configure AI services in the sidebar for advanced analytics, natural language queries, and intelligent insights!*"""
 
 # Initialize global instance
-@st.cache_resource
 def get_ai_manager():
-    return AIModelManager()
+    """Get AI manager instance, refreshed when API keys change"""
+    # Create cache key based on current API keys
+    cache_key = f"{st.session_state.get('gemini_api_key', '')[:10]}_{st.session_state.get('openai_api_key', '')[:10]}_{st.session_state.get('anthropic_api_key', '')[:10]}"
+    
+    # Use session state to cache the manager with current keys
+    if 'ai_manager_cache_key' not in st.session_state or st.session_state.ai_manager_cache_key != cache_key:
+        st.session_state.ai_manager = AIModelManager()
+        st.session_state.ai_manager_cache_key = cache_key
+    
+    return st.session_state.ai_manager

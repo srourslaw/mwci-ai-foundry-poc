@@ -168,18 +168,53 @@ def main():
                 st.success("✅ Anthropic API key saved!")
             st.rerun()
         
-        # Status indicators
+        # Test API key button
+        if st.session_state.get('gemini_api_key'):
+            if st.button("🧪 Test Gemini API", use_container_width=True):
+                try:
+                    import google.generativeai as genai
+                    genai.configure(api_key=st.session_state.gemini_api_key)
+                    model = genai.GenerativeModel('gemini-1.5-flash')
+                    response = model.generate_content("Say 'Hello from Manila Water!'")
+                    st.success(f"✅ API Test Success: {response.text}")
+                except Exception as e:
+                    st.error(f"❌ API Test Failed: {str(e)}")
+                    if "API_KEY_INVALID" in str(e):
+                        st.error("🔑 Your API key appears to be invalid")
+                    elif "quota" in str(e).lower():
+                        st.error("📊 API quota exceeded")
+                    else:
+                        st.error("🔧 Check your API key format")
+        
+        # Status indicators with real-time validation
         st.markdown("**AI Service Status:**")
-        gemini_status = "🟢 Connected" if st.session_state.get('gemini_api_key') else "🔴 Not configured"
-        openai_status = "🟢 Connected" if st.session_state.get('openai_api_key') else "⚪ Optional"
-        anthropic_status = "🟢 Connected" if st.session_state.get('anthropic_api_key') else "⚪ Optional"
+        
+        # Test AI manager to see actual status
+        from utils.ai_models import get_ai_manager
+        ai_manager = get_ai_manager()
+        
+        gemini_working = bool(ai_manager.gemini_model)
+        openai_working = bool(ai_manager.openai_client)
+        anthropic_working = bool(ai_manager.anthropic_client)
+        
+        gemini_status = "🟢 Ready" if gemini_working else "🔴 Not configured"
+        openai_status = "🟢 Ready" if openai_working else "⚪ Optional"
+        anthropic_status = "🟢 Ready" if anthropic_working else "⚪ Optional"
         
         st.markdown(f"**Gemini:** {gemini_status}")
         st.markdown(f"**OpenAI:** {openai_status}")  
         st.markdown(f"**Claude:** {anthropic_status}")
         
-        if not st.session_state.get('gemini_api_key'):
-            st.info("💡 Add your Gemini API key to enable AI features!")
+        # Debug info
+        if hasattr(ai_manager, 'available_keys'):
+            if any(ai_manager.available_keys.values()) and not any([gemini_working, openai_working, anthropic_working]):
+                st.error("⚠️ API keys detected but not working. Check key format!")
+        
+        if not gemini_working and not openai_working and not anthropic_working:
+            if st.session_state.get('gemini_api_key'):
+                st.warning("🔄 Try refreshing the page after adding keys")
+            else:
+                st.info("💡 Add your Gemini API key to enable AI features!")
     
     page = st.session_state.current_page
     
