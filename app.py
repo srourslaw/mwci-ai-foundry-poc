@@ -126,6 +126,61 @@ def main():
             st.session_state.current_page = option
             st.rerun()
     
+    # API Configuration Section
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 🔑 AI Configuration")
+    
+    # API Key inputs
+    with st.sidebar.expander("🤖 Configure AI Services", expanded=False):
+        st.markdown("**Add your API keys for AI features:**")
+        
+        gemini_key = st.text_input(
+            "🔹 Gemini API Key", 
+            type="password", 
+            help="For AI responses and ticket classification",
+            key="gemini_api_input"
+        )
+        
+        openai_key = st.text_input(
+            "🔹 OpenAI API Key (Optional)", 
+            type="password", 
+            help="Fallback AI service",
+            key="openai_api_input"
+        )
+        
+        anthropic_key = st.text_input(
+            "🔹 Anthropic API Key (Optional)", 
+            type="password", 
+            help="For advanced data analysis",
+            key="anthropic_api_input"
+        )
+        
+        # Save button
+        if st.button("💾 Save API Keys", use_container_width=True):
+            if gemini_key:
+                st.session_state.gemini_api_key = gemini_key
+                st.success("✅ Gemini API key saved!")
+            if openai_key:
+                st.session_state.openai_api_key = openai_key
+                st.success("✅ OpenAI API key saved!")
+            if anthropic_key:
+                st.session_state.anthropic_api_key = anthropic_key
+                st.success("✅ Anthropic API key saved!")
+            st.rerun()
+        
+        # Status indicators
+        st.markdown("**AI Service Status:**")
+        gemini_status = "🟢 Connected" if st.session_state.get('gemini_api_key') else "🔴 Not configured"
+        openai_status = "🟢 Connected" if st.session_state.get('openai_api_key') else "⚪ Optional"
+        anthropic_status = "🟢 Connected" if st.session_state.get('anthropic_api_key') else "⚪ Optional"
+        
+        st.markdown(f"**Gemini:** {gemini_status}")
+        st.markdown(f"**OpenAI:** {openai_status}")  
+        st.markdown(f"**Claude:** {anthropic_status}")
+        
+        if not st.session_state.get('gemini_api_key'):
+            st.info("💡 Add your Gemini API key to enable AI features!")
+    
     page = st.session_state.current_page
     
     # Route to appropriate page
@@ -156,6 +211,10 @@ def show_dashboard(data_processor):
         <h3 style="margin: 0.5rem 0 0 0; font-weight: 300; opacity: 0.9;">Enterprise Command Center & AI Operations Dashboard</h3>
     </div>
     """, unsafe_allow_html=True)
+    
+    # API Configuration Notice
+    if not st.session_state.get('gemini_api_key'):
+        st.info("💡 **Enable AI Features:** Add your API keys in the sidebar under '🤖 Configure AI Services' to unlock HR assistance, smart ticketing, and data analytics!")
     
     # Get all data for comprehensive view
     stats = data_processor.get_summary_stats()

@@ -19,13 +19,20 @@
    - Main file path: `app.py`
    - App name: `manila-water-ai-foundry` (or choose your own)
 
-### 3. Configure Secrets
-In your app settings on Streamlit Cloud, add these secrets:
+### 3. Configure API Keys (Two Options)
 
+#### Option A: User Input (Recommended for Sharing)
+- Users can add their own API keys directly in the dashboard sidebar
+- Click "🤖 Configure AI Services" in the sidebar
+- Add API keys and click "💾 Save API Keys"
+- **Best for sharing publicly** - users bring their own keys!
+
+#### Option B: Pre-configured Keys (Optional)
+If you want to pre-configure keys, add these secrets in Streamlit Cloud settings:
 ```toml
-GEMINI_API_KEY = "AIzaSyCPvX2uauYs9VsXAn54aV2HQkV7Z757P_w"
-OPENAI_API_KEY = "your-openai-key-if-you-have-one"
-ANTHROPIC_API_KEY = "your-claude-key-if-you-have-one"
+GEMINI_API_KEY = "your-gemini-api-key-here"
+OPENAI_API_KEY = "your-openai-key-here"
+ANTHROPIC_API_KEY = "your-claude-key-here"
 ```
 
 ### 4. Your Live URL

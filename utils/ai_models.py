@@ -13,20 +13,25 @@ class AIModelManager:
         self.setup_clients()
     
     def setup_clients(self):
-        """Initialize AI clients with API keys"""
+        """Initialize AI clients with API keys from session state or secrets"""
         try:
-            if "OPENAI_API_KEY" in st.secrets:
-                openai.api_key = st.secrets["OPENAI_API_KEY"]
-                self.openai_client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+            # Check session state first (user input), then secrets (deployment)
+            gemini_key = st.session_state.get('gemini_api_key') or st.secrets.get("GEMINI_API_KEY")
+            openai_key = st.session_state.get('openai_api_key') or st.secrets.get("OPENAI_API_KEY") 
+            anthropic_key = st.session_state.get('anthropic_api_key') or st.secrets.get("ANTHROPIC_API_KEY")
             
-            if "ANTHROPIC_API_KEY" in st.secrets:
-                self.anthropic_client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
+            if openai_key:
+                openai.api_key = openai_key
+                self.openai_client = openai.OpenAI(api_key=openai_key)
             
-            if "GEMINI_API_KEY" in st.secrets:
-                genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+            if anthropic_key:
+                self.anthropic_client = anthropic.Anthropic(api_key=anthropic_key)
+            
+            if gemini_key:
+                genai.configure(api_key=gemini_key)
                 self.gemini_model = genai.GenerativeModel('gemini-1.5-flash')
         except Exception as e:
-            st.error(f"Error setting up AI clients: {e}")
+            pass  # Fail silently to avoid showing errors in UI
     
     def generate_hr_response(self, user_query: str, employee_data: Dict, context: str = "") -> str:
         """Generate HR assistant response using OpenAI or Gemini"""
