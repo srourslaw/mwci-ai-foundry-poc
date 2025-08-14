@@ -1,10 +1,9 @@
-# 🌊 Manila Water AI Foundry POC - Complete Implementation Guide
+# 🌊 Manila Water AI Foundry POC
 
-![Manila Water AI Foundry](https://img.shields.io/badge/Manila%20Water-AI%20Foundry-blue?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF6B6B?style=for-the-badge)
-![OpenAI](https://img.shields.io/badge/Powered%20by-OpenAI-412991?style=for-the-badge)
-![Claude](https://img.shields.io/badge/Enhanced%20by-Claude-FF9500?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Demo%20Ready-00C851?style=for-the-badge)
+A comprehensive AI-powered dashboard for Manila Water's operations, featuring HR assistance, smart ticketing, and data analytics.
+
+## 🚀 Live Demo
+[View Live Dashboard](https://your-app-name.streamlit.app) *(will be available after deployment)*
 
 **🎯 Transforming Water Utility Operations with Artificial Intelligence**
 

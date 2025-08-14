@@ -39,14 +39,14 @@ class UIComponents:
             padding: 1rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-left: 4px solid #1f77b4;
+            border-left: 4px solid #667eea;
             margin-bottom: 1rem;
         ">
             <div style="display: flex; align-items: center; gap: 0.5rem;">
                 <span style="font-size: 1.2rem;">{icon}</span>
                 <h4 style="margin: 0; color: #333;">{title}</h4>
             </div>
-            <h2 style="margin: 0.5rem 0 0 0; color: #1f77b4;">{value}</h2>
+            <h2 style="margin: 0.5rem 0 0 0; color: #667eea;">{value}</h2>
             {delta_html}
         </div>
         """, unsafe_allow_html=True)
@@ -114,64 +114,65 @@ class UIComponents:
     @staticmethod
     def render_employee_card(employee: Dict):
         """Render employee information card"""
-        leave_total = sum(employee.get('leave_balance', {}).values())
-        
-        st.markdown(f"""
-        <div style="
-            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid #1f77b4;
-            margin: 1rem 0;
-        ">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="
-                    width: 60px;
-                    height: 60px;
-                    border-radius: 50%;
-                    background: #1f77b4;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: white;
-                    font-size: 1.5rem;
-                ">
-                    👤
-                </div>
-                <div>
-                    <h3 style="margin: 0; color: #1f77b4;">{employee.get('name', 'N/A')}</h3>
-                    <p style="margin: 0; color: #666;">{employee.get('position', 'N/A')}</p>
-                    <p style="margin: 0; color: #666; font-size: 0.9rem;">{employee.get('department', 'N/A')}</p>
-                </div>
-            </div>
+        if not employee:
+            st.warning("No employee data available")
+            return
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                <div>
-                    <strong>📧 Email:</strong><br>
-                    <span style="color: #666;">{employee.get('email', 'N/A')}</span>
-                </div>
-                <div>
-                    <strong>📍 Location:</strong><br>
-                    <span style="color: #666;">{employee.get('location', 'N/A')}</span>
-                </div>
-                <div>
-                    <strong>👔 Manager:</strong><br>
-                    <span style="color: #666;">{employee.get('manager', 'N/A')}</span>
-                </div>
-                <div>
-                    <strong>🏖️ Leave Balance:</strong><br>
-                    <span style="color: #2ca02c; font-weight: bold;">{leave_total} days</span>
+        leave_balance = employee.get('leave_balance', {})
+        leave_total = sum(leave_balance.values()) if leave_balance else 0
+        
+        # Use Streamlit native components for better rendering
+        with st.container():
+            st.markdown(f"""
+            <div style="
+                background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+                padding: 1.5rem;
+                border-radius: 12px;
+                border: 1px solid #667eea;
+                margin: 1rem 0;
+            ">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        background: #667eea;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-size: 1.5rem;
+                    ">
+                        👤
+                    </div>
+                    <div>
+                        <h3 style="margin: 0; color: #667eea;">{employee.get('name', 'N/A')}</h3>
+                        <p style="margin: 0; color: #666;">{employee.get('position', 'N/A')}</p>
+                        <p style="margin: 0; color: #666; font-size: 0.9rem;">{employee.get('department', 'N/A')}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
+            
+            # Use columns for better layout control
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown(f"**📧 Email:** {employee.get('email', 'N/A')}")
+                st.markdown(f"**👔 Manager:** {employee.get('manager', 'N/A')}")
+            with col2:
+                st.markdown(f"**📍 Location:** {employee.get('location', 'N/A')}")
+                st.markdown(f"**🏖️ Leave Balance:** :blue[{leave_total} days]")
     
     @staticmethod
     def render_ticket_status(ticket: Dict):
         """Render ticket status card"""
+        if not ticket:
+            st.error("No ticket data available")
+            return
+            
         status_colors = {
             "New": "#ff7f0e",
-            "In Progress": "#1f77b4", 
+            "In Progress": "#667eea", 
             "Resolved": "#2ca02c",
             "Closed": "#666666"
         }
@@ -179,68 +180,39 @@ class UIComponents:
         priority_colors = {
             "Critical": "#d62728",
             "High": "#ff7f0e",
-            "Medium": "#2ca02c",
-            "Low": "#1f77b4"
+            "Medium": "#667eea",
+            "Low": "#2ca02c"
         }
         
-        status_color = status_colors.get(ticket.get('status', 'New'), "#666666")
-        priority_color = priority_colors.get(ticket.get('priority', 'Medium'), "#666666")
+        status = ticket.get('status', 'New')
+        priority = ticket.get('priority', 'Medium')
+        status_color = status_colors.get(status, "#666666")
+        priority_color = priority_colors.get(priority, "#666666")
         
-        st.markdown(f"""
-        <div style="
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 5px solid {status_color};
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin: 1rem 0;
-        ">
-            <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
-                <h4 style="margin: 0; color: #333;">🎫 Ticket {ticket.get('id', 'N/A')}</h4>
-                <div style="display: flex; gap: 0.5rem;">
-                    <span style="
-                        background: {status_color};
-                        color: white;
-                        padding: 0.3rem 0.8rem;
-                        border-radius: 15px;
-                        font-size: 0.8rem;
-                        font-weight: bold;
-                    ">{ticket.get('status', 'New')}</span>
-                    <span style="
-                        background: {priority_color};
-                        color: white;
-                        padding: 0.3rem 0.8rem;
-                        border-radius: 15px;
-                        font-size: 0.8rem;
-                        font-weight: bold;
-                    ">{ticket.get('priority', 'Medium')}</span>
-                </div>
-            </div>
+        # Use a container with simple header
+        with st.container():
+            # Header with badges
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                st.markdown(f"#### 🎫 Ticket {ticket.get('id', 'N/A')}")
+            with col2:
+                st.markdown(f":{status.lower().replace(' ', '_')}[{status}] :{priority.lower()}[{priority}]")
             
-            <p style="color: #333; margin-bottom: 1rem; line-height: 1.5;">
-                <strong>Description:</strong> {ticket.get('description', 'N/A')}
-            </p>
+            # Description
+            st.markdown(f"**Description:** {ticket.get('description', 'N/A')}")
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
-                <div>
-                    <strong>👤 Customer:</strong><br>
-                    {ticket.get('customer_name', 'N/A')}
-                </div>
-                <div>
-                    <strong>📍 Area:</strong><br>
-                    {ticket.get('area', 'N/A')}
-                </div>
-                <div>
-                    <strong>🔧 Assigned To:</strong><br>
-                    {ticket.get('assigned_tech', 'Unassigned')}
-                </div>
-                <div>
-                    <strong>📅 Created:</strong><br>
-                    {ticket.get('created_date', 'N/A')}
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+            # Details in columns
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.markdown(f"**👤 Customer:**  \n{ticket.get('customer_name', 'N/A')}")
+            with col2:
+                st.markdown(f"**📍 Area:**  \n{ticket.get('area', 'N/A')}")
+            with col3:
+                st.markdown(f"**🔧 Assigned To:**  \n{ticket.get('assigned_tech', 'Unassigned')}")
+            with col4:
+                st.markdown(f"**📅 Created:**  \n{ticket.get('created_date', 'N/A')}")
+            
+            st.markdown("---")
     
     @staticmethod
     def create_consumption_chart(areas_data: List[Dict]) -> go.Figure:

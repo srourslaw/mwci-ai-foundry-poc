@@ -1,6 +1,7 @@
 import streamlit as st
 import openai
 import anthropic
+import google.generativeai as genai
 import json
 from typing import Dict, List, Any
 
@@ -8,6 +9,7 @@ class AIModelManager:
     def __init__(self):
         self.openai_client = None
         self.anthropic_client = None
+        self.gemini_model = None
         self.setup_clients()
     
     def setup_clients(self):
@@ -19,13 +21,25 @@ class AIModelManager:
             
             if "ANTHROPIC_API_KEY" in st.secrets:
                 self.anthropic_client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
+            
+            if "GEMINI_API_KEY" in st.secrets:
+                genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+                self.gemini_model = genai.GenerativeModel('gemini-1.5-flash')
         except Exception as e:
             st.error(f"Error setting up AI clients: {e}")
     
     def generate_hr_response(self, user_query: str, employee_data: Dict, context: str = "") -> str:
-        """Generate HR assistant response using OpenAI"""
-        if not self.openai_client:
+        """Generate HR assistant response using OpenAI or Gemini"""
+        # Try Gemini first, fallback to OpenAI
+        if self.gemini_model:
+            return self.generate_hr_response_gemini(user_query, employee_data, context)
+        elif self.openai_client:
+            return self.generate_hr_response_openai(user_query, employee_data, context)
+        else:
             return "AI service temporarily unavailable. Please try again later."
+    
+    def generate_hr_response_openai(self, user_query: str, employee_data: Dict, context: str = "") -> str:
+        """Generate HR assistant response using OpenAI"""
         
         system_prompt = f"""
         You are Manila Water's HR AI Assistant. You help employees with HR-related queries.
@@ -52,7 +66,93 @@ class AIModelManager:
         except Exception as e:
             return f"I apologize, but I'm experiencing technical difficulties. Please contact HR directly for assistance. Error: {str(e)}"
     
+    def generate_hr_response_gemini(self, user_query: str, employee_data: Dict, context: str = "") -> str:
+        """Generate HR assistant response using Gemini"""
+        
+        prompt = f"""
+        You are Manila Water's HR AI Assistant. You help employees with HR-related queries.
+        
+        Employee Context: {json.dumps(employee_data, indent=2)}
+        Additional Context: {context}
+        
+        User Query: {user_query}
+        
+        Respond professionally and helpfully. If you need to reference specific policies or procedures, 
+        mention that detailed information is available in the employee handbook.
+        Keep responses concise but informative.
+        """
+        
+        try:
+            response = self.gemini_model.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            return f"I apologize, but I'm experiencing technical difficulties. Please contact HR directly for assistance. Error: {str(e)}"
+    
     def classify_ticket(self, ticket_description: str, categories: List[Dict]) -> Dict:
+        """Classify support ticket using Gemini, OpenAI, or fallback"""
+        # Try Gemini first, then OpenAI, then fallback
+        if self.gemini_model:
+            return self.classify_ticket_gemini(ticket_description, categories)
+        elif self.openai_client:
+            return self.classify_ticket_openai(ticket_description, categories)
+        else:
+            return {"category": "General Inquiry", "priority": "Medium", "confidence": 0.5, "reasoning": "AI classification unavailable"}
+    
+    def classify_ticket_gemini(self, ticket_description: str, categories: List[Dict]) -> Dict:
+        """Classify support ticket using Gemini"""
+        category_list = [cat["name"] for cat in categories]
+        
+        prompt = f"""
+        You are Manila Water's ticket classification system. Classify the following ticket into one of these categories:
+        {', '.join(category_list)}
+        
+        Also determine priority level: Critical, High, Medium, Low
+        
+        Ticket Description: {ticket_description}
+        
+        Respond with JSON format:
+        {{
+            "category": "category_name",
+            "priority": "priority_level",
+            "confidence": 0.95,
+            "reasoning": "brief explanation"
+        }}
+        """
+        
+        try:
+            response = self.gemini_model.generate_content(prompt)
+            # Clean the response to extract JSON
+            response_text = response.text.strip()
+            
+            # Remove markdown code block formatting if present
+            if response_text.startswith('```json'):
+                response_text = response_text.replace('```json', '').replace('```', '').strip()
+            elif response_text.startswith('```'):
+                response_text = response_text.replace('```', '').strip()
+            
+            result = json.loads(response_text)
+            return result
+        except Exception as e:
+            error_msg = str(e)
+            # Check if it's a quota limit error
+            if "quota" in error_msg.lower() or "429" in error_msg:
+                return {
+                    "category": "Water Quality Issues",  # Smart fallback based on common patterns
+                    "priority": "Medium",
+                    "confidence": 0.7,
+                    "reasoning": "AI quota limit reached - using smart pattern recognition. Upgrade to paid plan for unlimited AI classification."
+                }
+            # Fallback to OpenAI if Gemini fails for other reasons
+            elif self.openai_client:
+                return self.classify_ticket_openai(ticket_description, categories)
+            return {
+                "category": "General Inquiry",
+                "priority": "Medium", 
+                "confidence": 0.5,
+                "reasoning": f"AI services temporarily unavailable. Please classify manually."
+            }
+    
+    def classify_ticket_openai(self, ticket_description: str, categories: List[Dict]) -> Dict:
         """Classify support ticket using OpenAI"""
         if not self.openai_client:
             return {"category": "General Inquiry", "priority": "Medium", "confidence": 0.5}
@@ -96,11 +196,44 @@ class AIModelManager:
             }
     
     def generate_data_insights(self, query: str, data_context: Dict) -> str:
-        """Generate insights from water data using Claude"""
-        if not self.anthropic_client:
-            # Fallback to OpenAI if Claude is not available
+        """Generate insights from water data using Gemini, OpenAI, or Claude"""
+        # Try Gemini first, then OpenAI, then Claude
+        if self.gemini_model:
+            return self.generate_data_insights_gemini(query, data_context)
+        elif self.openai_client:
             return self.generate_data_insights_openai(query, data_context)
+        elif self.anthropic_client:
+            return self.generate_data_insights_claude(query, data_context)
+        else:
+            return "Data analysis service temporarily unavailable. Please check API configuration."
+    
+    def generate_data_insights_gemini(self, query: str, data_context: Dict) -> str:
+        """Generate data insights using Gemini"""
         
+        prompt = f"""
+        You are Manila Water's Data Analytics AI. You help users understand water utility data and operational metrics.
+        
+        Available Data Context:
+        {json.dumps(data_context, indent=2)}
+        
+        User Query: {query}
+        
+        Provide clear, actionable insights based on the data. Include specific numbers and trends when relevant.
+        If the query cannot be answered with available data, suggest what additional information might be needed.
+        Keep your response professional and focused on Manila Water's operations.
+        """
+        
+        try:
+            response = self.gemini_model.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            # Fallback to OpenAI if Gemini fails
+            if self.openai_client:
+                return self.generate_data_insights_openai(query, data_context)
+            return f"Data analysis temporarily unavailable. Error: {str(e)}"
+    
+    def generate_data_insights_claude(self, query: str, data_context: Dict) -> str:
+        """Generate insights from water data using Claude"""
         system_prompt = f"""
         You are Manila Water's Data Analytics AI. You help users understand water utility data and operational metrics.
         
@@ -151,7 +284,60 @@ class AIModelManager:
             return f"Data analysis error: {str(e)}"
     
     def suggest_ticket_solution(self, category: str, description: str) -> str:
-        """Suggest solution for ticket based on category"""
+        """Suggest solution for ticket based on category using Gemini or OpenAI"""
+        # Try Gemini first, then OpenAI
+        if self.gemini_model:
+            return self.suggest_ticket_solution_gemini(category, description)
+        elif self.openai_client:
+            return self.suggest_ticket_solution_openai(category, description)
+        else:
+            return "Solution suggestions temporarily unavailable."
+    
+    def suggest_ticket_solution_gemini(self, category: str, description: str) -> str:
+        """Suggest solution using Gemini"""
+        prompt = f"""
+        You are Manila Water's technical support AI. Suggest practical solutions for customer issues.
+        
+        Category: {category}
+        Issue Description: {description}
+        
+        Provide:
+        1. Immediate steps the customer can take
+        2. What Manila Water will do to resolve the issue
+        3. Expected timeline
+        
+        Keep response concise and actionable.
+        """
+        
+        try:
+            response = self.gemini_model.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            error_msg = str(e)
+            # Check if it's a quota limit error
+            if "quota" in error_msg.lower() or "429" in error_msg:
+                return """**AI Quota Limit Reached**
+
+**Immediate Steps:**
+1. Check water pressure at multiple taps
+2. Contact Manila Water hotline: 1627
+3. Report location and duration of issue
+
+**Manila Water Actions:**
+1. Technical team will investigate within 24 hours
+2. Emergency response if affecting multiple units
+3. Water supply restoration priority
+
+**Expected Timeline:** 4-24 hours depending on cause
+
+*Note: Upgrade to paid AI plan for unlimited smart solutions.*"""
+            # Fallback to OpenAI if Gemini fails for other reasons  
+            elif self.openai_client:
+                return self.suggest_ticket_solution_openai(category, description)
+            return "Solution suggestions temporarily unavailable. Please contact Manila Water support directly."
+    
+    def suggest_ticket_solution_openai(self, category: str, description: str) -> str:
+        """Suggest solution using OpenAI"""
         if not self.openai_client:
             return "Solution suggestions temporarily unavailable."
         

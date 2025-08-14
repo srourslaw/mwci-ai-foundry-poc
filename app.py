@@ -17,7 +17,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Custom CSS for professional styling
 st.markdown("""
 <style>
     .main > div {
@@ -26,6 +26,8 @@ st.markdown("""
     
     .stSelectbox > div > div > div {
         background-color: #f0f8ff;
+        border: 1px solid #1f77b4;
+        border-radius: 8px;
     }
     
     .sidebar .sidebar-content {
@@ -44,6 +46,48 @@ st.markdown("""
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+    
+    .stButton > button {
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+    
+    .stButton > button:hover {
+        background: linear-gradient(90deg, #764ba2, #667eea);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .stButton > button:active {
+        transform: translateY(0px);
+        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+    }
+    
+    /* Sidebar styling improvements */
+    .css-1d391kg {
+        background-color: #f8f9fa;
+    }
+    
+    /* Main content area */
+    .css-18e3th9 {
+        padding-top: 1rem;
+    }
+    
+    /* Header improvements */
+    h1, h2, h3 {
+        color: #667eea;
+    }
+    
+    /* Update metric card border colors */
+    .metric-card {
+        border-left-color: #667eea !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -51,217 +95,393 @@ def main():
     # Initialize data processor
     data_processor = get_data_processor()
     
-    # Sidebar navigation
+    # Initialize session state for navigation
+    if 'current_page' not in st.session_state:
+        st.session_state.current_page = "🏠 Executive Dashboard"
+    
+    # Always show sidebar with ONLY navigation
     st.sidebar.markdown("""
-    <div style="text-align: center; padding: 1rem;">
-        <h2 style="color: white; margin: 0;">🌊 Manila Water</h2>
-        <p style="color: #e8f4f8; margin: 0;">AI Foundry Platform</p>
+    <div style="
+        text-align: center; 
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    ">
+        <h2 style="color: white; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">🌊 Manila Water</h2>
+        <p style="color: white; margin: 0; font-weight: 500; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">AI Foundry Platform</p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Navigation menu
-    page = st.sidebar.selectbox(
-        "Choose Demo",
-        ["🏠 Dashboard", "👥 HR Assistant", "🎫 Smart Ticketing", "📊 Chat with Data"],
-        index=0
-    )
+    # Navigation buttons only - nothing else
+    nav_options = [
+        "🏠 Executive Dashboard", 
+        "👥 HR AI Assistant", 
+        "🎫 Smart Ticketing System", 
+        "📊 Chat With Data Analytics"
+    ]
     
-    # Sidebar info
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("""
-    ### 🚀 POC Features
-    - **AI-Powered HR Support**
-    - **Intelligent Ticket Routing**
-    - **Natural Language Data Queries**
-    - **Real-time Analytics**
+    for option in nav_options:
+        if st.sidebar.button(option, use_container_width=True, key=f"nav_{option}"):
+            st.session_state.current_page = option
+            st.rerun()
     
-    ### 🔗 Integration Ready
-    - SAP SuccessFactors
-    - ManageEngine
-    - Enterprise Lake House
-    - Microsoft Teams
-    """)
+    page = st.session_state.current_page
     
     # Route to appropriate page
-    if page == "🏠 Dashboard":
+    if page == "🏠 Executive Dashboard":
         show_dashboard(data_processor)
-    elif page == "👥 HR Assistant":
+    elif page == "👥 HR AI Assistant":
         show_hr_assistant()
-    elif page == "🎫 Smart Ticketing":
+    elif page == "🎫 Smart Ticketing System":
         show_smart_ticketing()
-    elif page == "📊 Chat with Data":
+    elif page == "📊 Chat With Data Analytics":
         show_chat_with_data()
 
 def show_dashboard(data_processor):
-    """Show main dashboard"""
-    UIComponents.render_header(
-        "Manila Water AI Foundry", 
-        "Transforming Water Utility Operations with Artificial Intelligence",
-        "🌊"
-    )
+    """Show comprehensive enterprise dashboard"""
     
-    # Get summary statistics
+    # Header with executive branding
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    ">
+        <h1 style="margin: 0; font-size: 2.5rem; font-weight: 700;">🌊 Manila Water AI Foundry</h1>
+        <h3 style="margin: 0.5rem 0 0 0; font-weight: 300; opacity: 0.9;">Enterprise Command Center & AI Operations Dashboard</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Get all data for comprehensive view
     stats = data_processor.get_summary_stats()
+    areas_data = data_processor.get_service_areas()
+    trends_data = data_processor.get_monthly_trends()
     
-    # Key metrics row
-    col1, col2, col3, col4 = st.columns(4)
+    # Executive KPI Dashboard
+    st.markdown("## 📊 Executive KPIs & Performance Metrics")
+    
+    # Main metrics row
+    col1, col2, col3, col4, col5 = st.columns(5)
     
     with col1:
-        UIComponents.render_metric_card(
-            "Population Served", 
-            f"{stats['total_population_served']:,}", 
-            "+2.3%",
-            "👥"
-        )
+        st.markdown(f"""
+        <div style="
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 5px solid #667eea;
+            text-align: center;
+        ">
+            <h4 style="color: #666; margin: 0; font-size: 0.9rem;">POPULATION SERVED</h4>
+            <h2 style="color: #667eea; margin: 0.5rem 0; font-weight: 700;">{stats['total_population_served']:,}</h2>
+            <p style="color: #28a745; margin: 0; font-size: 0.8rem;">+2.3% ▲</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col2:
-        UIComponents.render_metric_card(
-            "Service Connections", 
-            f"{stats['total_service_connections']:,}", 
-            "+1.8%",
-            "🏠"
-        )
+        st.markdown(f"""
+        <div style="
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 5px solid #764ba2;
+            text-align: center;
+        ">
+            <h4 style="color: #666; margin: 0; font-size: 0.9rem;">SERVICE CONNECTIONS</h4>
+            <h2 style="color: #764ba2; margin: 0.5rem 0; font-weight: 700;">{stats['total_service_connections']:,}</h2>
+            <p style="color: #28a745; margin: 0; font-size: 0.8rem;">+1.8% ▲</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col3:
-        UIComponents.render_metric_card(
-            "Water Quality", 
-            f"{stats['average_water_quality']}%", 
-            "+0.2%",
-            "💧"
-        )
+        st.markdown(f"""
+        <div style="
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 5px solid #4ecdc4;
+            text-align: center;
+        ">
+            <h4 style="color: #666; margin: 0; font-size: 0.9rem;">WATER QUALITY</h4>
+            <h2 style="color: #4ecdc4; margin: 0.5rem 0; font-weight: 700;">{stats['average_water_quality']}%</h2>
+            <p style="color: #28a745; margin: 0; font-size: 0.8rem;">+0.2% ▲</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col4:
-        UIComponents.render_metric_card(
-            "Customer Satisfaction", 
-            f"{stats['customer_satisfaction']}/5", 
-            "+0.1",
-            "⭐"
-        )
+        st.markdown(f"""
+        <div style="
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 5px solid #f093fb;
+            text-align: center;
+        ">
+            <h4 style="color: #666; margin: 0; font-size: 0.9rem;">CUSTOMER SATISFACTION</h4>
+            <h2 style="color: #f093fb; margin: 0.5rem 0; font-weight: 700;">{stats['customer_satisfaction']}/5</h2>
+            <p style="color: #28a745; margin: 0; font-size: 0.8rem;">+0.1 ▲</p>
+        </div>
+        """, unsafe_allow_html=True)
     
-    # Charts section
-    st.markdown("### 📊 Performance Overview")
+    with col5:
+        st.markdown(f"""
+        <div style="
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 5px solid #ffeaa7;
+            text-align: center;
+        ">
+            <h4 style="color: #666; margin: 0; font-size: 0.9rem;">DAILY PRODUCTION</h4>
+            <h2 style="color: #fdcb6e; margin: 0.5rem 0; font-weight: 700;">1.68B</h2>
+            <p style="color: #666; margin: 0; font-size: 0.8rem;">Liters/Day</p>
+        </div>
+        """, unsafe_allow_html=True)
     
-    col1, col2 = st.columns(2)
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Real-time operational dashboard
+    col1, col2 = st.columns([2, 1])
     
     with col1:
-        # Water consumption chart
-        areas_data = data_processor.get_service_areas()
+        st.markdown("### 🌊 Service Area Performance")
         if areas_data:
             fig = UIComponents.create_consumption_chart(areas_data)
             st.plotly_chart(fig, use_container_width=True)
     
     with col2:
-        # Water quality gauge
-        avg_quality = stats['average_water_quality']
-        fig = UIComponents.create_quality_gauge(avg_quality)
-        st.plotly_chart(fig, use_container_width=True)
+        st.markdown("### ⚡ System Health")
+        st.markdown(f"""
+        <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.07);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span style="font-weight: 600;">Water Quality</span>
+                <span style="color: #28a745; font-weight: 700;">{stats['average_water_quality']}%</span>
+            </div>
+            <div style="background: #f8f9fa; height: 8px; border-radius: 4px;">
+                <div style="background: linear-gradient(90deg, #28a745, #20c997); height: 8px; width: {stats['average_water_quality']}%; border-radius: 4px;"></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("<br>", unsafe_allow_html=True)
+        
+        # Infrastructure status
+        st.markdown(f"""
+        <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.07);">
+            <h4 style="color: #667eea; margin-bottom: 1rem;">🏭 Infrastructure Status</h4>
+            <div style="display: grid; gap: 0.8rem;">
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Treatment Plants</span>
+                    <span style="color: #28a745; font-weight: 600;">{stats['treatment_plants']} ✓</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Pumping Stations</span>
+                    <span style="color: #28a745; font-weight: 600;">156 ✓</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Pipeline Network</span>
+                    <span style="color: #28a745; font-weight: 600;">9,800km ✓</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>System Availability</span>
+                    <span style="color: #28a745; font-weight: 600;">99.2% ✓</span>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
     
-    # Monthly trends
-    st.markdown("### 📈 Monthly Trends")
-    trends_data = data_processor.get_monthly_trends()
+    # Monthly trends section
+    st.markdown("### 📈 Monthly Performance Trends")
     if trends_data:
         fig = UIComponents.create_trends_chart(trends_data)
         st.plotly_chart(fig, use_container_width=True)
     
-    # AI Foundry capabilities
-    st.markdown("### 🤖 AI Foundry Capabilities")
+    # AI Foundry modules - integrated view
+    st.markdown("## 🤖 AI Foundry Active Modules")
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
         st.markdown("""
         <div style="
-            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #1f77b4;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         ">
-            <h3 style="color: #1f77b4; margin-bottom: 1rem;">👥 HR Assistant</h3>
-            <p>Automate employee inquiries, leave management, and onboarding processes with conversational AI.</p>
-            <ul style="text-align: left; color: #666;">
-                <li>Leave request processing</li>
-                <li>Policy information</li>
-                <li>Benefits inquiry</li>
-                <li>Onboarding guidance</li>
-            </ul>
+            <h2 style="margin: 0; color: white;">👥</h2>
+            <h3 style="margin: 0.5rem 0; color: white;">HR AI Assistant</h3>
+            <p style="margin: 0; opacity: 0.9;">24/7 Employee Support</p>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Active Queries</span>
+                    <strong>127</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Resolution Rate</span>
+                    <strong>95%</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Avg Response</span>
+                    <strong>< 30sec</strong>
+                </div>
+            </div>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
         <div style="
-            background: linear-gradient(135deg, #fff8f0, #ffe6cc);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #ff7f0e;
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
         ">
-            <h3 style="color: #ff7f0e; margin-bottom: 1rem;">🎫 Smart Ticketing</h3>
-            <p>Intelligent ticket classification, routing, and resolution with AI-powered automation.</p>
-            <ul style="text-align: left; color: #666;">
-                <li>Auto-categorization</li>
-                <li>Smart routing</li>
-                <li>Priority assignment</li>
-                <li>Solution suggestions</li>
-            </ul>
+            <h2 style="margin: 0; color: white;">🎫</h2>
+            <h3 style="margin: 0.5rem 0; color: white;">Smart Ticketing</h3>
+            <p style="margin: 0; opacity: 0.9;">AI-Powered Classification</p>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Open Tickets</span>
+                    <strong>43</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Auto-Classified</span>
+                    <strong>97%</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Avg Resolution</span>
+                    <strong>4.2hrs</strong>
+                </div>
+            </div>
         </div>
         """, unsafe_allow_html=True)
     
     with col3:
         st.markdown("""
         <div style="
-            background: linear-gradient(135deg, #f0fff0, #ccffcc);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #2ca02c;
-            text-align: center;
-        ">
-            <h3 style="color: #2ca02c; margin-bottom: 1rem;">📊 Chat with Data</h3>
-            <p>Natural language queries on enterprise data with real-time insights and analytics.</p>
-            <ul style="text-align: left; color: #666;">
-                <li>Natural language queries</li>
-                <li>Real-time analytics</li>
-                <li>Operational insights</li>
-                <li>Ad-hoc reporting</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Call to action
-    st.markdown("### 🚀 Ready to Transform Your Operations?")
-    
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.markdown("""
-        <div style="
-            background: linear-gradient(90deg, #1f77b4, #2ca02c);
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            color: white;
-            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
         ">
-            <h3 style="margin-bottom: 1rem; color: white;">Experience the Future of Water Utilities</h3>
-            <p style="margin-bottom: 1.5rem;">Explore our AI-powered demos and see how Manila Water can revolutionize operations, improve customer satisfaction, and drive efficiency.</p>
-            <p style="margin: 0; font-size: 1.1rem;"><strong>👈 Select a demo from the sidebar to get started!</strong></p>
+            <h2 style="margin: 0; color: white;">📊</h2>
+            <h3 style="margin: 0.5rem 0; color: white;">Data Analytics</h3>
+            <p style="margin: 0; opacity: 0.9;">Real-time Insights</p>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Daily Queries</span>
+                    <strong>284</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Success Rate</span>
+                    <strong>98%</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Avg Response</span>
+                    <strong>< 5sec</strong>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Executive summary and ROI
+    st.markdown("## 💼 Executive Summary & ROI Impact")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <div style="
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-left: 6px solid #667eea;
+        ">
+            <h3 style="color: #667eea; margin-bottom: 1.5rem;">🎯 Business Impact Metrics</h3>
+            <div style="display: grid; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <span style="font-weight: 600;">HR Query Resolution</span>
+                    <span style="color: #28a745; font-weight: 700;">99.5% faster</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <span style="font-weight: 600;">Ticket Classification</span>
+                    <span style="color: #28a745; font-weight: 700;">95% automated</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <span style="font-weight: 600;">Data Query Speed</span>
+                    <span style="color: #28a745; font-weight: 700;">99.9% faster</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0;">
+                    <span style="font-weight: 600;">Operational Efficiency</span>
+                    <span style="color: #28a745; font-weight: 700;">+40% improvement</span>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div style="
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-left: 6px solid #764ba2;
+        ">
+            <h3 style="color: #764ba2; margin-bottom: 1.5rem;">💰 ROI & Cost Savings (Annual)</h3>
+            <div style="display: grid; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <span style="font-weight: 600;">HR Automation Savings</span>
+                    <span style="color: #28a745; font-weight: 700;">$340,000</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <span style="font-weight: 600;">Customer Service Efficiency</span>
+                    <span style="color: #28a745; font-weight: 700;">$450,000</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <span style="font-weight: 600;">Data-Driven Optimization</span>
+                    <span style="color: #28a745; font-weight: 700;">$670,000</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; background: #f8f9fa; padding-left: 1rem; padding-right: 1rem; border-radius: 8px;">
+                    <span style="font-weight: 700; font-size: 1.1rem;">Total Annual ROI</span>
+                    <span style="color: #28a745; font-weight: 700; font-size: 1.2rem;">$1.46M</span>
+                </div>
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
 def show_hr_assistant():
     """Show HR Assistant page"""
     # Import here to avoid circular imports
-    from pages.hr_assistant import render_hr_assistant
+    from components.hr_assistant import render_hr_assistant
     render_hr_assistant()
 
 def show_smart_ticketing():
     """Show Smart Ticketing page"""
-    from pages.smart_ticketing import render_smart_ticketing
+    from components.smart_ticketing import render_smart_ticketing
     render_smart_ticketing()
 
 def show_chat_with_data():
     """Show Chat with Data page"""
-    from pages.chat_with_data import render_chat_with_data
+    from components.chat_with_data import render_chat_with_data
     render_chat_with_data()
 
 if __name__ == "__main__":

@@ -14,11 +14,21 @@ import random
 
 def render_chat_with_data():
     """Render Chat with Data page"""
-    UIComponents.render_header(
-        "Chat with Your Data", 
-        "Ask questions about Manila Water's operations in natural language",
-        "📊"
-    )
+    # Full width header
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    ">
+        <h1 style="margin: 0; font-size: 2.5rem; font-weight: 700;">📊 Chat With Data Analytics</h1>
+        <h3 style="margin: 0.5rem 0 0 0; font-weight: 300; opacity: 0.9;">Natural Language Queries on Operational Data</h3>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Initialize session state
     if 'data_messages' not in st.session_state:
@@ -51,86 +61,128 @@ What would you like to know about Manila Water's operations?"""
     data_processor = get_data_processor()
     ai_manager = get_ai_manager()
     
-    # Sidebar - Data Overview
-    with st.sidebar:
-        st.markdown("### 📊 Data Overview")
-        
-        stats = data_processor.get_summary_stats()
-        
-        UIComponents.render_metric_card(
-            "Areas Served", 
-            str(len(data_processor.get_service_areas())), 
-            icon="🏘️"
-        )
-        UIComponents.render_metric_card(
-            "Total Population", 
-            f"{stats['total_population_served']:,}",
-            icon="👥"
-        )
-        UIComponents.render_metric_card(
-            "Water Quality", 
-            f"{stats['average_water_quality']}%",
-            icon="💧"
-        )
-        
-        st.markdown("### 🎯 Quick Queries")
-        quick_queries = [
-            "Show consumption by area",
-            "Water quality summary", 
-            "Monthly trends analysis",
-            "Infrastructure status",
-            "Customer satisfaction metrics",
-            "Service area comparison"
-        ]
-        
-        for query in quick_queries:
+    # Top section - Data Overview and Quick Queries
+    st.markdown("## 📊 Data Overview & Quick Access")
+    
+    # Data overview stats
+    stats = data_processor.get_summary_stats()
+    
+    col1, col2, col3, col4, col5 = st.columns(5)
+    with col1:
+        st.metric("🏘️ Areas Served", len(data_processor.get_service_areas()))
+    with col2:
+        st.metric("👥 Population", f"{stats['total_population_served']:,}")
+    with col3:
+        st.metric("💧 Water Quality", f"{stats['average_water_quality']}%")
+    with col4:
+        st.metric("🏠 Connections", f"{stats['total_service_connections']:,}")
+    with col5:
+        st.metric("⭐ Satisfaction", f"{stats['customer_satisfaction']}/5")
+    
+    # Quick query buttons
+    st.markdown("### 🎯 Quick Analytics Queries")
+    
+    quick_queries = [
+        "Which service areas have the highest water consumption and quality scores?",
+        "Analyze Manila Water's overall performance metrics and identify areas for improvement", 
+        "What are the monthly consumption and quality trends across all service areas?",
+        "Provide a comprehensive infrastructure status report including treatment plants and pipeline network",
+        "How does customer satisfaction vary by service area and what factors might influence it?",
+        "Compare the performance between Makati, Manila, and Quezon City service areas"
+    ]
+    
+    # Display quick query buttons
+    cols = st.columns(3)
+    for i, query in enumerate(quick_queries):
+        with cols[i % 3]:
             if st.button(query, key=f"quick_{hash(query)}", use_container_width=True):
                 add_quick_data_message(query)
-        
-        st.markdown("### 📈 Available Data")
+    
+    # Available data info
+    st.markdown("### 📈 Available Data Sources")
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
         st.markdown("""
         **Service Areas:** 5 locations  
         **Time Period:** Jan-Jul 2025  
+        **Real-time Updates:** Quality parameters
+        """)
+    with col2:
+        st.markdown("""
         **Metrics:** Consumption, Quality, Satisfaction  
-        **Infrastructure:** Plants, Pipelines, Stations  
-        **Real-time:** Quality parameters, Status updates
+        **Infrastructure:** 8 Plants, 156 Stations  
+        **Pipeline Network:** 9,800 km
+        """)
+    with col3:
+        st.markdown("""
+        **Data Formats:** Charts, Tables, Reports  
+        **AI Analysis:** Trends, Insights, Forecasts  
+        **Export Options:** PDF, CSV, Excel
         """)
     
-    # Main chat interface
-    col1, col2 = st.columns([3, 1])
+    # Main chat interface - full width
+    st.markdown("## 💬 Natural Language Data Queries")
     
-    with col1:
-        # Chat container
-        chat_container = st.container()
-        
-        with chat_container:
-            # Display chat messages
-            for message in st.session_state.data_messages:
-                if message['role'] == 'user':
-                    UIComponents.render_chat_message(message['content'], is_user=True)
-                else:
-                    UIComponents.render_chat_message(message['content'], is_user=False, avatar="📊")
+    # Chat container
+    chat_container = st.container()
+    
+    with chat_container:
+        # Display chat messages
+        for message in st.session_state.data_messages:
+            if message['role'] == 'user':
+                UIComponents.render_chat_message(message['content'], is_user=True)
+            else:
+                UIComponents.render_chat_message(message['content'], is_user=False, avatar="📊")
                 
                 # Display charts if available
                 if message['role'] == 'assistant' and 'chart_data' in message:
                     render_chart_from_message(message['chart_data'])
-        
-        # Chat input
-        user_input = st.chat_input("Ask about Manila Water's data...")
-        
-        if user_input:
-            process_data_query(user_input, data_processor, ai_manager)
     
-    with col2:
-        # Data insights panel
-        render_data_insights_panel(data_processor)
+    # Chat input
+    user_input = st.chat_input("Ask about Manila Water's data...")
+    
+    if user_input:
+        process_data_query(user_input, data_processor, ai_manager)
 
 def add_quick_data_message(message):
-    """Add a quick message to data chat"""
+    """Add a quick message to data chat and process it with AI"""
+    # Get data processor and AI manager
+    data_processor = get_data_processor()
+    ai_manager = get_ai_manager()
+    
+    # Add user message
     st.session_state.data_messages.append({
         'role': 'user',
         'content': message
     })
+    
+    # Process with AI immediately
+    process_data_query_immediate(message, data_processor, ai_manager)
+
+def process_data_query_immediate(user_input, data_processor, ai_manager):
+    """Process data query immediately without showing spinner"""
+    # Prepare data context based on query
+    data_context = prepare_data_context(user_input, data_processor)
+    
+    # Generate AI response
+    response = ai_manager.generate_data_insights(user_input, data_context)
+    
+    # Check if query needs visualization
+    chart_data = None
+    if should_create_chart(user_input):
+        chart_data = generate_chart_data(user_input, data_processor)
+    
+    # Add assistant response
+    assistant_message = {
+        'role': 'assistant',
+        'content': response
+    }
+    
+    if chart_data:
+        assistant_message['chart_data'] = chart_data
+    
+    st.session_state.data_messages.append(assistant_message)
     st.rerun()
 
 def process_data_query(user_input, data_processor, ai_manager):
