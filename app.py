@@ -7,6 +7,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))
 
 from utils.ui_components import UIComponents
 from utils.data_processor import get_data_processor
+from components.ceo_demo_dashboard import show_ceo_demo_dashboard
 import pandas as pd
 
 # Page configuration
@@ -115,9 +116,10 @@ def main():
     
     # Navigation buttons only - nothing else
     nav_options = [
-        "🏠 Executive Dashboard", 
-        "👥 HR AI Assistant", 
-        "🎫 Smart Ticketing System", 
+        "🏠 Executive Dashboard",
+        "🚀 CEO Demo Dashboard",
+        "👥 HR AI Assistant",
+        "🎫 Smart Ticketing System",
         "📊 Chat With Data Analytics"
     ]
     
@@ -221,6 +223,8 @@ def main():
     # Route to appropriate page
     if page == "🏠 Executive Dashboard":
         show_dashboard(data_processor)
+    elif page == "🚀 CEO Demo Dashboard":
+        show_ceo_demo_dashboard()
     elif page == "👥 HR AI Assistant":
         show_hr_assistant()
     elif page == "🎫 Smart Ticketing System":
