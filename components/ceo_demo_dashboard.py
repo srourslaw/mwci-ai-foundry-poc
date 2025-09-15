@@ -15,8 +15,8 @@ from utils.data_processor import get_data_processor
 
 def show_ceo_demo_dashboard():
     """
-    CEO Show & Tell Dashboard - Multi-Perspective AI Capabilities Demo
-    Designed specifically for executive presentations showing business value
+    Executive AI Demo - Four Core AI Use Cases for Business
+    Based on CTO Jeremy's framework for AI business transformation
     """
 
     # Initialize components
@@ -37,9 +37,9 @@ def show_ceo_demo_dashboard():
         margin-bottom: 3rem;
         box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     ">
-        <h1 style="margin: 0; font-size: 3rem; font-weight: 700;">🚀 AI Business Transformation</h1>
-        <h2 style="margin: 1rem 0 0 0; font-weight: 300; opacity: 0.9;">CEO Executive Demonstration</h2>
-        <p style="margin: 1rem 0 0 0; font-size: 1.2rem; opacity: 0.8;">Four Core AI Capabilities Delivering Measurable ROI</p>
+        <h1 style="margin: 0; font-size: 3rem; font-weight: 700;">🎯 Executive AI Demonstration</h1>
+        <h2 style="margin: 1rem 0 0 0; font-weight: 300; opacity: 0.9;">Four Strategic AI Use Cases for Business</h2>
+        <p style="margin: 1rem 0 0 0; font-size: 1.2rem; opacity: 0.8;">From Instant Answers to Intelligent Automation</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -50,32 +50,851 @@ def show_ceo_demo_dashboard():
     st.markdown("---")
     st.markdown("## 🎯 Live AI Capability Demonstrations")
 
-    # Demo Navigation
+    # Demo Navigation - Jeremy's Four AI Use Cases
     demo_tab = st.selectbox(
-        "🎭 Select Demo Scenario",
+        "🎯 Select AI Use Case Demo",
         [
-            "🏠 Overview: All Capabilities at a Glance",
-            "💼 Capability 1: Instant Employee Self-Service",
-            "🔍 Capability 2: Proactive Business Intelligence",
-            "⚡ Capability 3: Smart Decision Support",
-            "🤖 Capability 4: Intelligent Automation",
-            "📊 Complete ROI Analysis"
+            "🏠 Overview: All Four AI Use Cases",
+            "⚡ Use Case 1: Give me what I'm looking for (Human Requests)",
+            "🔍 Use Case 2: Tell me what I don't know (Hidden Insights)",
+            "📈 Use Case 3: How do I... What's the outcome? (Strategic Guidance)",
+            "🤖 Use Case 4: Agentic AI - Do you want me to... (Intelligent Automation)",
+            "💰 Business Impact & ROI Analysis"
         ],
-        help="Choose which AI capability to demonstrate"
+        help="Choose which of Jeremy's AI use cases to demonstrate"
     )
 
-    if demo_tab == "🏠 Overview: All Capabilities at a Glance":
-        render_capabilities_overview(data_processor, ai_manager, show_ai_fallback)
-    elif demo_tab == "💼 Capability 1: Instant Employee Self-Service":
-        render_employee_self_service_demo(data_processor, ai_manager, show_ai_fallback)
-    elif demo_tab == "🔍 Capability 2: Proactive Business Intelligence":
-        render_business_intelligence_demo(data_processor, ai_manager, show_ai_fallback)
-    elif demo_tab == "⚡ Capability 3: Smart Decision Support":
-        render_decision_support_demo(data_processor, ai_manager, show_ai_fallback)
-    elif demo_tab == "🤖 Capability 4: Intelligent Automation":
-        render_intelligent_automation_demo(data_processor, ai_manager, show_ai_fallback)
-    elif demo_tab == "📊 Complete ROI Analysis":
+    if demo_tab == "🏠 Overview: All Four AI Use Cases":
+        render_jeremy_overview(data_processor, ai_manager, show_ai_fallback)
+    elif demo_tab == "⚡ Use Case 1: Give me what I'm looking for (Human Requests)":
+        render_use_case_1_human_requests(data_processor, ai_manager, show_ai_fallback)
+    elif demo_tab == "🔍 Use Case 2: Tell me what I don't know (Hidden Insights)":
+        render_use_case_2_hidden_insights(data_processor, ai_manager, show_ai_fallback)
+    elif demo_tab == "📈 Use Case 3: How do I... What's the outcome? (Strategic Guidance)":
+        render_use_case_3_strategic_guidance(data_processor, ai_manager, show_ai_fallback)
+    elif demo_tab == "🤖 Use Case 4: Agentic AI - Do you want me to... (Intelligent Automation)":
+        render_use_case_4_agentic_ai(data_processor, ai_manager, show_ai_fallback)
+    elif demo_tab == "💰 Business Impact & ROI Analysis":
         render_complete_roi_analysis(data_processor)
+
+def render_jeremy_overview(data_processor, ai_manager, show_ai_fallback):
+    """Overview of Jeremy's Four AI Use Cases Framework"""
+    st.markdown("### 🎯 Four Strategic AI Use Cases for Business Transformation")
+
+    st.markdown("""
+    <div style="
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 5px solid #667eea;
+        margin-bottom: 2rem;
+    ">
+        <h4>🎭 CTO Jeremy's AI Framework</h4>
+        <p>These four use cases represent the complete spectrum of AI business value - from immediate efficiency gains to strategic transformation.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Four use cases in a 2x2 grid
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("""
+        <div style="
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            margin-bottom: 1rem;
+        ">
+            <h3>⚡ Use Case 1: "Give me what I'm looking for"</h3>
+            <p><strong>Human requests, just faster</strong></p>
+            <ul>
+                <li>How many days leave do I have left?</li>
+                <li>How do I log into the HR Leave system?</li>
+                <li>Summarize this document</li>
+                <li>Create me a spreadsheet with...</li>
+            </ul>
+            <p><strong>Sources:</strong> Documents, Databases, CSVs</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            margin-bottom: 1rem;
+        ">
+            <h3>📈 Use Case 3: "How do I... What's the outcome?"</h3>
+            <p><strong>Strategic guidance based on data</strong></p>
+            <ul>
+                <li>How do I improve ticket closure rate?</li>
+                <li>Which tickets should I focus on for maximum closure rate?</li>
+                <li>Forecast demand patterns by hour/day/month</li>
+                <li>Predict when additional capacity will be required</li>
+            </ul>
+            <p><strong>Technology:</strong> GenAI + Machine Learning</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col2:
+        st.markdown("""
+        <div style="
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            margin-bottom: 1rem;
+        ">
+            <h3>🔍 Use Case 2: "Tell me what I don't know"</h3>
+            <p><strong>Hidden insights and compliance</strong></p>
+            <ul>
+                <li>Am I compliant to regulations and what focus areas need work?</li>
+                <li>What data are you missing to provide a complete response?</li>
+                <li>Which tickets can I close that have already been resolved?</li>
+                <li>Compare against standards</li>
+            </ul>
+            <p><strong>Value:</strong> Risk prevention, proactive management</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            margin-bottom: 1rem;
+        ">
+            <h3>🤖 Use Case 4: Agentic AI</h3>
+            <p><strong>"Do you want me to..."</strong></p>
+            <ul>
+                <li>Schedule the required testing?</li>
+                <li>Create the work orders?</li>
+                <li>Alert the relevant teams?</li>
+                <li>Generate the compliance report?</li>
+            </ul>
+            <p><strong>Impact:</strong> From analysis to execution</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Live metrics
+    st.markdown("### 📈 Real-Time AI Performance")
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric("Human Requests Handled", "1,247", "↑ 340 today")
+    with col2:
+        st.metric("Hidden Insights Generated", "89", "↑ 12 today")
+    with col3:
+        st.metric("Strategic Recommendations", "156", "↑ 23 today")
+    with col4:
+        st.metric("Automated Actions Executed", "67", "↑ 8 today")
+
+def render_use_case_1_human_requests(data_processor, ai_manager, show_ai_fallback):
+    """Use Case 1: Give me what I'm looking for - Human requests, just faster"""
+    st.markdown("### ⚡ Use Case 1: \"Give me what I'm looking for\"")
+    st.markdown("**Human requests, just faster than doing it manually**")
+
+    st.markdown("""
+    <div style="
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 5px solid #667eea;
+        margin-bottom: 2rem;
+    ">
+        <h4>💡 The Business Challenge</h4>
+        <p>Employees spend hours searching for information, waiting for responses, or trying to complete routine tasks that should take seconds.</p>
+        <p><strong>Jeremy's Examples:</strong> Leave balance queries, system login help, document summaries, spreadsheet creation</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Interactive demo section
+    st.markdown("#### 🎭 Live Demo: Instant Employee Self-Service")
+
+    col1, col2 = st.columns([1, 2])
+
+    with col1:
+        st.markdown("**👤 Employee Demo**")
+        selected_employee = st.selectbox(
+            "Select Employee (simulating secure login)",
+            ["Maria Santos - Engineering", "Juan Dela Cruz - Operations", "Carmen Lopez - Customer Service"],
+            help="In production, employee sees only their own data"
+        )
+
+        # Jeremy's specific examples as buttons
+        jeremy_questions = [
+            "How many days leave do I have left?",
+            "How do I log into the HR Leave system?",
+            "Summarize my recent performance review",
+            "Create me a spreadsheet with my overtime hours",
+            "What training courses are available for me?"
+        ]
+
+        selected_question = st.selectbox("Jeremy's Example Questions:", jeremy_questions)
+
+    with col2:
+        st.markdown("**🤖 AI Response**")
+
+        if st.button("⚡ Ask AI", use_container_width=True):
+            with st.spinner("AI processing your request..."):
+                time.sleep(1.5)
+
+                if "leave" in selected_question.lower():
+                    st.markdown("""
+                    <div style="
+                        background: #d4edda;
+                        border: 1px solid #c3e6cb;
+                        padding: 1.5rem;
+                        border-radius: 10px;
+                        margin: 1rem 0;
+                    ">
+                        <h5>🤖 AI Response (1.8 seconds)</h5>
+                        <p><strong>Your Leave Balance:</strong></p>
+                        <ul>
+                            <li>Annual Leave: 12 days remaining</li>
+                            <li>Sick Leave: 8 days remaining</li>
+                            <li>Emergency Leave: 5 days remaining</li>
+                        </ul>
+                        <p><strong>Total Available:</strong> 25 days</p>
+                        <p><em>Sources: Employee database, HR policy documents</em></p>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+                elif "login" in selected_question.lower():
+                    st.markdown("""
+                    <div style="
+                        background: #d4edda;
+                        border: 1px solid #c3e6cb;
+                        padding: 1.5rem;
+                        border-radius: 10px;
+                        margin: 1rem 0;
+                    ">
+                        <h5>🤖 AI Response (1.2 seconds)</h5>
+                        <p><strong>HR Leave System Access:</strong></p>
+                        <ol>
+                            <li>Go to portal.manilawater.com</li>
+                            <li>Use your employee ID: MW-ENG-2019-045</li>
+                            <li>Password: Your AD credentials</li>
+                            <li>If locked out: Contact IT ext. 7888</li>
+                        </ol>
+                        <p><em>Sources: IT documentation, system manuals</em></p>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+                elif "spreadsheet" in selected_question.lower():
+                    st.markdown("""
+                    <div style="
+                        background: #d4edda;
+                        border: 1px solid #c3e6cb;
+                        padding: 1.5rem;
+                        border-radius: 10px;
+                        margin: 1rem 0;
+                    ">
+                        <h5>🤖 AI Response (2.3 seconds)</h5>
+                        <p><strong>Overtime Hours Spreadsheet Created:</strong></p>
+                        <p>✅ Downloaded: MariaSantos_Overtime_Q3_2025.xlsx</p>
+                        <p><strong>Contains:</strong></p>
+                        <ul>
+                            <li>July: 12.5 hours (₱8,750)</li>
+                            <li>August: 18.2 hours (₱12,740)</li>
+                            <li>September: 9.7 hours (₱6,790)</li>
+                        </ul>
+                        <p><strong>Total Q3:</strong> 40.4 hours = ₱28,280</p>
+                        <p><em>Sources: Timesheet database, payroll system</em></p>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+                else:
+                    st.markdown("""
+                    <div style="
+                        background: #d4edda;
+                        border: 1px solid #c3e6cb;
+                        padding: 1.5rem;
+                        border-radius: 10px;
+                        margin: 1rem 0;
+                    ">
+                        <h5>🤖 AI Response (1.5 seconds)</h5>
+                        <p>I can help you with that! Here's the information you need based on your role and access level.</p>
+                        <p><em>Sources: Employee records, training catalog, HR policies</em></p>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+    # Business impact metrics
+    st.markdown("#### 📊 Business Impact Metrics")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("""
+        **⏱️ Time Savings**
+        - Before: 2-3 days for HR responses
+        - With AI: 2-3 seconds
+        - **Improvement: 99.5% faster**
+        """)
+
+    with col2:
+        st.markdown("""
+        **💰 Cost Impact**
+        - HR staff time saved: 6 hours/day
+        - Employee productivity gained: 45 min/day
+        - **Annual savings: ₱17M**
+        """)
+
+    with col3:
+        st.markdown("""
+        **📈 Adoption Metrics**
+        - Employee satisfaction: +1.2 points
+        - Self-service adoption: 94%
+        - **HR ticket reduction: 80%**
+        """)
+
+def render_use_case_2_hidden_insights(data_processor, ai_manager, show_ai_fallback):
+    """Use Case 2: Tell me what I don't know - Hidden insights and compliance"""
+    st.markdown("### 🔍 Use Case 2: \"Tell me what I don't know\"")
+    st.markdown("**Proactive insights, compliance monitoring, and risk detection**")
+
+    st.markdown("""
+    <div style="
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 5px solid #4ecdc4;
+        margin-bottom: 2rem;
+    ">
+        <h4>💡 The Business Challenge</h4>
+        <p>Critical issues and compliance gaps often go undetected until they become expensive problems.</p>
+        <p><strong>Jeremy's Examples:</strong> Regulatory compliance gaps, missing data identification, process optimization opportunities</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Interactive demo
+    st.markdown("#### 🎭 Live Demo: AI-Powered Business Intelligence")
+
+    # Jeremy's specific examples
+    jeremy_insights = [
+        "Am I compliant to DOH water quality regulations and what focus areas need work?",
+        "What data are you missing to provide a complete compliance response?",
+        "Which tickets can I close that have already been resolved?",
+        "Compare our performance against industry standards",
+        "What operational risks am I not aware of?"
+    ]
+
+    selected_insight = st.selectbox("Jeremy's Insight Questions:", jeremy_insights)
+
+    if st.button("🔍 Generate AI Insights", use_container_width=True):
+        with st.spinner("AI analyzing business data and identifying hidden patterns..."):
+            time.sleep(2.5)
+
+            if "compliant" in selected_insight.lower():
+                st.markdown("""
+                <div style="
+                    background: #fff3cd;
+                    border: 1px solid #ffeaa7;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                ">
+                    <h5>🔍 AI Compliance Analysis (3.2 seconds)</h5>
+                    <p><strong>DOH Compliance Status: ⚠️ ATTENTION REQUIRED</strong></p>
+
+                    <p><strong>Overall Performance:</strong></p>
+                    <ul>
+                        <li>✅ 14 areas COMPLIANT (98.9% avg quality)</li>
+                        <li>⚠️ 2 areas APPROACHING THRESHOLD: Malabon (98.4%), Navotas (98.2%)</li>
+                        <li>🎯 Target: 98.5% minimum for all areas</li>
+                    </ul>
+
+                    <p><strong>Hidden Risks You Didn't Know About:</strong></p>
+                    <ul>
+                        <li>🚨 Pipe aging in coastal areas accelerating faster than predicted</li>
+                        <li>⏰ 72 hours until potential non-compliance</li>
+                        <li>💰 Risk exposure: ₱2.1M in penalties + service disruption</li>
+                    </ul>
+
+                    <p><strong>Immediate Action Required:</strong></p>
+                    <ol>
+                        <li>Enhanced water testing in Malabon/Navotas (next 24 hours)</li>
+                        <li>Pipeline inspection scheduled (within 30 days)</li>
+                        <li>Preventive maintenance budget: ₱850M vs ₱2.1M penalty risk</li>
+                    </ol>
+                </div>
+                """, unsafe_allow_html=True)
+
+            elif "missing" in selected_insight.lower():
+                st.markdown("""
+                <div style="
+                    background: #d1ecf1;
+                    border: 1px solid #bee5eb;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                ">
+                    <h5>🔍 AI Data Gap Analysis (2.8 seconds)</h5>
+                    <p><strong>Missing Data That Affects Decision Quality:</strong></p>
+
+                    <p><strong>Critical Gaps:</strong></p>
+                    <ul>
+                        <li>🏗️ Pipe installation dates for 15% of network (affects maintenance scheduling)</li>
+                        <li>🧪 Soil composition data around Malabon pipes (affects corrosion prediction)</li>
+                        <li>📊 Customer usage patterns during peak hours (affects capacity planning)</li>
+                    </ul>
+
+                    <p><strong>Impact of Missing Data:</strong></p>
+                    <ul>
+                        <li>Maintenance planning accuracy: 78% (could be 95%)</li>
+                        <li>Capacity forecasting: 82% (could be 96%)</li>
+                        <li>Risk assessment: 71% (could be 94%)</li>
+                    </ul>
+
+                    <p><strong>Recommended Data Collection:</strong></p>
+                    <ol>
+                        <li>Historical records digitization project (Cost: ₱2.5M, ROI: 6 months)</li>
+                        <li>IoT sensor deployment in critical areas (Cost: ₱8M, ROI: 12 months)</li>
+                        <li>Customer meter data collection enhancement (Cost: ₱1.2M, ROI: 3 months)</li>
+                    </ol>
+                </div>
+                """, unsafe_allow_html=True)
+
+            elif "tickets" in selected_insight.lower():
+                st.markdown("""
+                <div style="
+                    background: #d4edda;
+                    border: 1px solid #c3e6cb;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                ">
+                    <h5>🔍 AI Ticket Analysis (1.9 seconds)</h5>
+                    <p><strong>Auto-Closable Tickets Identified: 23 tickets</strong></p>
+
+                    <p><strong>Categories for Closure:</strong></p>
+                    <ul>
+                        <li>💳 Payment confirmations processed: 8 tickets (customers already paid)</li>
+                        <li>🔧 Maintenance completed: 7 tickets (work orders marked done)</li>
+                        <li>📞 Duplicate reports: 5 tickets (same issue, different customers)</li>
+                        <li>✅ Auto-resolved: 3 tickets (system restored automatically)</li>
+                    </ul>
+
+                    <p><strong>Process Efficiency Gains:</strong></p>
+                    <ul>
+                        <li>Agent time saved: 4.6 hours</li>
+                        <li>Customer satisfaction improvement: +0.3 points</li>
+                        <li>SLA compliance improvement: +8%</li>
+                    </ul>
+
+                    <p><strong>Action:</strong> Would you like me to auto-close these tickets and notify customers?</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+    # Hidden insights discovery metrics
+    st.markdown("#### 📊 Hidden Insights Discovery Metrics")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("""
+        **🎯 Proactive Detection**
+        - Compliance risks identified: 89
+        - Days before issues critical: 2.3 avg
+        - **Prevention success rate: 94%**
+        """)
+
+    with col2:
+        st.markdown("""
+        **💰 Risk Avoidance**
+        - Penalties prevented: ₱45M
+        - Service disruptions avoided: 12
+        - **Total risk mitigation: ₱67M**
+        """)
+
+    with col3:
+        st.markdown("""
+        **⚡ Response Speed**
+        - Traditional analysis: 3-5 days
+        - AI analysis: 3-5 seconds
+        - **Speed improvement: 99.8%**
+        """)
+
+def render_use_case_3_strategic_guidance(data_processor, ai_manager, show_ai_fallback):
+    """Use Case 3: How do I... What's the outcome? - Strategic guidance based on data"""
+    st.markdown("### 📈 Use Case 3: \"How do I... What's the likely outcome?\"")
+    st.markdown("**Strategic guidance and predictive analytics based on data**")
+
+    st.markdown("""
+    <div style="
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 5px solid #ff6b6b;
+        margin-bottom: 2rem;
+    ">
+        <h4>💡 The Business Challenge</h4>
+        <p>Strategic decisions are often made with incomplete information or gut instinct rather than data-driven insights.</p>
+        <p><strong>Jeremy's Examples:</strong> Process optimization, performance improvement, demand forecasting, capacity planning</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Interactive demo
+    st.markdown("#### 🎭 Live Demo: AI-Powered Strategic Guidance")
+
+    # Jeremy's specific strategic questions
+    jeremy_strategies = [
+        "How do I improve the ticket closure rate?",
+        "Which tickets should I focus on to get the maximum closure rate?",
+        "Forecast demand patterns by hour/day/month for capacity planning",
+        "Predict when additional compute, storage, or network capacity will be required",
+        "What's the likely outcome if we increase service prices by 5%?"
+    ]
+
+    selected_strategy = st.selectbox("Jeremy's Strategic Questions:", jeremy_strategies)
+
+    if st.button("📈 Get AI Strategic Guidance", use_container_width=True):
+        with st.spinner("AI analyzing data patterns and generating strategic recommendations..."):
+            time.sleep(3)
+
+            if "ticket closure" in selected_strategy.lower():
+                st.markdown("""
+                <div style="
+                    background: #d1ecf1;
+                    border: 1px solid #bee5eb;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                ">
+                    <h5>📈 AI Strategic Analysis (4.1 seconds)</h5>
+                    <p><strong>Ticket Closure Rate Optimization Strategy</strong></p>
+
+                    <p><strong>Current Performance:</strong></p>
+                    <ul>
+                        <li>Overall closure rate: 87% (Industry benchmark: 92%)</li>
+                        <li>Average resolution time: 18.5 hours</li>
+                        <li>Customer satisfaction: 4.2/5</li>
+                    </ul>
+
+                    <p><strong>AI-Identified Optimization Opportunities:</strong></p>
+                    <ol>
+                        <li><strong>Billing Inquiries (48% of volume):</strong> Auto-resolve payment confirmations = +8% closure rate</li>
+                        <li><strong>Duplicate Reports (12% of volume):</strong> AI detection and merging = +3% closure rate</li>
+                        <li><strong>Low-priority Maintenance (15%):</strong> Batch processing = +2% closure rate</li>
+                    </ol>
+
+                    <p><strong>Predicted Outcomes (3-month implementation):</strong></p>
+                    <ul>
+                        <li>📊 Closure rate: 87% → 95% (+8 percentage points)</li>
+                        <li>⏱️ Resolution time: 18.5 → 12.3 hours (-33%)</li>
+                        <li>😊 Customer satisfaction: 4.2 → 4.6 (+0.4 points)</li>
+                        <li>💰 Cost savings: ₱12M annually from efficiency gains</li>
+                    </ul>
+
+                    <p><strong>Implementation Priority:</strong> Start with billing auto-resolution (highest impact, lowest effort)</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            elif "which tickets" in selected_strategy.lower():
+                st.markdown("""
+                <div style="
+                    background: #fff3cd;
+                    border: 1px solid #ffeaa7;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                ">
+                    <h5>📈 AI Ticket Prioritization Analysis (3.7 seconds)</h5>
+                    <p><strong>Maximum Impact Ticket Focus Strategy</strong></p>
+
+                    <p><strong>High-Impact Targets (Focus on these first):</strong></p>
+                    <ol>
+                        <li><strong>47 Billing Payment Confirmations</strong>
+                            <ul>
+                                <li>Auto-resolution probability: 95%</li>
+                                <li>Time savings: 3.2 hours each</li>
+                                <li>Total impact: 150 hours saved</li>
+                            </ul>
+                        </li>
+                        <li><strong>23 Routine Maintenance Completions</strong>
+                            <ul>
+                                <li>Auto-closure probability: 89%</li>
+                                <li>Average age: 12 days overdue</li>
+                                <li>SLA impact: Critical</li>
+                            </ul>
+                        </li>
+                        <li><strong>18 Duplicate Water Pressure Reports</strong>
+                            <ul>
+                                <li>Merge success rate: 92%</li>
+                                <li>Customer confusion reduction: High</li>
+                                <li>Resource optimization: Immediate</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <p><strong>Expected Results (if you focus on these 88 tickets):</strong></p>
+                    <ul>
+                        <li>🎯 Closure rate improvement: +12.3 percentage points</li>
+                        <li>⏱️ Team capacity freed up: 187 hours</li>
+                        <li>📈 SLA compliance improvement: +15%</li>
+                        <li>💰 Revenue impact: ₱2.8M from faster billing resolution</li>
+                    </ul>
+
+                    <p><strong>Action Plan:</strong> Prioritize billing confirmations → maintenance completions → duplicate merging</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            elif "forecast demand" in selected_strategy.lower():
+                st.markdown("""
+                <div style="
+                    background: #d4edda;
+                    border: 1px solid #c3e6cb;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                ">
+                    <h5>📈 AI Demand Forecasting Analysis (5.2 seconds)</h5>
+                    <p><strong>Water Demand Prediction & Capacity Planning</strong></p>
+
+                    <p><strong>Hourly Pattern Predictions:</strong></p>
+                    <ul>
+                        <li>🌅 Peak morning (6-8 AM): 1.85B liters (+12% from current)</li>
+                        <li>🌞 Midday stable (10 AM-2 PM): 1.45B liters</li>
+                        <li>🌆 Evening surge (6-8 PM): 1.92B liters (+18% from current)</li>
+                        <li>🌙 Night minimum (11 PM-5 AM): 0.78B liters</li>
+                    </ul>
+
+                    <p><strong>Monthly Forecasts (Next 6 months):</strong></p>
+                    <ul>
+                        <li>Oct 2025: 52.1B liters (dry season effect +8%)</li>
+                        <li>Nov 2025: 48.7B liters (post-monsoon normalization)</li>
+                        <li>Dec 2025: 51.8B liters (holiday population shifts)</li>
+                        <li>Jan 2026: 54.2B liters (new developments online)</li>
+                    </ul>
+
+                    <p><strong>Capacity Gap Analysis:</strong></p>
+                    <ul>
+                        <li>⚠️ Current capacity: 1.68B liters/day</li>
+                        <li>🚨 Projected peak demand: 1.92B liters/day</li>
+                        <li>💡 Capacity shortfall: 240M liters/day by Jan 2026</li>
+                        <li>💰 Infrastructure investment needed: ₱2.1B</li>
+                    </ul>
+
+                    <p><strong>Recommended Actions:</strong></p>
+                    <ol>
+                        <li>Accelerate Treatment Plant 3 expansion (6 months early)</li>
+                        <li>Install smart pressure management in BGC/Makati (3 months)</li>
+                        <li>Demand shifting incentives for industrial customers (immediate)</li>
+                    </ol>
+                </div>
+                """, unsafe_allow_html=True)
+
+    # Strategic guidance metrics
+    st.markdown("#### 📊 Strategic Guidance Impact Metrics")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("""
+        **🎯 Decision Quality**
+        - Accuracy of predictions: 94%
+        - Strategic success rate: 87%
+        - **ROI on recommendations: 312%**
+        """)
+
+    with col2:
+        st.markdown("""
+        **⚡ Speed to Decision**
+        - Traditional analysis: 2-3 weeks
+        - AI analysis: 3-5 seconds
+        - **Time to decision: 99.7% faster**
+        """)
+
+    with col3:
+        st.markdown("""
+        **💰 Business Impact**
+        - Process improvements: ₱45M savings
+        - Capacity optimization: ₱23M savings
+        - **Total strategic value: ₱68M**
+        """)
+
+def render_use_case_4_agentic_ai(data_processor, ai_manager, show_ai_fallback):
+    """Use Case 4: Agentic AI - Do you want me to... (Intelligent Automation)"""
+    st.markdown("### 🤖 Use Case 4: Agentic AI - \"Do you want me to...\"")
+    st.markdown("**From analysis to execution - AI that actually takes action**")
+
+    st.markdown("""
+    <div style="
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 5px solid #feca57;
+        margin-bottom: 2rem;
+    ">
+        <h4>💡 The Revolutionary Difference</h4>
+        <p>Most AI stops at recommendations. Agentic AI completes the full workflow - from problem detection to solution execution.</p>
+        <p><strong>Jeremy's Vision:</strong> AI doesn't just tell you what to do, it offers to do it for you with your approval.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Live demonstration of Agentic AI workflow
+    st.markdown("#### 🎭 Live Demo: Complete AI Workflow Automation")
+
+    col1, col2 = st.columns([1, 1])
+
+    with col1:
+        st.markdown("##### 🔍 Step 1: AI Problem Detection")
+
+        if st.button("🚨 Simulate AI Detection Scan", use_container_width=True):
+            with st.spinner("AI continuously monitoring systems..."):
+                time.sleep(2)
+
+                st.markdown("""
+                <div style="
+                    background: #fff3cd;
+                    border: 1px solid #ffeaa7;
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    margin: 1rem 0;
+                ">
+                    <h5>⚠️ AI Alert: Compliance Risk Detected</h5>
+                    <p><strong>Issue:</strong> Water quality in Malabon approaching regulatory threshold</p>
+                    <p><strong>Current Status:</strong> 98.4% (Target: 98.5%+)</p>
+                    <p><strong>Trend:</strong> Declining 0.1% per week</p>
+                    <p><strong>Time to Non-Compliance:</strong> 72 hours</p>
+                    <p><strong>Financial Risk:</strong> ₱2.1M penalty + service disruption</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+                st.session_state.ai_detected_issue = True
+
+    with col2:
+        st.markdown("##### 🤖 Step 2: AI Proposed Actions")
+
+        if st.session_state.get('ai_detected_issue'):
+            st.markdown("""
+            <div style="
+                background: #d1ecf1;
+                border: 1px solid #bee5eb;
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin: 1rem 0;
+            ">
+                <h5>🤖 AI: "I've identified a critical issue. Do you want me to:"</h5>
+
+                <div style="margin: 1rem 0;">
+                    <p><strong>✅ Schedule emergency water quality testing?</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">• Lab team notification sent<br>• Testing slots: Tomorrow 8 AM, 2 PM, 6 PM<br>• Estimated cost: ₱45,000</p>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <p><strong>✅ Create maintenance work orders?</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">• 3 work orders: Pipeline inspection, filtration check, pressure optimization<br>• Priority: High<br>• Assigned team: Malabon zone technicians</p>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <p><strong>✅ Alert Operations Director and compliance team?</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">• Teams notification with full context<br>• SMS alert to on-call manager<br>• Calendar invite for emergency review meeting</p>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <p><strong>✅ Generate regulatory compliance report?</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">• DOH notification draft prepared<br>• Incident timeline documented<br>• Corrective action plan included</p>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <p><strong>✅ Notify affected customers?</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">• 2,847 customers in Malabon area<br>• SMS + email notification prepared<br>• Service advisory posted to website</p>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Execution demonstration
+    st.markdown("##### ⚡ Step 3: AI Execution (With Your Approval)")
+
+    if st.session_state.get('ai_detected_issue'):
+        col1, col2 = st.columns(2)
+
+        with col1:
+            if st.button("✅ Execute All Actions", use_container_width=True, type="primary"):
+                st.session_state.ai_executing = True
+
+        with col2:
+            if st.button("❌ Cancel Actions", use_container_width=True):
+                st.session_state.ai_detected_issue = False
+                st.session_state.ai_executing = False
+
+        if st.session_state.get('ai_executing'):
+            st.markdown("##### 🚀 AI Execution in Progress...")
+
+            progress_bar = st.progress(0)
+            status_container = st.empty()
+
+            actions = [
+                ("🧪 Emergency testing scheduled", "Lab team notified • Testing: Tomorrow 8 AM • WO-2025-089 created"),
+                ("🔧 Maintenance work orders created", "3 work orders assigned • Priority: High • Teams dispatched"),
+                ("📢 Operations team alerted", "Teams notification sent • Director contacted • Meeting scheduled"),
+                ("📋 Compliance report generated", "DOH-COMPLIANCE-2025-08-08.pdf created • Ready for submission"),
+                ("📱 Customer notifications sent", "2,847 customers notified • Website updated • Call center briefed")
+            ]
+
+            for i, (action, details) in enumerate(actions):
+                time.sleep(1.2)
+                progress_bar.progress((i + 1) / len(actions))
+
+                status_container.markdown(f"""
+                <div style="
+                    background: #d4edda;
+                    border: 1px solid #c3e6cb;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin: 0.5rem 0;
+                ">
+                    <strong>{action}</strong><br>
+                    <small style="color: #666;">{details}</small>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # Final completion status
+            st.markdown("""
+            <div style="
+                background: #d4edda;
+                border: 1px solid #c3e6cb;
+                padding: 2rem;
+                border-radius: 10px;
+                margin: 2rem 0;
+                text-align: center;
+            ">
+                <h4 style="color: #155724; margin: 0;">✅ Complete Workflow Executed Successfully</h4>
+                <p style="margin: 1rem 0 0 0;"><strong>Total Execution Time:</strong> 6.2 seconds</p>
+                <p style="margin: 0.5rem 0 0 0;"><strong>Manual Process Time:</strong> 6-8 hours</p>
+                <p style="margin: 0.5rem 0 0 0;"><strong>Actions Logged:</strong> Full audit trail created</p>
+                <p style="margin: 0.5rem 0 0 0;"><strong>Next Review:</strong> Automated in 24 hours</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Agentic AI impact metrics
+    st.markdown("#### 📊 Agentic AI Impact Metrics")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("""
+        **⚡ Execution Speed**
+        - Manual workflow: 6-8 hours
+        - AI workflow: 6 seconds
+        - **Speed improvement: 99.97%**
+        """)
+
+    with col2:
+        st.markdown("""
+        **🎯 Accuracy & Compliance**
+        - Human error rate: 12%
+        - AI error rate: 0.3%
+        - **Reliability improvement: 97.5%**
+        """)
+
+    with col3:
+        st.markdown("""
+        **💰 Business Value**
+        - Process automation: ₱28M savings
+        - Error prevention: ₱15M savings
+        - **Total agentic value: ₱43M**
+        """)
 
 def render_roi_summary():
     """Executive ROI Summary Cards"""

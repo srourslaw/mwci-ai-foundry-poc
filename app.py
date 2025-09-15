@@ -130,7 +130,7 @@ def main():
 
     # Add CEO demo only if import was successful
     if CEO_DEMO_AVAILABLE:
-        nav_options.insert(1, "🚀 CEO Demo Dashboard")
+        nav_options.insert(1, "🎯 Executive AI Demo")
     
     for option in nav_options:
         if st.sidebar.button(option, use_container_width=True, key=f"nav_{option}"):
@@ -232,7 +232,7 @@ def main():
     # Route to appropriate page
     if page == "🏠 Executive Dashboard":
         show_dashboard(data_processor)
-    elif page == "🚀 CEO Demo Dashboard" and CEO_DEMO_AVAILABLE:
+    elif page == "🎯 Executive AI Demo" and CEO_DEMO_AVAILABLE:
         show_ceo_demo_dashboard()
     elif page == "👥 HR AI Assistant":
         show_hr_assistant()
