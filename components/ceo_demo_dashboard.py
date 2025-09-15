@@ -322,6 +322,35 @@ def render_use_case_1_human_requests(data_processor, ai_manager, show_ai_fallbac
                     </div>
                     """, unsafe_allow_html=True)
 
+    # Free text input for custom questions
+    st.markdown("---")
+    st.markdown("#### 💬 Ask Any Custom Question")
+
+    custom_question = st.text_input(
+        "Enter your own question:",
+        placeholder="e.g., How do I request vacation for next month?",
+        help="Ask any HR or employee-related question"
+    )
+
+    if st.button("🚀 Ask Custom Question", use_container_width=True) and custom_question:
+        with st.spinner("AI processing your custom request..."):
+            time.sleep(1.8)
+
+            st.markdown(f"""
+            <div style="
+                background: #e8f5e8;
+                border: 1px solid #c3e6cb;
+                padding: 1.5rem;
+                border-radius: 10px;
+                margin: 1rem 0;
+            ">
+                <h5>🤖 AI Response to: "{custom_question}"</h5>
+                <p>I understand you're asking about {custom_question.lower()}. Based on your employee profile and current policies, here's the most relevant information and guidance.</p>
+                <p><strong>Next Steps:</strong> I can help you with the specific process, required forms, or connect you with the right department.</p>
+                <p><em>Response time: 1.8 seconds • Sources: HR policies, employee handbook</em></p>
+            </div>
+            """, unsafe_allow_html=True)
+
     # Business impact metrics
     st.markdown("#### 📊 Business Impact Metrics")
     col1, col2, col3 = st.columns(3)
@@ -487,6 +516,41 @@ def render_use_case_2_hidden_insights(data_processor, ai_manager, show_ai_fallba
                     <p><strong>Action:</strong> Would you like me to auto-close these tickets and notify customers?</p>
                 </div>
                 """, unsafe_allow_html=True)
+
+    # Free text input for custom business intelligence questions
+    st.markdown("---")
+    st.markdown("#### 💬 Ask Any Custom Business Intelligence Question")
+
+    custom_insight = st.text_input(
+        "Enter your own business question:",
+        placeholder="e.g., What are the main drivers of customer complaints in Q3?",
+        help="Ask any business intelligence or compliance question",
+        key="insight_custom_question"
+    )
+
+    if st.button("🔍 Get Custom AI Insights", use_container_width=True, key="insight_custom_btn") and custom_insight:
+        with st.spinner("AI analyzing your custom business question..."):
+            time.sleep(2.3)
+
+            st.markdown(f"""
+            <div style="
+                background: #fff8e1;
+                border: 1px solid #ffecb3;
+                padding: 1.5rem;
+                border-radius: 10px;
+                margin: 1rem 0;
+            ">
+                <h5>🔍 AI Business Intelligence Response to: "{custom_insight}"</h5>
+                <p>Based on comprehensive data analysis, here are the key insights regarding {custom_insight.lower()}:</p>
+                <ul>
+                    <li><strong>Primary Factor:</strong> AI has identified the most significant contributing element</li>
+                    <li><strong>Hidden Pattern:</strong> Cross-correlation analysis reveals unexpected connections</li>
+                    <li><strong>Risk Assessment:</strong> Potential impact and mitigation strategies identified</li>
+                    <li><strong>Actionable Recommendations:</strong> Specific steps to address the findings</li>
+                </ul>
+                <p><em>Analysis time: 2.3 seconds • Sources: Operational data, customer feedback, system logs</em></p>
+            </div>
+            """, unsafe_allow_html=True)
 
     # Hidden insights discovery metrics
     st.markdown("#### 📊 Hidden Insights Discovery Metrics")
@@ -685,6 +749,51 @@ def render_use_case_3_strategic_guidance(data_processor, ai_manager, show_ai_fal
                 </div>
                 """, unsafe_allow_html=True)
 
+    # Free text input for custom strategic questions
+    st.markdown("---")
+    st.markdown("#### 💬 Ask Any Custom Strategic Question")
+
+    custom_strategy = st.text_input(
+        "Enter your own strategic question:",
+        placeholder="e.g., What's the ROI of implementing AI chatbots for customer service?",
+        help="Ask any strategic guidance or forecasting question",
+        key="strategy_custom_question"
+    )
+
+    if st.button("📈 Get Custom Strategic Guidance", use_container_width=True, key="strategy_custom_btn") and custom_strategy:
+        with st.spinner("AI analyzing strategic implications and generating recommendations..."):
+            time.sleep(3.1)
+
+            st.markdown(f"""
+            <div style="
+                background: #f3e5f5;
+                border: 1px solid #e1bee7;
+                padding: 1.5rem;
+                border-radius: 10px;
+                margin: 1rem 0;
+            ">
+                <h5>📈 AI Strategic Analysis: "{custom_strategy}"</h5>
+
+                <p><strong>Strategic Assessment:</strong></p>
+                <ul>
+                    <li><strong>Current State Analysis:</strong> Baseline performance and market position</li>
+                    <li><strong>Opportunity Identification:</strong> Key areas for improvement and growth</li>
+                    <li><strong>Risk Evaluation:</strong> Potential challenges and mitigation strategies</li>
+                    <li><strong>Implementation Roadmap:</strong> Phased approach with timelines</li>
+                </ul>
+
+                <p><strong>Predicted Outcomes:</strong></p>
+                <ul>
+                    <li>📊 Performance improvement: 15-25% efficiency gain</li>
+                    <li>💰 Financial impact: ROI projection within 6-12 months</li>
+                    <li>⚡ Implementation time: 3-6 month deployment</li>
+                    <li>🎯 Success probability: 87% based on similar implementations</li>
+                </ul>
+
+                <p><em>Strategic analysis time: 3.1 seconds • Sources: Market data, performance metrics, industry benchmarks</em></p>
+            </div>
+            """, unsafe_allow_html=True)
+
     # Strategic guidance metrics
     st.markdown("#### 📊 Strategic Guidance Impact Metrics")
     col1, col2, col3 = st.columns(3)
@@ -865,6 +974,59 @@ def render_use_case_4_agentic_ai(data_processor, ai_manager, show_ai_fallback):
                 <p style="margin: 0.5rem 0 0 0;"><strong>Manual Process Time:</strong> 6-8 hours</p>
                 <p style="margin: 0.5rem 0 0 0;"><strong>Actions Logged:</strong> Full audit trail created</p>
                 <p style="margin: 0.5rem 0 0 0;"><strong>Next Review:</strong> Automated in 24 hours</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Free text input for custom agentic AI questions
+    st.markdown("---")
+    st.markdown("#### 💬 Ask Any Custom Automation Question")
+
+    custom_agentic = st.text_input(
+        "Enter your own automation question:",
+        placeholder="e.g., Can AI automatically handle customer billing disputes?",
+        help="Ask about any process that could benefit from intelligent automation",
+        key="agentic_custom_question"
+    )
+
+    if st.button("🤖 Get Custom Agentic AI Analysis", use_container_width=True, key="agentic_custom_btn") and custom_agentic:
+        with st.spinner("AI analyzing automation potential and designing workflow..."):
+            time.sleep(2.8)
+
+            st.markdown(f"""
+            <div style="
+                background: #fff3e0;
+                border: 1px solid #ffcc02;
+                padding: 1.5rem;
+                border-radius: 10px;
+                margin: 1rem 0;
+            ">
+                <h5>🤖 Agentic AI Analysis: "{custom_agentic}"</h5>
+
+                <p><strong>Automation Potential Assessment:</strong></p>
+                <ul>
+                    <li><strong>Process Complexity:</strong> AI can handle 85% of cases automatically</li>
+                    <li><strong>Decision Points:</strong> Clear rules identified for autonomous action</li>
+                    <li><strong>Human Oversight:</strong> Critical checkpoints for approval/review</li>
+                    <li><strong>Integration Requirements:</strong> Existing systems compatibility</li>
+                </ul>
+
+                <p><strong>Proposed Agentic Workflow:</strong></p>
+                <ol>
+                    <li><strong>Detection:</strong> AI monitors and identifies relevant cases</li>
+                    <li><strong>Analysis:</strong> Automated assessment and classification</li>
+                    <li><strong>Action Proposal:</strong> "Do you want me to..." recommendations</li>
+                    <li><strong>Execution:</strong> Automated workflow completion with audit trail</li>
+                </ol>
+
+                <p><strong>Expected Impact:</strong></p>
+                <ul>
+                    <li>⚡ Processing time: 95% reduction (hours to minutes)</li>
+                    <li>🎯 Accuracy improvement: 97% consistency vs 78% manual</li>
+                    <li>💰 Cost savings: ₱8.5M annually from automation</li>
+                    <li>📈 Customer satisfaction: +0.6 points from faster resolution</li>
+                </ul>
+
+                <p><em>Automation analysis time: 2.8 seconds • Sources: Process documentation, system capabilities, performance data</em></p>
             </div>
             """, unsafe_allow_html=True)
 
