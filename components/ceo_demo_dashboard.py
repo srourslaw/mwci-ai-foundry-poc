@@ -18,6 +18,7 @@ def show_ceo_demo_dashboard():
     Executive AI Demo - Four Core AI Use Cases for Business
     Based on CTO Jeremy's framework for AI business transformation
     """
+    # HTML Rendering Fix Applied - 2025-09-15 14:35 - FINAL FIX
 
     # Initialize components
     data_processor = get_data_processor()
@@ -438,26 +439,32 @@ def render_use_case_2_hidden_insights(data_processor, ai_manager, show_ai_fallba
                 st.markdown("### 🔍 AI Compliance Analysis (3.2 seconds)")
                 st.markdown("**DOH Compliance Status: ⚠️ ATTENTION REQUIRED**")
 
-                st.markdown("**Overall Performance:**")
                 st.markdown("""
-                - ✅ 14 areas COMPLIANT (98.9% avg quality)
-                - ⚠️ 2 areas APPROACHING THRESHOLD: Malabon (98.4%), Navotas (98.2%)
-                - 🎯 Target: 98.5% minimum for all areas
-                """)
+                <p><strong>Overall Performance:</strong></p>
+                <ul>
+                    <li>✅ 14 areas COMPLIANT (98.9% avg quality)</li>
+                    <li>⚠️ 2 areas APPROACHING THRESHOLD: Malabon (98.4%), Navotas (98.2%)</li>
+                    <li>🎯 Target: 98.5% minimum for all areas</li>
+                </ul>
+                """, unsafe_allow_html=True)
 
-                st.markdown("**Hidden Risks You Didn't Know About:**")
                 st.markdown("""
-                - 🚨 Pipe aging in coastal areas accelerating faster than predicted
-                - ⏰ 72 hours until potential non-compliance
-                - 💰 Risk exposure: ₱2.1M in penalties + service disruption
-                """)
+                <p><strong>Hidden Risks You Didn't Know About:</strong></p>
+                <ul>
+                    <li>🚨 Pipe aging in coastal areas accelerating faster than predicted</li>
+                    <li>⏰ 72 hours until potential non-compliance</li>
+                    <li>💰 Risk exposure: ₱2.1M in penalties + service disruption</li>
+                </ul>
+                """, unsafe_allow_html=True)
 
-                st.markdown("**Immediate Action Required:**")
                 st.markdown("""
-                1. Enhanced water testing in Malabon/Navotas (next 24 hours)
-                2. Pipeline inspection scheduled (within 30 days)
-                3. Preventive maintenance budget: ₱850M vs ₱2.1M penalty risk
-                """)
+                <p><strong>Immediate Action Required:</strong></p>
+                <ol>
+                    <li>Enhanced water testing in Malabon/Navotas (next 24 hours)</li>
+                    <li>Pipeline inspection scheduled (within 30 days)</li>
+                    <li>Preventive maintenance budget: ₱850M vs ₱2.1M penalty risk</li>
+                </ol>
+                """, unsafe_allow_html=True)
 
             elif "missing" in selected_insight.lower():
                 st.markdown("""
@@ -639,42 +646,26 @@ def render_use_case_3_strategic_guidance(data_processor, ai_manager, show_ai_fal
             time.sleep(3)
 
             if "ticket closure" in selected_strategy.lower():
-                st.markdown("""
-                <div style="
-                    background: #d1ecf1;
-                    border: 1px solid #bee5eb;
-                    padding: 2rem;
-                    border-radius: 10px;
-                    margin: 1rem 0;
-                ">
-                    <h5>📈 AI Strategic Analysis (4.1 seconds)</h5>
-                    <p><strong>Ticket Closure Rate Optimization Strategy</strong></p>
+                st.markdown("### 📈 AI Strategic Analysis (4.1 seconds)")
+                st.markdown("**Ticket Closure Rate Optimization Strategy**")
 
-                    <p><strong>Current Performance:</strong></p>
-                    <ul>
-                        <li>Overall closure rate: 87% (Industry benchmark: 92%)</li>
-                        <li>Average resolution time: 18.5 hours</li>
-                        <li>Customer satisfaction: 4.2/5</li>
-                    </ul>
+                st.markdown("**Current Performance:**")
+                st.markdown("- Overall closure rate: 87% (Industry benchmark: 92%)")
+                st.markdown("- Average resolution time: 18.5 hours")
+                st.markdown("- Customer satisfaction: 4.2/5")
 
-                    <p><strong>AI-Identified Optimization Opportunities:</strong></p>
-                    <ol>
-                        <li><strong>Billing Inquiries (48% of volume):</strong> Auto-resolve payment confirmations = +8% closure rate</li>
-                        <li><strong>Duplicate Reports (12% of volume):</strong> AI detection and merging = +3% closure rate</li>
-                        <li><strong>Low-priority Maintenance (15%):</strong> Batch processing = +2% closure rate</li>
-                    </ol>
+                st.markdown("**AI-Identified Optimization Opportunities:**")
+                st.markdown("1. **Billing Inquiries (48% of volume):** Auto-resolve payment confirmations = +8% closure rate")
+                st.markdown("2. **Duplicate Reports (12% of volume):** AI detection and merging = +3% closure rate")
+                st.markdown("3. **Low-priority Maintenance (15%):** Batch processing = +2% closure rate")
 
-                    <p><strong>Predicted Outcomes (3-month implementation):</strong></p>
-                    <ul>
-                        <li>📊 Closure rate: 87% → 95% (+8 percentage points)</li>
-                        <li>⏱️ Resolution time: 18.5 → 12.3 hours (-33%)</li>
-                        <li>😊 Customer satisfaction: 4.2 → 4.6 (+0.4 points)</li>
-                        <li>💰 Cost savings: ₱12M annually from efficiency gains</li>
-                    </ul>
+                st.markdown("**Predicted Outcomes (3-month implementation):**")
+                st.markdown("- 📊 Closure rate: 87% → 95% (+8 percentage points)")
+                st.markdown("- ⏱️ Resolution time: 18.5 → 12.3 hours (-33%)")
+                st.markdown("- 😊 Customer satisfaction: 4.2 → 4.6 (+0.4 points)")
+                st.markdown("- 💰 Cost savings: ₱12M annually from efficiency gains")
 
-                    <p><strong>Implementation Priority:</strong> Start with billing auto-resolution (highest impact, lowest effort)</p>
-                </div>
-                """, unsafe_allow_html=True)
+                st.markdown("**Implementation Priority:** Start with billing auto-resolution (highest impact, lowest effort)")
 
             elif "which tickets" in selected_strategy.lower():
                 st.markdown("""
@@ -901,42 +892,22 @@ def render_use_case_4_agentic_ai(data_processor, ai_manager, show_ai_fallback):
         st.markdown("##### 🤖 Step 2: AI Proposed Actions")
 
         if st.session_state.get('ai_detected_issue'):
-            st.markdown("""
-            <div style="
-                background: #d1ecf1;
-                border: 1px solid #bee5eb;
-                padding: 1.5rem;
-                border-radius: 8px;
-                margin: 1rem 0;
-            ">
-                <h5>🤖 AI: "I've identified a critical issue. Do you want me to:"</h5>
+            st.markdown("#### 🤖 AI: \"I've identified a critical issue. Do you want me to:\"")
 
-                <div style="margin: 1rem 0;">
-                    <p><strong>✅ Schedule emergency water quality testing?</strong></p>
-                    <p style="font-size: 0.9rem; color: #666;">• Lab team notification sent<br>• Testing slots: Tomorrow 8 AM, 2 PM, 6 PM<br>• Estimated cost: ₱45,000</p>
-                </div>
+            st.markdown("**✅ Schedule emergency water quality testing?**")
+            st.markdown("• Lab team notification sent  \n• Testing slots: Tomorrow 8 AM, 2 PM, 6 PM  \n• Estimated cost: ₱45,000")
 
-                <div style="margin: 1rem 0;">
-                    <p><strong>✅ Create maintenance work orders?</strong></p>
-                    <p style="font-size: 0.9rem; color: #666;">• 3 work orders: Pipeline inspection, filtration check, pressure optimization<br>• Priority: High<br>• Assigned team: Malabon zone technicians</p>
-                </div>
+            st.markdown("**✅ Create maintenance work orders?**")
+            st.markdown("• 3 work orders: Pipeline inspection, filtration check, pressure optimization  \n• Priority: High  \n• Assigned team: Malabon zone technicians")
 
-                <div style="margin: 1rem 0;">
-                    <p><strong>✅ Alert Operations Director and compliance team?</strong></p>
-                    <p style="font-size: 0.9rem; color: #666;">• Teams notification with full context<br>• SMS alert to on-call manager<br>• Calendar invite for emergency review meeting</p>
-                </div>
+            st.markdown("**✅ Alert Operations Director and compliance team?**")
+            st.markdown("• Teams notification with full context  \n• SMS alert to on-call manager  \n• Calendar invite for emergency review meeting")
 
-                <div style="margin: 1rem 0;">
-                    <p><strong>✅ Generate regulatory compliance report?</strong></p>
-                    <p style="font-size: 0.9rem; color: #666;">• DOH notification draft prepared<br>• Incident timeline documented<br>• Corrective action plan included</p>
-                </div>
+            st.markdown("**✅ Generate regulatory compliance report?**")
+            st.markdown("• DOH notification draft prepared  \n• Incident timeline documented  \n• Corrective action plan included")
 
-                <div style="margin: 1rem 0;">
-                    <p><strong>✅ Notify affected customers?</strong></p>
-                    <p style="font-size: 0.9rem; color: #666;">• 2,847 customers in Malabon area<br>• SMS + email notification prepared<br>• Service advisory posted to website</p>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown("**✅ Notify affected customers?**")
+            st.markdown("• 2,847 customers in Malabon area  \n• SMS + email notification prepared  \n• Service advisory posted to website")
 
     # Execution demonstration
     st.markdown("##### ⚡ Step 3: AI Execution (With Your Approval)")
