@@ -7,8 +7,14 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))
 
 from utils.ui_components import UIComponents
 from utils.data_processor import get_data_processor
-from components.ceo_demo_dashboard import show_ceo_demo_dashboard
 import pandas as pd
+
+# Optional import for CEO demo dashboard
+try:
+    from components.ceo_demo_dashboard import show_ceo_demo_dashboard
+    CEO_DEMO_AVAILABLE = True
+except ImportError:
+    CEO_DEMO_AVAILABLE = False
 
 # Page configuration
 st.set_page_config(
@@ -117,11 +123,14 @@ def main():
     # Navigation buttons only - nothing else
     nav_options = [
         "🏠 Executive Dashboard",
-        "🚀 CEO Demo Dashboard",
         "👥 HR AI Assistant",
         "🎫 Smart Ticketing System",
         "📊 Chat With Data Analytics"
     ]
+
+    # Add CEO demo only if import was successful
+    if CEO_DEMO_AVAILABLE:
+        nav_options.insert(1, "🚀 CEO Demo Dashboard")
     
     for option in nav_options:
         if st.sidebar.button(option, use_container_width=True, key=f"nav_{option}"):
@@ -223,7 +232,7 @@ def main():
     # Route to appropriate page
     if page == "🏠 Executive Dashboard":
         show_dashboard(data_processor)
-    elif page == "🚀 CEO Demo Dashboard":
+    elif page == "🚀 CEO Demo Dashboard" and CEO_DEMO_AVAILABLE:
         show_ceo_demo_dashboard()
     elif page == "👥 HR AI Assistant":
         show_hr_assistant()

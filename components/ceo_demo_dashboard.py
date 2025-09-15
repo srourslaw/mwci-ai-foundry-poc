@@ -6,7 +6,11 @@ import pandas as pd
 from datetime import datetime, timedelta
 import time
 from utils.ui_components import UIComponents
-from utils.ai_models import AIManager
+try:
+    from utils.ai_models import get_ai_manager
+except ImportError:
+    def get_ai_manager():
+        return None
 from utils.data_processor import get_data_processor
 
 def show_ceo_demo_dashboard():
@@ -19,12 +23,8 @@ def show_ceo_demo_dashboard():
     data_processor = get_data_processor()
 
     # Check for AI configuration
-    if not st.session_state.get('gemini_api_key') and not st.session_state.get('openai_api_key'):
-        ai_manager = None
-        show_ai_fallback = True
-    else:
-        ai_manager = AIManager()
-        show_ai_fallback = False
+    ai_manager = get_ai_manager()
+    show_ai_fallback = not (st.session_state.get('gemini_api_key') or st.session_state.get('openai_api_key'))
 
     # Header - Executive Presentation Style
     st.markdown("""
