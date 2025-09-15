@@ -61,11 +61,11 @@ def show_ceo_demo_dashboard():
             "🤖 Use Case 4: Agentic AI - Do you want me to... (Intelligent Automation)",
             "💰 Business Impact & ROI Analysis"
         ],
-        help="Choose which of Jeremy's AI use cases to demonstrate"
+        help="Choose which AI use case to demonstrate"
     )
 
     if demo_tab == "🏠 Overview: All Four AI Use Cases":
-        render_jeremy_overview(data_processor, ai_manager, show_ai_fallback)
+        render_ai_overview(data_processor, ai_manager, show_ai_fallback)
     elif demo_tab == "⚡ Use Case 1: Give me what I'm looking for (Human Requests)":
         render_use_case_1_human_requests(data_processor, ai_manager, show_ai_fallback)
     elif demo_tab == "🔍 Use Case 2: Tell me what I don't know (Hidden Insights)":
@@ -77,8 +77,8 @@ def show_ceo_demo_dashboard():
     elif demo_tab == "💰 Business Impact & ROI Analysis":
         render_complete_roi_analysis(data_processor)
 
-def render_jeremy_overview(data_processor, ai_manager, show_ai_fallback):
-    """Overview of Jeremy's Four AI Use Cases Framework"""
+def render_ai_overview(data_processor, ai_manager, show_ai_fallback):
+    """Overview of Four Strategic AI Use Cases Framework"""
     st.markdown("### 🎯 Four Strategic AI Use Cases for Business Transformation")
 
     st.markdown("""
@@ -89,7 +89,7 @@ def render_jeremy_overview(data_processor, ai_manager, show_ai_fallback):
         border-left: 5px solid #667eea;
         margin-bottom: 2rem;
     ">
-        <h4>🎭 CTO Jeremy's AI Framework</h4>
+        <h4>🎯 Strategic AI Framework</h4>
         <p>These four use cases represent the complete spectrum of AI business value - from immediate efficiency gains to strategic transformation.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -207,7 +207,7 @@ def render_use_case_1_human_requests(data_processor, ai_manager, show_ai_fallbac
     ">
         <h4>💡 The Business Challenge</h4>
         <p>Employees spend hours searching for information, waiting for responses, or trying to complete routine tasks that should take seconds.</p>
-        <p><strong>Jeremy's Examples:</strong> Leave balance queries, system login help, document summaries, spreadsheet creation</p>
+        <p><strong>Examples:</strong> Leave balance queries, system login help, document summaries, spreadsheet creation</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -224,8 +224,8 @@ def render_use_case_1_human_requests(data_processor, ai_manager, show_ai_fallbac
             help="In production, employee sees only their own data"
         )
 
-        # Jeremy's specific examples as buttons
-        jeremy_questions = [
+        # Business example questions
+        example_questions = [
             "How many days leave do I have left?",
             "How do I log into the HR Leave system?",
             "Summarize my recent performance review",
@@ -233,7 +233,7 @@ def render_use_case_1_human_requests(data_processor, ai_manager, show_ai_fallbac
             "What training courses are available for me?"
         ]
 
-        selected_question = st.selectbox("Jeremy's Example Questions:", jeremy_questions)
+        selected_question = st.selectbox("Business Example Questions:", example_questions)
 
     with col2:
         st.markdown("**🤖 AI Response**")
@@ -365,15 +365,15 @@ def render_use_case_2_hidden_insights(data_processor, ai_manager, show_ai_fallba
     ">
         <h4>💡 The Business Challenge</h4>
         <p>Critical issues and compliance gaps often go undetected until they become expensive problems.</p>
-        <p><strong>Jeremy's Examples:</strong> Regulatory compliance gaps, missing data identification, process optimization opportunities</p>
+        <p><strong>Examples:</strong> Regulatory compliance gaps, missing data identification, process optimization opportunities</p>
     </div>
     """, unsafe_allow_html=True)
 
     # Interactive demo
     st.markdown("#### 🎭 Live Demo: AI-Powered Business Intelligence")
 
-    # Jeremy's specific examples
-    jeremy_insights = [
+    # Business intelligence examples
+    insight_examples = [
         "Am I compliant to DOH water quality regulations and what focus areas need work?",
         "What data are you missing to provide a complete compliance response?",
         "Which tickets can I close that have already been resolved?",
@@ -381,7 +381,7 @@ def render_use_case_2_hidden_insights(data_processor, ai_manager, show_ai_fallba
         "What operational risks am I not aware of?"
     ]
 
-    selected_insight = st.selectbox("Jeremy's Insight Questions:", jeremy_insights)
+    selected_insight = st.selectbox("Business Intelligence Examples:", insight_examples)
 
     if st.button("🔍 Generate AI Insights", use_container_width=True):
         with st.spinner("AI analyzing business data and identifying hidden patterns..."):
@@ -531,15 +531,15 @@ def render_use_case_3_strategic_guidance(data_processor, ai_manager, show_ai_fal
     ">
         <h4>💡 The Business Challenge</h4>
         <p>Strategic decisions are often made with incomplete information or gut instinct rather than data-driven insights.</p>
-        <p><strong>Jeremy's Examples:</strong> Process optimization, performance improvement, demand forecasting, capacity planning</p>
+        <p><strong>Examples:</strong> Process optimization, performance improvement, demand forecasting, capacity planning</p>
     </div>
     """, unsafe_allow_html=True)
 
     # Interactive demo
     st.markdown("#### 🎭 Live Demo: AI-Powered Strategic Guidance")
 
-    # Jeremy's specific strategic questions
-    jeremy_strategies = [
+    # Strategic guidance examples
+    strategy_examples = [
         "How do I improve the ticket closure rate?",
         "Which tickets should I focus on to get the maximum closure rate?",
         "Forecast demand patterns by hour/day/month for capacity planning",
@@ -547,7 +547,7 @@ def render_use_case_3_strategic_guidance(data_processor, ai_manager, show_ai_fal
         "What's the likely outcome if we increase service prices by 5%?"
     ]
 
-    selected_strategy = st.selectbox("Jeremy's Strategic Questions:", jeremy_strategies)
+    selected_strategy = st.selectbox("Strategic Guidance Examples:", strategy_examples)
 
     if st.button("📈 Get AI Strategic Guidance", use_container_width=True):
         with st.spinner("AI analyzing data patterns and generating strategic recommendations..."):
@@ -728,7 +728,7 @@ def render_use_case_4_agentic_ai(data_processor, ai_manager, show_ai_fallback):
     ">
         <h4>💡 The Revolutionary Difference</h4>
         <p>Most AI stops at recommendations. Agentic AI completes the full workflow - from problem detection to solution execution.</p>
-        <p><strong>Jeremy's Vision:</strong> AI doesn't just tell you what to do, it offers to do it for you with your approval.</p>
+        <p><strong>The Vision:</strong> AI doesn't just tell you what to do, it offers to do it for you with your approval.</p>
     </div>
     """, unsafe_allow_html=True)
 
